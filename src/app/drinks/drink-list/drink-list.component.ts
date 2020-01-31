@@ -45,8 +45,11 @@ export class DrinkListComponent implements OnInit, OnDestroy {
    }
 
    onSort() {
+      this.userFeature();
+
       this.drinks$ = this.drinksService
          .getDrinksSorted()
+         .pipe(delay(150))
          .pipe(map((drinks: any) => drinks.doc));
    }
 
