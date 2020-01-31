@@ -1,0 +1,15 @@
+<h2><a routerLink="/">baristabook</a></h2>
+
+<div *ngIf="!userIsAuth">
+  <button routerLink="/auth/login">Login</button>
+  <button routerLink="/auth/signup">Sign Up</button>
+</div>
+
+<div *ngIf="userIsAuth">
+  <button routerLink="/user/profile">User</button>
+  <button routerLink="/user/starred">Starred</button>
+  <button
+    (click)="onLogout()"
+    *ngIf="userIsAuth"
+  >Logout</button>
+</div>

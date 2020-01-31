@@ -1,0 +1,57 @@
+extends base
+
+block content
+    h2 #{title}
+    a(href=`?sort=name`) Sort by name
+    each drink in drinks
+        p
+            span= `------------------------------`
+        p
+            a(href=`/drink/${drink.slug}`)= drink.name
+        //- STARRED UI
+        if (user && url.charAt(0) === `/` && url.substring(0, 11) !== `/my-starred`)
+            - let toggle = 0
+            if (starred.length === 0)
+                p
+                        a(href=`/star-drink/${drink.slug}`) Star drink
+            for star in starred
+                if (drink.id === star.id)
+                    p
+                        a(href=`/delete-starred-drink/${drink.slug}`) Delete starred
+                    - toggle = 1
+                - if (drink.id !== star.id && toggle === 0 && star === starred[starred.length - 1])
+                    p
+                        a(href=`/star-drink/${drink.slug}`) Star drink
+        if (url.substring(0, 11) === `/my-starred`)
+            p
+                a(href=`/delete-starred-drink/${drink.slug}`) Delete starred
+        p
+            span= drink.code
+        p
+            span= drink.form
+        p
+            span= drink.season
+        p
+            span= drink.size
+        p
+            span= drink.caffeine
+        p
+            span= drink.caffeineCount
+        p
+            span= drink.syrup
+        p
+            span= drink.syrupCount
+        p
+            span= drink.body
+        p
+            span= drink.whippedCream
+        p
+            span= drink.topping
+        p
+            span= drink.shaker
+        p
+            span= drink.shakerAddition
+        p
+            span= drink.driedFruit
+        p
+            span= drink.custom

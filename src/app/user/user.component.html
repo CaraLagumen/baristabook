@@ -1,0 +1,62 @@
+<span *ngIf="isLoading">Loading...</span>
+
+<div *ngIf="!isLoading">
+  Info
+  <form
+    (submit)="onUpdateUser()"
+    [formGroup]="updateUserForm"
+    *ngIf="!isLoading"
+  >
+    <input
+      type="text"
+      formControlName="name"
+      placeholder="{{ user?.name }}"
+    > Name
+    <br>
+    <input
+      type="email"
+      formControlName="email"
+      placeholder="{{ user?.email }}"
+    > Email
+    <br>
+    <input
+      type="text"
+      formControlName="location"
+      placeholder="{{ user?.location }}"
+    > Location
+    <br>
+    <button type="submit">Update Info</button>
+  </form>
+
+  Change Password
+  <form
+    (submit)="onChangePassword(changePasswordForm)"
+    #changePasswordForm="ngForm"
+  >
+    <input
+      type="password"
+      required
+      ngModel
+      name="passwordCurrent"
+      #passwordCurrentInput="ngModel"
+    > Current Password
+    <br>
+    <input
+      type="password"
+      required
+      ngModel
+      name="password"
+      #passwordInput="ngModel"
+    > New Password
+    <br>
+    <input
+      type="password"
+      required
+      ngModel
+      name="passwordConfirm"
+      #passwordConfirmInput="ngModel"
+    > Confirm New Password
+    <br>
+    <button *ngIf="!isLoading">Update Password</button>
+    </form>
+</div>

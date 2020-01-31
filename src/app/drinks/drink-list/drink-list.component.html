@@ -1,0 +1,12 @@
+<span *ngIf="isLoading">Loading...</span>
+
+<div *ngIf="!isLoading">
+  <app-drink-item
+    *ngFor="let drink of (drinks$ | async);"
+    [drink]="drink"
+    [userIsAuth]="userIsAuth"
+    [starreds]="starreds"
+  ></app-drink-item>
+
+  <button (click)="onSort()">Sort by Name</button>
+</div>

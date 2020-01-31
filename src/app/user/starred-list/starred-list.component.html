@@ -1,0 +1,11 @@
+<span *ngIf="isLoading">Loading...</span>
+
+<div *ngIf="!isLoading">
+  <app-starred-item
+    *ngFor="let starredDrink of (starredsDrinks$ | async); let i = index;"
+    [starredDrink]="starredDrink"
+    [starreds]="starreds"
+  ></app-starred-item>
+
+  <button (click)="onSort()">Sort by Name</button>
+</div>

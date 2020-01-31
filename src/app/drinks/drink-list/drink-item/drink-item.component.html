@@ -1,0 +1,30 @@
+<!-- STARRED -->
+<span *ngIf="userIsAuth">
+  <button
+    (click)="clickHandler($event)"
+  >
+    {{ star }}
+  </button>
+</span>
+
+<!-- DRINK LINK -->
+<button (click)="onPreviewDrink()">
+  ▼
+</button>
+
+<!-- DRINK CODE -->
+<a
+  [routerLink]="['/drinks', drink.id]"
+  routerLinkActive="active"
+>
+  {{ drink?.code }}
+</a>
+
+<br>
+<!-- DRINK PREVIEW -->
+<div *ngIf="previewDrink">
+  {{ drink?.name }}<br>
+  {{ drink?.form }}<br>
+  {{ drink?.season }}<br>
+  {{ drink?.size }}<br>
+</div>

@@ -1,0 +1,29 @@
+<!-- STARRED DELETE -->
+<button
+  (click)="onDeleteStarred()"
+  [disabled]="isDisabled"
+>
+  {{ star }}
+</button>
+
+<!-- STARRED LINK -->
+<button (click)="onViewStarred()">
+  ▼
+</button>
+
+<!-- STARRED CODE -->
+<a
+  [routerLink]="['/drinks', starredDrink.id]"
+  routerLinkActive="active"
+>
+  {{ starredDrink.code }}
+</a>
+
+<br>
+<!-- STARRED PREVIEW -->
+<div *ngIf="viewStarred">
+  {{ starredDrink.name }}<br>
+  {{ starredDrink.form }}<br>
+  {{ starredDrink.season }}<br>
+  {{ starredDrink.size }}<br>
+</div>

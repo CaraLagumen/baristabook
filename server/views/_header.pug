@@ -1,0 +1,18 @@
+header
+    nav
+        a(href=`/`) All Drinks
+        
+    nav
+        if user
+            p   
+                a(href=`/my-starred`) My starred
+            p
+                a.nav__el.nav__el--logout Log out
+            p
+                a(href=`/me`)
+                    span= user.name.split(` `)[0]
+        else
+            p
+                a(href=`/login`) Log in
+            p
+                a(href=`/signup`) Sign up
