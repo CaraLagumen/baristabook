@@ -5,6 +5,8 @@ const starredController = require(`./../controllers/starredController`);
 
 const router = express.Router();
 
+router.route(`/search`).get(drinkController.getSearch);
+
 router
    .route(`/`)
    .get(drinkController.getAllDrinks)

@@ -25,4 +25,8 @@ export class DrinksService {
    getDrink(id: string): Observable<Drink> {
       return this.http.get<Drink>(`${ROOT_URL}/${id}`);
    }
+
+   searchDrinks(term: Observable<any>) {
+      return this.http.get(`${ROOT_URL}/search?drink=${term}`);
+   }
 }

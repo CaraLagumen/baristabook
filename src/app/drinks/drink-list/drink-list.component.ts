@@ -1,6 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription, Observable } from 'rxjs';
-import { map, delay } from 'rxjs/operators';
+import { Subscription, Observable, Subject } from 'rxjs';
+import {
+   map,
+   delay,
+   debounceTime,
+   distinctUntilChanged,
+   filter
+} from 'rxjs/operators';
 
 import { DrinksService } from '../drinks.service';
 import { Drink } from '../../shared/drink.model';
@@ -19,14 +25,48 @@ export class DrinkListComponent implements OnInit, OnDestroy {
    userIsAuth: boolean;
    userId: string;
    starreds: any[];
+   searching: boolean;
 
    isLoading = false;
+   searchTerm = new Subject<string>();
+   searchResults: any;
 
    constructor(
       private drinksService: DrinksService,
       private authService: AuthService,
       private userService: UserService
-   ) {}
+   ) {
+      //REAL-TIME SEARCH FEATURE
+      this.searchTerm
+         .pipe(
+            //EXTRACT TYPED INPUT
+            map((typed: any) => typed.target.value),
+            //DELAY API CALL FOR 400MS
+            debounceTime(400),
+            //RESTRICT TYPING ERR FROM GETTING SENT
+            distinctUntilChanged(),
+            //REQUIRE SEARCH TERM TO BE MORE THAN 1 LETTER
+            filter(term => term.length > 0)
+         )
+         .subscribe(searchTerm => {
+            this.searching = true;
+
+            //FETCH THE RESULTS
+            this.drinksService
+               .searchDrinks(searchTerm)
+               .pipe(
+                  map((res: any) => {
+                     this.searchResults = res.doc;
+                  })
+               )
+               //UPDATE UI
+               .subscribe(searchTerm => {
+                  this.searching = true;
+
+                  this.onSearch(searchTerm);
+               });
+         });
+   }
 
    ngOnInit() {
       this.isLoading = true;
@@ -35,7 +75,6 @@ export class DrinkListComponent implements OnInit, OnDestroy {
 
       //EXPOSE DRINK FOR DISPLAY WITH MINISCULE DELAY
       //TO REGISTER STARRED DRINKS IF ANY
-      //REGULAR MODE
       this.drinks$ = this.drinksService
          .getDrinks()
          .pipe(delay(150))
@@ -51,6 +90,17 @@ export class DrinkListComponent implements OnInit, OnDestroy {
          .getDrinksSorted()
          .pipe(delay(150))
          .pipe(map((drinks: any) => drinks.doc));
+   }
+
+   onSearch(term) {
+      this.drinksService.searchDrinks(term).subscribe(
+         res => {
+            this.searching = false;
+         },
+         err => {
+            this.searching = false;
+         }
+      );
    }
 
    userFeature() {

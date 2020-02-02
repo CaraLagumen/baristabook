@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { DrinksComponent } from './drinks.component';
 import { DrinkComponent } from './drink/drink.component';
@@ -15,6 +16,6 @@ import { DrinksRoutingModule } from './drinks-routing.module';
       DrinkItemComponent,
       DrinkListComponent
    ],
-   imports: [DrinksRoutingModule, RouterModule, CommonModule]
+   imports: [DrinksRoutingModule, RouterModule, CommonModule, FormsModule]
 })
 export class DrinksModule {}
