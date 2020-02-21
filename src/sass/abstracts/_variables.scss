@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Italiana|Roboto&display=swap");
+
+:root {
+  //COLORS----------------------------------------------------------
+
+  //PRIMARY
+  --color-blonde: #b69c64; //SEARCH BAR, ICONS, TEXT
+  --color-star: #c7b58c; //LOGO
+
+  //SECONDARY
+  --color-earth: #807c50; //HEADER, FOOTER
+  --color-mocha: #312d2a; //HEADER, FOOTER
+
+  //TERTIARY
+  --color-white: #fff; //TEXT
+  --color-coffee: #64532f; //VALUES BARS
+  --color-espresso: #0e0e0e; //BACKGROUND
+
+  //ACCENT
+  --color-hot: #8c5430;
+  --color-iced: #305a8c;
+  --color-frozen: #a1cdff;
+
+  //FONT----------------------------------------------------------
+
+  //STYLES
+  --font-primary: "Roboto", sans-serif;
+  --font-logo: "Italiana", sans-serif;
+
+  //SIZES
+  --font-big: 3rem; //HEADERS
+  --font-small: 2rem; //PARAGRAPHS, BUTTONS, LINKS
+  --font-xsmall: 1.235rem; //TYPE
+}
