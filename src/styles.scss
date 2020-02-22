@@ -1,8 +1,10 @@
-@import "sass/abstracts/base";
+@import url("https://fonts.googleapis.com/css?family=Italiana|Roboto&display=swap");
+
 @import "sass/abstracts/functions";
 @import "sass/abstracts/mixins";
 @import "sass/abstracts/variables";
 
+@import "sass/base/base";
 @import "sass/base/animations";
 @import "sass/base/typography";
 @import "sass/base/utilities";

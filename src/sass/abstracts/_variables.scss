@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Italiana|Roboto&display=swap");
-
 :root {
   //COLORS----------------------------------------------------------
 
@@ -13,7 +11,7 @@
 
   //TERTIARY
   --color-white: #fff; //TEXT
-  --color-coffee: #64532f; //VALUES BARS
+  --color-coffee: #64532f; //DRINK VALUES BARS
   --color-espresso: #0e0e0e; //BACKGROUND
 
   //ACCENT
@@ -29,6 +27,7 @@
 
   //SIZES
   --font-big: 3rem; //HEADERS
-  --font-small: 2rem; //PARAGRAPHS, BUTTONS, LINKS
-  --font-xsmall: 1.235rem; //TYPE
+  --font-medium: 2rem; //PARAGRAPHS, BUTTONS, LINKS
+  --font-small: 1.56rem; //KEY VALUE PAIRS
+  --font-xsmall: 1.235rem; //DRINK TYPES
 }

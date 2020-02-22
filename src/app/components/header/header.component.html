@@ -1,15 +1,48 @@
-<h2><a routerLink="/">baristabook</a></h2>
+<div class="header">
 
-<div *ngIf="!userIsAuth">
-  <button routerLink="/auth/login">Login</button>
-  <button routerLink="/auth/signup">Sign Up</button>
-</div>
+  <div class="header__logo">
 
-<div *ngIf="userIsAuth">
-  <button routerLink="/user/profile">User</button>
-  <button routerLink="/user/starred">Starred</button>
-  <button
-    (click)="onLogout()"
-    *ngIf="userIsAuth"
-  >Logout</button>
+    <a
+      routerLink="/"
+      class="header__logo-svg"
+    > <img
+        src="assets/logo.svg"
+        alt="Baristabook logo"
+      ></a>
+
+  </div>
+
+  <div class="header__user">
+
+    <div
+      *ngIf="!userIsAuth"
+      class="header__user--container"
+    >
+      <a
+        routerLink="/auth/login"
+        class="heading-2"
+      >Login</a>
+      <a
+        routerLink="/auth/signup"
+        class="heading-2"
+      >Sign Up</a>
+    </div>
+
+    <div
+      *ngIf="userIsAuth"
+      class="header__user--container"
+    >
+      <button routerLink="/user/profile">Profile</button>
+      <button routerLink="/user/starred">Starred</button>
+      <button
+        (click)="onLogout()"
+        *ngIf="userIsAuth"
+      >Logout</button>
+    </div>
+
+    <div class="header__bg1">&nbsp;</div>
+    <div class="header__bg2">&nbsp;</div>
+
+  </div>
+
 </div>

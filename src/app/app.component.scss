@@ -1,0 +1,23 @@
+.container {
+  display: grid;
+  grid-template-rows:
+    [header-start] 17vh
+    [header-end main-start] 68vh
+    [main-end footer-start] 15vh
+    [footer-end];
+}
+
+app-header {
+  border-bottom: white solid;
+  grid-row: header-start / header-end;
+}
+
+.main {
+  border-bottom: white solid;
+  grid-row: main-start / main-end;
+}
+
+app-footer {
+  border-bottom: white solid;
+  grid-row: footer-start / footer-end;
+}

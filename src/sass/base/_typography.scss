@@ -1,0 +1,18 @@
+a {
+  &,
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--color-primary);
+  }
+}
+
+.heading-1 {
+  font-size: var(--font-big);
+  text-transform: uppercase;
+}
+
+.heading-2 {
+  font-size: var(--font-medium);
+  text-transform: uppercase;
+}

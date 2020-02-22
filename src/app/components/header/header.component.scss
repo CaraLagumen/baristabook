@@ -1,0 +1,62 @@
+.header {
+  display: grid;
+  grid-template-columns:
+    [logo-start] 33vw
+    [logo-end] 33vw
+    [user-start] 34vw
+    [user-end];
+  height: 100%;
+  width: 100%;
+
+  &__logo {
+    grid-column: logo-start / logo-end;
+
+    position: relative;
+    top: 4vh;
+    left: 5vw;
+  }
+
+  &__user {
+    grid-column: user-start / user-end;
+
+    &--container {
+      display: grid;
+      grid-template-columns: min-content max-content;
+      height: 100%;
+      width: 100%;
+
+      align-content: end;
+      justify-content: space-evenly;
+
+      position: relative;
+      padding-bottom: 4vh;
+      padding-right: 4.5vw;
+    }
+  }
+
+  &__bg1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--color-mocha);
+    clip-path: polygon(100% 20%, 100% 0, 0 0, 0 100%);
+
+    z-index: -1;
+  }
+
+  &__bg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 10vh;
+    width: 100vw;
+    background-color: var(--color-earth);
+    clip-path: polygon(100% 80%, 100% 0, 0 0, 0 25%);
+
+    z-index: -2;
+  }
+}
