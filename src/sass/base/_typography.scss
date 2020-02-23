@@ -7,6 +7,16 @@ a {
   }
 }
 
+input {
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--font-small);
+}
+
+ul {
+  list-style: none;
+}
+
 .heading-1 {
   font-size: var(--font-big);
   text-transform: uppercase;

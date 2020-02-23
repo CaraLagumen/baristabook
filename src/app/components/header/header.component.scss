@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns:
     [logo-start] 33vw
-    [logo-end] 33vw
+    [logo-end] 1fr
     [user-start] 34vw
     [user-end];
   height: 100%;
@@ -21,14 +21,14 @@
 
     &--container {
       display: grid;
-      grid-template-columns: min-content max-content;
+      grid-template-columns: repeat(3, 1fr);
       height: 100%;
       width: 100%;
 
       align-content: end;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      justify-items: center;
 
-      position: relative;
       padding-bottom: 4vh;
       padding-right: 4.5vw;
     }

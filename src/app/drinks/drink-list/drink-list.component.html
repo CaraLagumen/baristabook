@@ -1,33 +1,48 @@
-<!-- SEARCH FEATURE -->
-<br>
-<form>
-  <label>
-    <input
-      type="text"
-      (keyup)="searchTerm.next($event)"
-    >🔎
-    <br>
-    <small *ngIf="searching">Searching...</small>
-  </label>
-</form>
+<div class="root-container">
 
-<div *ngIf="searchResults">
-  <ul *ngFor="let result of searchResults | slice:0:9">
-    <a [routerLink]="['/drinks', result.id]">{{ result?.name }}</a>
-  </ul>
-</div>
+  <!-- SEARCH FEATURE -->
+  <div class="search">
 
-<!-- MAIN -->
-<br>
-<span *ngIf="isLoading">Loading...</span>
+    <div class="search__bar">
+      <form>
+        <label>
+          <input
+            type="text"
+            (keyup)="searchTerm.next($event)"
+            placeholder="Search"
+            class="search__bar--input"
+          >
+          <small *ngIf="searching">Searching...</small>
+        </label>
+      </form>
+    </div>
 
-<div *ngIf="!isLoading">
-  <app-drink-item
-    *ngFor="let drink of (drinks$ | async);"
-    [drink]="drink"
-    [userIsAuth]="userIsAuth"
-    [starreds]="starreds"
-  ></app-drink-item>
+    <div class="search__results">
+      <div *ngIf="searchResults">
+        <ul *ngFor="let result of searchResults | slice:0:9">
+          <a [routerLink]="['/drinks', result.id]">{{ result?.name }}</a>
+        </ul>
+      </div>
+    </div>
 
-  <button (click)="onSort()">Sort by Name</button>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <span *ngIf="isLoading">Loading...</span>
+
+    <div *ngIf="!isLoading">
+      <app-drink-item
+        *ngFor="let drink of (drinks$ | async);"
+        [drink]="drink"
+        [userIsAuth]="userIsAuth"
+        [starreds]="starreds"
+      ></app-drink-item>
+
+      <button (click)="onSort()">Sort by Name</button>
+    </div>
+
+  </div>
+
 </div>

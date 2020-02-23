@@ -1,0 +1,42 @@
+.root-container {
+  display: grid;
+  grid-template-rows:
+    [search-start] 8vh
+    [search-end main-start] 60vh
+    [main-end];
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top: 0.01rem solid var(--color-mocha);
+  border-bottom: 0.01rem solid var(--color-mocha);
+
+  &__bar {
+    padding: 1rem;
+
+    &--input {
+      height: 4.5vh;
+      width: 30rem;
+      padding: 0.7rem 2rem;
+      border-radius: 10rem;
+
+      background-color: var(--color-star);
+      color: var(--color-espresso);
+      text-transform: uppercase;
+      text-align: center;
+
+      transition: all 0.2s;
+
+      &:focus {
+        width: 35rem;
+      }
+
+      &::-webkit-input-placeholder {
+        color: var(--color-espresso);
+      }
+    }
+  }
+}
