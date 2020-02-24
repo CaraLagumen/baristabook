@@ -5,15 +5,12 @@
     [logo-end] 1fr
     [user-start] 34vw
     [user-end];
-  height: 100%;
-  width: 100%;
 
   &__logo {
     grid-column: logo-start / logo-end;
 
-    position: relative;
-    top: 4vh;
-    left: 5vw;
+    padding-bottom: 2vh;
+    padding-left: 4.5vw;
   }
 
   &__user {
@@ -25,7 +22,7 @@
       height: 100%;
       width: 100%;
 
-      align-content: end;
+      align-content: flex-end;
       justify-content: space-between;
       justify-items: center;
 

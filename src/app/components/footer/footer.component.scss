@@ -8,6 +8,14 @@
 
   color: #fff;
 
+  &__carapace {
+    grid-column: cara-start / cara-end;
+
+    align-self: flex-end;
+
+    padding-left: 1rem;
+  }
+
   &__nav {
     grid-column: nav-start / nav-end;
 
@@ -16,6 +24,7 @@
     grid-template-rows: repeat(5, min-content);
     justify-content: flex-end;
     justify-items: flex-end;
+    align-self: flex-end;
 
     padding-bottom: 0.5rem;
     padding-right: 1rem;
@@ -25,6 +34,10 @@
       font-weight: 100;
       text-transform: lowercase;
     }
+  }
+
+  &__copyright {
+    text-transform: uppercase;
   }
 
   &__bg1 {
