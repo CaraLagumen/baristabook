@@ -30,6 +30,7 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   isLoading = false;
   searchTerm = new Subject<string>();
   searchResults: any;
+  hidden = false;
 
   constructor(
     private drinksService: DrinksService,
@@ -62,6 +63,7 @@ export class DrinkListComponent implements OnInit, OnDestroy {
           //UPDATE UI
           .subscribe(searchTerm => {
             this.searching = true;
+            this.hidden = false;
 
             this.onSearch(searchTerm);
           });
@@ -101,6 +103,10 @@ export class DrinkListComponent implements OnInit, OnDestroy {
         this.searching = false;
       }
     );
+  }
+
+  onHideSearchResults() {
+    this.hidden = true;
   }
 
   userFeature() {

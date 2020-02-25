@@ -1,33 +1,112 @@
-<div *ngIf="drink$ | async as drink;">
-  <h2>{{ drink?.name }}</h2>
+<div class="drink-container">
+  <div
+    *ngIf="drink$ | async as drink;"
+    class="drink-card"
+  >
 
-  <p>{{ drink?.code }}</p>
-  
-  <p>{{ drink?.form }}</p>
-  
-  <p>{{ drink?.season }}</p>
-  
-  <p>{{ drink?.size }}</p>
-  
-  <p>{{ drink?.caffeine }}</p>
-  
-  <p>{{ drink?.caffeineCount }}</p>
-  
-  <p>{{ drink?.syrup }}</p>
-  
-  <p>{{ drink?.syrupCount }}</p>
-  
-  <p>{{ drink?.body }}</p>
-  
-  <p>{{ drink?.whippedCream }}</p>
-  
-  <p>{{ drink?.topping }}</p>
-  
-  <p>{{ drink?.shaker }}</p>
-  
-  <p>{{ drink?.shakerAddition }}</p>
-  
-  <p>{{ drink?.driedFruit }}</p>
-  
-  <p>{{ drink?.custom }}</p>
+    <div class="drink-card__code">
+      <span class="drink-card__code--box"></span>
+      <span class="drink-card__code--letter">{{ drink?.code }}</span>
+    </div>
+
+    <div class="scroll-container">
+      <ul class="drink-card__value">
+
+        <li class="drink-card__value--pair">
+          <span class="drink-card__value--pair-key">Name</span>
+          <span class="drink-card__value--pair-value">{{ drink?.name }}</span>
+        </li>
+
+        <li class="drink-card__value--pair">
+          <span class="drink-card__value--pair-key">Form</span>
+          <span class="drink-card__value--pair-value">{{ drink?.form }}</span>
+        </li>
+
+        <li class="drink-card__value--pair">
+          <span class="drink-card__value--pair-key">Season</span>
+          <span class="drink-card__value--pair-value">{{ drink?.season }}</span>
+        </li>
+
+        <li class="drink-card__value--pair">
+          <span class="drink-card__value--pair-key">Size</span>
+          <span class="drink-card__value--pair-value">{{ drink?.size }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.caffeine"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.caffeine }}</span>
+          <span class="drink-card__value--pair-value">{{ drink?.caffeineCount }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.syrup"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.syrup }}</span>
+          <span class="drink-card__value--pair-value">{{ drink?.syrupCount }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.body"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Body</span>
+          <span class="drink-card__value--pair-value">{{ drink?.body }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.whippedCream"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Whipped Cream</span>
+          <span class="drink-card__value--pair-value">{{ drink?.whippedCream }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.topping"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Topping</span>
+          <span class="drink-card__value--pair-value">{{ drink?.topping }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.shaker"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Shaker</span>
+          <span class="drink-card__value--pair-value">{{ drink?.shaker }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.shakerAddition"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Shaker Addition</span>
+          <span class="drink-card__value--pair-value">{{ drink?.shakerAddition }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.driedFruit"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Dried Fruit</span>
+          <span class="drink-card__value--pair-value">{{ drink?.driedFruit }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.custom"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Custom</span>
+          <span class="drink-card__value--pair-value">{{ drink?.custom }}</span>
+        </li>
+
+      </ul>
+    </div>
+
+
+  </div>
 </div>

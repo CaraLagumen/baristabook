@@ -6,7 +6,7 @@
     [nav-start] 30vw
     [nav-end];
 
-  color: #fff;
+  color: var(--color-white);
 
   &__carapace {
     grid-column: cara-start / cara-end;

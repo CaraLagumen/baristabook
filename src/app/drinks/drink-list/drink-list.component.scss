@@ -1,4 +1,4 @@
-.root-container {
+.drink-list-container {
   display: grid;
   grid-template-rows:
     [search-start] 8vh
@@ -51,7 +51,21 @@
       }
 
       &-loading {
-        box-shadow: 0 0 2rem var(--color-mocha);
+        animation: glow 0.2s ease-out;
+
+        @keyframes glow {
+          0% {
+            box-shadow: 0 0 0.1rem var(--color-star);
+          }
+
+          50% {
+            box-shadow: 0 0 0.3rem var(--color-star);
+          }
+
+          100% {
+            box-shadow: 0 0 1rem var(--color-star);
+          }
+        }
       }
     }
   }
@@ -68,15 +82,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-color: rgba(black, 0.5);
+    width: 30rem;
+    padding: 2rem 3rem;
     border-radius: 0.8rem;
+    background-color: rgba(black, 0.5);
 
     display: grid;
     justify-content: center;
     grid-auto-rows: max-content;
     gap: 0.2rem;
-
-    padding: 2rem 3rem;
 
     &:empty {
       display: none;
@@ -88,6 +102,17 @@
 
     ul:not(:last-child) {
       border-bottom: 0.01rem solid var(--color-mocha);
+    }
+
+    &--close {
+      position: fixed;
+      top: -2rem;
+      right: 1rem;
+
+      background: none;
+      color: var(--color-earth);
+      text-transform: lowercase;
+      font-weight: 100;
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="root-container">
+<div class="drink-list-container">
 
   <!-- SEARCH FEATURE -->
   <div class="search">
@@ -26,8 +26,14 @@
 
     <div
       class="search__results"
-      *ngIf="searchResults"
+      *ngIf="searchResults && !hidden"
     >
+      <button
+        (click)="onHideSearchResults()"
+        *ngIf="searchResults.length > 0"
+        class="search__results--close"
+      >Close</button>
+
       <ul *ngFor="let result of searchResults | slice:0:9">
         <a
           [routerLink]="['/drinks', result.id]"
