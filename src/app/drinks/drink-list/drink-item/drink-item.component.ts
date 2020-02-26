@@ -23,7 +23,7 @@ export class DrinkItemComponent implements OnInit {
 
    ngOnInit() {
       if (this.userIsAuth) {
-         // FIND IF DRINK IS STARRED FOR TOGGLE drinkIsStarred BUTTON
+         //FIND IF DRINK IS STARRED, TOGGLE drinkIsStarred BUTTON
          this.starreds.forEach(el => {
             if (el.drink.id === this.drink.id) {
                this.drinkIsStarred = true;

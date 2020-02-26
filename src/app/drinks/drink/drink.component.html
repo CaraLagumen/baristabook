@@ -1,18 +1,79 @@
 <div class="drink-container">
   <div
     *ngIf="drink$ | async as drink;"
+    [ngClass]="{ 'drink-card__style--hot': drink.form === 'Hot',
+    'drink-card__style--iced': drink.form === 'Iced',
+    'drink-card__style--frozen': drink.form === 'Frozen'}"
     class="drink-card"
   >
 
+    <!-- CODE -->
     <div class="drink-card__code">
       <span class="drink-card__code--box"></span>
       <span class="drink-card__code--letter">{{ drink?.code }}</span>
-      <button class="drink-card__code--star emboss">★</button>
+      <button
+        *ngIf="userIsAuth"
+        (click)="clickHandler($event)"
+        class="drink-card__code--star emboss"
+      >{{ star }}</button>
 
     </div>
 
-    <span class="drink-card__form text-xsmall">{{ drink?.form }}</span>
+    <!-- MISC -->
+    <div class="drink-card__misc">
 
+      <span class="drink-card__misc--season">
+        <span
+          *ngIf="drink.season === 'Year round'"
+          class="drink-card__misc--season"
+        ><img
+            src="assets/season-year.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span
+          *ngIf="drink.season === 'Winter'"
+          class="drink-card__misc--season"
+        ><img
+            src="assets/season-winter.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span
+          *ngIf="drink.season === 'Spring'"
+          class="drink-card__misc--season"
+        ><img
+            src="assets/season-spring.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span
+          *ngIf="drink.season === 'Summer'"
+          class="drink-card__misc--season"
+        ><img
+            src="assets/season-summer.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span
+          *ngIf="drink.season === 'Fall'"
+          class="drink-card__misc--season"
+        ><img
+            src="assets/season-fall.svg"
+            alt="Fall icon"
+          ></span>
+      </span>
+
+      <span
+        [ngClass]="{ 'drink-card__misc--form-hot': drink.form === 'Hot',
+      'drink-card__misc--form-iced': drink.form === 'Iced',
+      'drink-card__misc--form-frozen': drink.form === 'Frozen'}"
+        class="drink-card__misc--form text-xsmall"
+      >{{ drink?.form }}</span>
+
+    </div>
+
+    <!-- VALUES -->
     <div class="scroll-container">
       <ul class="drink-card__value">
 

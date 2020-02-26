@@ -18,13 +18,34 @@
   padding: 3rem 2rem;
   padding-bottom: 8rem;
 
-  //NGCLASS
-  background: linear-gradient(
-    to bottom,
-    var(--color-espresso),
-    var(--color-hot)
-  );
   border-radius: 0.8rem;
+
+  //VARIABLE STYLE
+  &__style {
+    &--hot {
+      background: linear-gradient(
+        to bottom,
+        var(--color-espresso),
+        var(--color-hot)
+      );
+    }
+
+    &--iced {
+      background: linear-gradient(
+        to bottom,
+        var(--color-espresso),
+        var(--color-iced)
+      );
+    }
+
+    &--frozen {
+      background: linear-gradient(
+        to bottom,
+        var(--color-espresso),
+        var(--color-frozen)
+      );
+    }
+  }
 
   &__code {
     display: grid;
@@ -50,28 +71,64 @@
       opacity: 0.2;
     }
 
-    //NGCLASS
     &--star {
       position: absolute;
-      transform: translate(12rem, -6rem) rotate(90deg);
+      transform: translate(-11rem, -5.5rem) rotate(-90deg);
 
-      font-size: 10rem;
+      font-size: 9rem;
     }
   }
 
-  //NGCLASS
-  &__form {
+  //VARIABLE STYLE
+  &__misc {
     align-self: flex-end;
     justify-self: flex-end;
 
-    transform: translate(-1rem, 0.8rem);
-    width: 4rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
 
-    background-color: var(--color-hot);
-    border-radius: 3.2rem;
+    height: 3rem;
 
-    color: var(--color-white);
-    text-align: center;
+    &--season {
+      align-self: flex-end;
+      transform: translate(-1.5rem, 1rem);
+
+      width: 3rem;
+
+      img {
+        width: 3rem;
+        filter: invert(100%) opacity(0.3);
+      }
+    }
+
+    &--form {
+      align-self: flex-end;
+      transform: translate(-1.8rem, 0.8rem);
+
+      height: 2rem;
+      width: 4rem;
+
+      border-radius: 3.2rem;
+      text-align: center;
+
+      &-hot {
+        background-color: var(--color-hot);
+        color: var(--color-white);
+      }
+
+      &-iced {
+        background-color: var(--color-iced);
+        color: var(--color-white);
+      }
+
+      &-frozen {
+        transform: translate(-2.5rem, 0.8rem);
+        width: 5.5rem;
+
+        background-color: var(--color-frozen);
+        color: var(--color-espresso);
+      }
+    }
   }
 
   &__value {
@@ -81,7 +138,6 @@
 
     font-size: var(--font-small);
     color: var(--color-white);
-    word-wrap: break-word;
     box-shadow: 0 0 1rem 0.1;
 
     &--pair {
