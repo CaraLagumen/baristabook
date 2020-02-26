@@ -47,3 +47,13 @@ ul {
   font-size: var(--font-xsmall);
   text-transform: uppercase;
 }
+
+.text-xsmall {
+  font-size: var(--font-xsmall);
+  text-transform: uppercase;
+}
+
+.emboss {
+  text-shadow: -0.1rem -0.1rem 0.1rem rgba(0, 0, 0, 0.7),
+    0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
+}

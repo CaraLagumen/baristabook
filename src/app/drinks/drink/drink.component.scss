@@ -9,15 +9,16 @@
 
 .drink-card {
   display: grid;
-  grid-template-rows: 20% 80%;
+  grid-template-rows: 20% 1fr 75%;
   justify-items: center;
-  row-gap: 2.5rem;
+  row-gap: 1.5rem;
 
-  height: 50rem;
+  max-height: 50rem;
   width: 30rem;
   padding: 3rem 2rem;
-  padding-bottom: 5.5rem;
+  padding-bottom: 8rem;
 
+  //NGCLASS
   background: linear-gradient(
     to bottom,
     var(--color-espresso),
@@ -48,6 +49,29 @@
       border: 0.1rem solid var(--color-white);
       opacity: 0.2;
     }
+
+    //NGCLASS
+    &--star {
+      position: absolute;
+      transform: translate(12rem, -6rem) rotate(90deg);
+
+      font-size: 10rem;
+    }
+  }
+
+  //NGCLASS
+  &__form {
+    align-self: flex-end;
+    justify-self: flex-end;
+
+    transform: translate(-1rem, 0.8rem);
+    width: 4rem;
+
+    background-color: var(--color-hot);
+    border-radius: 3.2rem;
+
+    color: var(--color-white);
+    text-align: center;
   }
 
   &__value {
@@ -74,6 +98,10 @@
       }
 
       &-value {
+        display: grid;
+        grid-template-columns: auto;
+        column-gap: 1rem;
+
         padding: 0.5rem;
 
         background-color: var(--color-coffee);
@@ -82,11 +110,45 @@
         text-transform: uppercase;
         font-weight: 400;
       }
+
+      &-box {
+        @mixin box {
+          justify-self: center;
+
+          height: 2.5rem;
+          width: 2.5rem;
+
+          background-color: var(--color-espresso);
+          text-align: center;
+        }
+
+        &1 {
+          @include box;
+          grid-column-start: 1;
+        }
+
+        &2 {
+          @include box;
+          grid-column-start: 2;
+        }
+
+        &3 {
+          @include box;
+          grid-column-start: 3;
+        }
+
+        &4 {
+          @include box;
+          grid-column-start: 4;
+        }
+      }
     }
   }
 }
 
 .scroll-container {
+  //CONTROL WITH .drink-card padding-bottom
+  height: 108%;
   //CREATES GAP
   padding-right: 3.5rem;
 

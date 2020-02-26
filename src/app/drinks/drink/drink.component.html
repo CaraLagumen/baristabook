@@ -7,7 +7,11 @@
     <div class="drink-card__code">
       <span class="drink-card__code--box"></span>
       <span class="drink-card__code--letter">{{ drink?.code }}</span>
+      <button class="drink-card__code--star emboss">★</button>
+
     </div>
+
+    <span class="drink-card__form text-xsmall">{{ drink?.form }}</span>
 
     <div class="scroll-container">
       <ul class="drink-card__value">
@@ -17,7 +21,7 @@
           <span class="drink-card__value--pair-value">{{ drink?.name }}</span>
         </li>
 
-        <li class="drink-card__value--pair">
+        <!-- <li class="drink-card__value--pair">
           <span class="drink-card__value--pair-key">Form</span>
           <span class="drink-card__value--pair-value">{{ drink?.form }}</span>
         </li>
@@ -25,11 +29,16 @@
         <li class="drink-card__value--pair">
           <span class="drink-card__value--pair-key">Season</span>
           <span class="drink-card__value--pair-value">{{ drink?.season }}</span>
-        </li>
+        </li> -->
 
         <li class="drink-card__value--pair">
           <span class="drink-card__value--pair-key">Size</span>
-          <span class="drink-card__value--pair-value">{{ drink?.size }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.size[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.size[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.size[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.size[3] }}</span>
+          </span>
         </li>
 
         <li
@@ -37,7 +46,12 @@
           class="drink-card__value--pair"
         >
           <span class="drink-card__value--pair-key">{{ drink?.caffeine }}</span>
-          <span class="drink-card__value--pair-value">{{ drink?.caffeineCount }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.caffeineCount[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.caffeineCount[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.caffeineCount[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.caffeineCount[3] }}</span>
+          </span>
         </li>
 
         <li
@@ -45,7 +59,12 @@
           class="drink-card__value--pair"
         >
           <span class="drink-card__value--pair-key">{{ drink?.syrup }}</span>
-          <span class="drink-card__value--pair-value">{{ drink?.syrupCount }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.syrupCount[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.syrupCount[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.syrupCount[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.syrupCount[3] }}</span>
+          </span>
         </li>
 
         <li
@@ -101,7 +120,7 @@
           class="drink-card__value--pair"
         >
           <span class="drink-card__value--pair-key">Custom</span>
-          <span class="drink-card__value--pair-value">{{ drink?.custom }}</span>
+          <span class="drink-card__value--pair-value text-xsmall">{{ drink?.custom }}</span>
         </li>
 
       </ul>

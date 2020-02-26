@@ -20,11 +20,11 @@
       <span></span>
       <a
         routerLink="/auth/login"
-        class="heading-2"
+        class="heading-2 emboss"
       >Login</a>
       <a
         routerLink="/auth/signup"
-        class="heading-2"
+        class="heading-2 emboss"
       >Sign Up</a>
     </div>
 
@@ -32,18 +32,18 @@
       *ngIf="userIsAuth"
       class="header__user--container"
     >
-      <a
-        routerLink="/user/profile"
-        class="heading-2"
-      >Profile</a>
-      <a
-        routerLink="/user/starred"
-        class="heading-2"
-      >Starred</a>
+      <button class="heading-2 emboss"><a
+          routerLink="/user/profile"
+          class="heading-2 emboss"
+        >Profile</a></button>
+      <button class="heading-2 emboss"><a
+          routerLink="/user/starred"
+          class="heading-2 emboss"
+        >Starred</a></button>
       <button
         (click)="onLogout()"
         *ngIf="userIsAuth"
-        class="heading-2"
+        class="heading-2 emboss"
       >Logout</button>
     </div>
 
