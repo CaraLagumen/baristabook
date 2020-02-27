@@ -25,24 +25,27 @@
     &--hot {
       background: linear-gradient(
         to bottom,
-        var(--color-espresso),
-        var(--color-hot)
+        var(--color-earth),
+        var(--color-hot) 80%,
+        var(--color-blonde)
       );
     }
 
     &--iced {
       background: linear-gradient(
         to bottom,
-        var(--color-espresso),
-        var(--color-iced)
+        var(--color-earth),
+        var(--color-iced) 80%,
+        var(--color-blonde)
       );
     }
 
     &--frozen {
       background: linear-gradient(
         to bottom,
-        var(--color-espresso),
-        var(--color-frozen)
+        var(--color-earth),
+        var(--color-frozen) 80%,
+        var(--color-blonde)
       );
     }
   }
@@ -73,7 +76,7 @@
 
     &--star {
       position: absolute;
-      transform: translate(-11rem, -5.5rem) rotate(-90deg);
+      transform: translate(-12rem, -4.5rem) rotate(-90deg);
 
       font-size: 9rem;
     }
@@ -91,13 +94,13 @@
 
     &--season {
       align-self: flex-end;
-      transform: translate(-1.5rem, 1rem);
+      transform: translate(-1.5rem, 1.3rem);
 
       width: 3rem;
 
       img {
         width: 3rem;
-        filter: invert(100%) opacity(0.3);
+        filter: invert(100%) opacity(0.5);
       }
     }
 
@@ -110,15 +113,14 @@
 
       border-radius: 3.2rem;
       text-align: center;
+      color: var(--color-white);
 
       &-hot {
         background-color: var(--color-hot);
-        color: var(--color-white);
       }
 
       &-iced {
         background-color: var(--color-iced);
-        color: var(--color-white);
       }
 
       &-frozen {
@@ -126,7 +128,6 @@
         width: 5.5rem;
 
         background-color: var(--color-frozen);
-        color: var(--color-espresso);
       }
     }
   }

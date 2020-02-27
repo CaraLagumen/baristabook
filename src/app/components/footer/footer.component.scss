@@ -14,6 +14,8 @@
     align-self: flex-end;
 
     padding-left: 1rem;
+
+    z-index: 300;
   }
 
   &__nav {
@@ -28,6 +30,8 @@
 
     padding-bottom: 0.5rem;
     padding-right: 1rem;
+    
+    z-index: 300;
 
     &--link {
       font-size: var(--font-small);
@@ -38,6 +42,8 @@
 
   &__copyright {
     text-transform: uppercase;
+
+    z-index: 300;
   }
 
   &__bg1 {
@@ -50,7 +56,7 @@
     background-color: var(--color-earth);
     clip-path: polygon(0% 70%, 100% 0, 100% 100%, 0 100%);
 
-    z-index: -1;
+    z-index: 200;
   }
 
   &__bg2 {
@@ -63,6 +69,6 @@
     background-color: var(--color-mocha);
     clip-path: polygon(0% 30%, 100% 70%, 100% 100%, 0 100%);
 
-    z-index: -2;
+    z-index: 100;
   }
 }

@@ -1,30 +1,185 @@
-<!-- STARRED -->
-<span *ngIf="userIsAuth">
-  <button
-    (click)="clickHandler($event)"
-  >
-    {{ star }}
-  </button>
-</span>
-
-<!-- DRINK LINK -->
-<button (click)="onPreviewDrink()">
-  ▼
-</button>
-
-<!-- DRINK CODE -->
-<a
-  [routerLink]="['/drinks', drink.id]"
-  routerLinkActive="active"
+<div
+  [ngClass]="{ 'drink-item-card__style--hot': drink.form === 'Hot',
+  'drink-item-card__style--iced': drink.form === 'Iced',
+  'drink-item-card__style--frozen': drink.form === 'Frozen'}"
+  class="drink-item-card"
 >
-  {{ drink?.code }}
-</a>
 
-<br>
-<!-- DRINK PREVIEW -->
-<div *ngIf="previewDrink">
-  {{ drink?.name }}<br>
-  {{ drink?.form }}<br>
-  {{ drink?.season }}<br>
-  {{ drink?.size }}<br>
+  <!-- STAR -->
+  <div class="drink-item-card__star">
+    <button
+      *ngIf="userIsAuth"
+      (click)="clickHandler($event)"
+      class="drink-item-card__star--btn emboss"
+    >{{ star }}
+    </button>
+
+    <button
+      *ngIf="!userIsAuth"
+      [routerLink]="['/auth/login']"
+      routerLinkActive="active"
+      class="drink-item-card__star--btn emboss"
+      style="color: var(--color-earth);"
+    >★
+    </button>
+  </div>
+
+  <!-- FRONT -->
+  <div
+    *ngIf="!previewDrink"
+    class="drink-item-card__container"
+  >
+
+    <div class="drink-item-card__container--misc">
+      <span class="drink-item-card__container--misc-season">
+        <span *ngIf="drink.season === 'Year round'"><img
+            src="assets/season-year.svg"
+            alt="Fall icon"
+            style="height: 2.6rem;"
+          ></span>
+
+        <span *ngIf="drink.season === 'Winter'"><img
+            src="assets/season-winter.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span *ngIf="drink.season === 'Spring'"><img
+            src="assets/season-spring.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span *ngIf="drink.season === 'Summer'"><img
+            src="assets/season-summer.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span *ngIf="drink.season === 'Fall'"><img
+            src="assets/season-fall.svg"
+            alt="Fall icon"
+          ></span>
+      </span>
+    </div>
+
+    <div class="drink-item-card__container--code">
+      <a
+        [routerLink]="['/drinks', drink.id]"
+        routerLinkActive="active"
+        class="drink-item-card__container--code-letter"
+      >{{ drink?.code }}</a>
+      <span class="drink-item-card__container--code-box"></span>
+    </div>
+
+    <span class="drink-item-card__container--form">{{ drink?.form }}</span>
+
+  </div>
+
+  <!-- BACK -->
+  <div
+    *ngIf="previewDrink"
+    class="drink-item-card__preview"
+  >
+
+    <span class="drink-item-card__preview--value-pair">
+      <span class="drink-item-card__preview--value-pair-key">Name</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.name }}</span>
+    </span>
+
+    <span class="drink-item-card__preview--value-pair"><span
+        class="drink-item-card__preview--value-pair-key">Size</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.size }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.caffeine"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">{{ drink?.caffeine }}</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.caffeineCount }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.syrup"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">{{ drink?.syrup }}</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.syrupCount }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.body"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Body</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.body }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.base"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">{{ drink?.base }}</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.baseCount }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.whippedCream"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Whipped Cream</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.whippedCream }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.topping"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Topping</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.topping }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.shaker"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Shaker</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.shaker }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.shakerAddition"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Shaker Addition</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.shakerAddition }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.driedFruit"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Dried Fruit</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.driedFruit }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.custom"
+      class="drink-item-card__preview--value-pair"
+    ><span class="drink-item-card__preview--value-pair-key">Custom</span>
+      <span class="drink-item-card__preview--value-pair-value">{{ drink?.custom }}</span>
+    </span>
+
+    <span>&nbsp;</span>
+
+  </div>
+
+  <!-- EXPAND BUTTON -->
+  <div class="drink-item-card__expand">
+    <button
+      *ngIf="!previewDrink"
+      (click)="onPreviewDrink()"
+      class="drink-item-card__expand--btn"
+    >
+      ▼
+    </button>
+
+    <button
+      *ngIf="previewDrink"
+      (click)="onPreviewDrink()"
+      class="drink-item-card__expand--btn"
+    >
+      ▲
+    </button>
+  </div>
+
 </div>

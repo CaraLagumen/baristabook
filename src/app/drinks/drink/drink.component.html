@@ -7,7 +7,7 @@
     class="drink-card"
   >
 
-    <!-- CODE -->
+    <!-- CODE / STAR -->
     <div class="drink-card__code">
       <span class="drink-card__code--box"></span>
       <span class="drink-card__code--letter">{{ drink?.code }}</span>
@@ -16,49 +16,34 @@
         (click)="clickHandler($event)"
         class="drink-card__code--star emboss"
       >{{ star }}</button>
-
     </div>
 
     <!-- MISC -->
     <div class="drink-card__misc">
 
       <span class="drink-card__misc--season">
-        <span
-          *ngIf="drink.season === 'Year round'"
-          class="drink-card__misc--season"
-        ><img
+        <span *ngIf="drink.season === 'Year round'"><img
             src="assets/season-year.svg"
             alt="Fall icon"
+            style="height: 2.6rem;"
           ></span>
 
-        <span
-          *ngIf="drink.season === 'Winter'"
-          class="drink-card__misc--season"
-        ><img
+        <span *ngIf="drink.season === 'Winter'"><img
             src="assets/season-winter.svg"
             alt="Fall icon"
           ></span>
 
-        <span
-          *ngIf="drink.season === 'Spring'"
-          class="drink-card__misc--season"
-        ><img
+        <span *ngIf="drink.season === 'Spring'"><img
             src="assets/season-spring.svg"
             alt="Fall icon"
           ></span>
 
-        <span
-          *ngIf="drink.season === 'Summer'"
-          class="drink-card__misc--season"
-        ><img
+        <span *ngIf="drink.season === 'Summer'"><img
             src="assets/season-summer.svg"
             alt="Fall icon"
           ></span>
 
-        <span
-          *ngIf="drink.season === 'Fall'"
-          class="drink-card__misc--season"
-        ><img
+        <span *ngIf="drink.season === 'Fall'"><img
             src="assets/season-fall.svg"
             alt="Fall icon"
           ></span>
@@ -81,16 +66,6 @@
           <span class="drink-card__value--pair-key">Name</span>
           <span class="drink-card__value--pair-value">{{ drink?.name }}</span>
         </li>
-
-        <!-- <li class="drink-card__value--pair">
-          <span class="drink-card__value--pair-key">Form</span>
-          <span class="drink-card__value--pair-value">{{ drink?.form }}</span>
-        </li>
-
-        <li class="drink-card__value--pair">
-          <span class="drink-card__value--pair-key">Season</span>
-          <span class="drink-card__value--pair-value">{{ drink?.season }}</span>
-        </li> -->
 
         <li class="drink-card__value--pair">
           <span class="drink-card__value--pair-key">Size</span>
@@ -134,6 +109,19 @@
         >
           <span class="drink-card__value--pair-key">Body</span>
           <span class="drink-card__value--pair-value">{{ drink?.body }}</span>
+        </li>
+
+        <li
+          *ngIf="drink.base"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.base }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.baseCount[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.baseCount[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.baseCount[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.baseCount[3] }}</span>
+          </span>
         </li>
 
         <li
@@ -186,7 +174,6 @@
 
       </ul>
     </div>
-
 
   </div>
 </div>

@@ -10,6 +10,8 @@ export interface Drink {
    syrup?: string;
    syrupCount?: number;
    body?: string;
+   base?: string;
+   baseCount?: number;
    whippedCream?: boolean;
    topping?: string;
    shaker?: string;

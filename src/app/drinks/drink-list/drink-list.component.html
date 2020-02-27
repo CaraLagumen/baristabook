@@ -45,19 +45,25 @@
   </div>
 
   <!-- MAIN -->
-  <div class="main">
+  <div
+    *ngIf="!isLoading"
+    class="main"
+  >
+    <div class="main__cards-container">
 
-    <span *ngIf="isLoading">Loading...</span>
-
-    <div *ngIf="!isLoading">
       <app-drink-item
         *ngFor="let drink of (drinks$ | async);"
         [drink]="drink"
         [userIsAuth]="userIsAuth"
         [starreds]="starreds"
       ></app-drink-item>
-    </div>
 
+    </div>
   </div>
+
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
 
 </div>

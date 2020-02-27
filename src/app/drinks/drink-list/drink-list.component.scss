@@ -70,11 +70,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 5000;
 
     width: 30rem;
     padding: 2rem 3rem;
     border-radius: 0.8rem;
-    background-color: rgba(black, 0.5);
+    background-color: rgba(black, 0.8);
 
     display: grid;
     justify-content: center;
@@ -102,6 +103,75 @@
       color: var(--color-earth);
       text-transform: lowercase;
       font-weight: 100;
+    }
+  }
+}
+
+.main__cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  justify-content: center;
+  column-gap: 5rem;
+  row-gap: 2rem;
+
+  height: 112%;
+  padding: 5rem 10rem;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.loading {
+  position: relative;
+
+  margin: 8rem auto;
+
+  color: var(--color-blonde);
+  font-size: 1rem;
+  text-indent: -9999rem;
+
+  animation-delay: -0.15s;
+
+  &,
+  &:before,
+  &:after {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    animation-fill-mode: both;
+    animation: load 1.8s infinite ease-in-out;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    left: -3.5rem;
+
+    animation-delay: -0.3s;
+  }
+
+  &:after {
+    left: 3.5rem;
+
+    animation-delay: -0.3s;
+  }
+
+  @keyframes load {
+    0%,
+    60%,
+    100% {
+      box-shadow: 0 2.5rem 0 -1.3rem;
+    }
+
+    40% {
+      box-shadow: 0 2.5rem 0 0;
     }
   }
 }
