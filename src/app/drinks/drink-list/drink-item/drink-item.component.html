@@ -27,11 +27,11 @@
   <!-- FRONT -->
   <div
     *ngIf="!previewDrink"
-    class="drink-item-card__container"
+    class="drink-item-card__front"
   >
 
-    <div class="drink-item-card__container--misc">
-      <span class="drink-item-card__container--misc-season">
+    <div class="drink-item-card__front--misc">
+      <span class="drink-item-card__front--misc-season">
         <span *ngIf="drink.season === 'Year round'"><img
             src="assets/season-year.svg"
             alt="Fall icon"
@@ -60,105 +60,105 @@
       </span>
     </div>
 
-    <div class="drink-item-card__container--code">
+    <div class="drink-item-card__front--code">
       <a
         [routerLink]="['/drinks', drink.id]"
         routerLinkActive="active"
-        class="drink-item-card__container--code-letter"
+        class="drink-item-card__front--code-letter"
       >{{ drink?.code }}</a>
-      <span class="drink-item-card__container--code-box"></span>
+      <span class="drink-item-card__front--code-box"></span>
     </div>
 
-    <span class="drink-item-card__container--form">{{ drink?.form }}</span>
+    <span class="drink-item-card__front--form">{{ drink?.form }}</span>
 
   </div>
 
   <!-- BACK -->
   <div
     *ngIf="previewDrink"
-    class="drink-item-card__preview"
+    class="drink-item-card__back"
   >
 
-    <span class="drink-item-card__preview--value-pair">
-      <span class="drink-item-card__preview--value-pair-key">Name</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.name }}</span>
+    <span class="drink-item-card__back--value-pair">
+      <span class="drink-item-card__back--value-pair-key">Name</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.name }}</span>
     </span>
 
-    <span class="drink-item-card__preview--value-pair"><span
-        class="drink-item-card__preview--value-pair-key">Size</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.size }}</span>
+    <span class="drink-item-card__back--value-pair"><span class="drink-item-card__back--value-pair-key">Size</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.size }}</span>
     </span>
 
     <span
       *ngIf="drink.caffeine"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">{{ drink?.caffeine }}</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.caffeineCount }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">{{ drink?.caffeine }}</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.caffeineCount }}</span>
     </span>
 
     <span
       *ngIf="drink.syrup"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">{{ drink?.syrup }}</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.syrupCount }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">{{ drink?.syrup }}</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.syrupCount }}</span>
     </span>
 
     <span
       *ngIf="drink.body"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Body</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.body }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Body</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.body }}</span>
     </span>
 
     <span
       *ngIf="drink.base"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">{{ drink?.base }}</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.baseCount }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">{{ drink?.base }}</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.baseCount }}</span>
     </span>
 
     <span
       *ngIf="drink.whippedCream"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Whipped Cream</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.whippedCream }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Whipped Cream</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.whippedCream }}</span>
     </span>
 
     <span
       *ngIf="drink.topping"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Topping</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.topping }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Topping</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.topping }}</span>
     </span>
 
     <span
       *ngIf="drink.shaker"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Shaker</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.shaker }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Shaker</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.shaker }}</span>
     </span>
 
     <span
       *ngIf="drink.shakerAddition"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Shaker Addition</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.shakerAddition }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Shaker Addition</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.shakerAddition }}</span>
     </span>
 
     <span
       *ngIf="drink.driedFruit"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Dried Fruit</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.driedFruit }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Dried Fruit</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.driedFruit }}</span>
     </span>
 
     <span
       *ngIf="drink.custom"
-      class="drink-item-card__preview--value-pair"
-    ><span class="drink-item-card__preview--value-pair-key">Custom</span>
-      <span class="drink-item-card__preview--value-pair-value">{{ drink?.custom }}</span>
+      class="drink-item-card__back--value-pair"
+    ><span class="drink-item-card__back--value-pair-key">Custom</span>
+      <span class="drink-item-card__back--value-pair-value">{{ drink?.custom }}</span>
     </span>
 
+    <!-- BOTTOM SPACER FOR SCROLL BAR -->
     <span>&nbsp;</span>
 
   </div>

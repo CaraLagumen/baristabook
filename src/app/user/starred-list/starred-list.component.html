@@ -1,11 +1,26 @@
-<span *ngIf="isLoading">Loading...</span>
+<div class="starred-list-container">
 
-<div *ngIf="!isLoading">
-  <app-starred-item
-    *ngFor="let starredDrink of (starredsDrinks$ | async); let i = index;"
-    [starredDrink]="starredDrink"
-    [starreds]="starreds"
-  ></app-starred-item>
+  <button
+    (click)="onSort()"
+    class="sort btn-1 emboss"
+  >Sort A - Z</button>
 
-  <button (click)="onSort()">Sort by Name</button>
+  <div
+    *ngIf="!isLoading"
+    class="main"
+  >
+    <div class="main__cards-container">
+      <app-starred-item
+        *ngFor="let starredDrink of (starredsDrinks$ | async);"
+        [starredDrink]="starredDrink"
+        [starreds]="starreds"
+      ></app-starred-item>
+    </div>
+  </div>
+
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
+
 </div>

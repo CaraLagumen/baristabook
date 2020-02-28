@@ -26,6 +26,10 @@ export class DrinksService {
       return this.http.get<Drink>(`${ROOT_URL}/${id}`);
    }
 
+   getDrinkSlug(slug: string): Observable<Drink> {
+      return this.http.get<Drink>(`${ROOT_URL}/name/${slug}`);
+   }
+
    searchDrinks(term: Observable<any>) {
       return this.http.get(`${ROOT_URL}/search?drink=${term}`);
    }

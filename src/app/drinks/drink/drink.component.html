@@ -7,15 +7,29 @@
     class="drink-card"
   >
 
-    <!-- CODE / STAR -->
-    <div class="drink-card__code">
-      <span class="drink-card__code--box"></span>
-      <span class="drink-card__code--letter">{{ drink?.code }}</span>
+    <!-- STAR -->
+    <div class="drink-card__star">
       <button
         *ngIf="userIsAuth"
         (click)="clickHandler($event)"
-        class="drink-card__code--star emboss"
-      >{{ star }}</button>
+        class="drink-card__star--btn emboss"
+      >{{ star }}
+      </button>
+
+      <button
+        *ngIf="!userIsAuth"
+        [routerLink]="['/auth/login']"
+        routerLinkActive="active"
+        class="drink-card__star--btn emboss"
+        style="color: var(--color-earth);"
+      >★
+      </button>
+    </div>
+
+    <!-- CODE -->
+    <div class="drink-card__code">
+      <span class="drink-card__code--box"></span>
+      <span class="drink-card__code--letter">{{ drink?.code }}</span>
     </div>
 
     <!-- MISC -->

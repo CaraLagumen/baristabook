@@ -1,5 +1,6 @@
 export interface Drink {
    id: string;
+   slug: string;
    name: string;
    code: string;
    form: string;

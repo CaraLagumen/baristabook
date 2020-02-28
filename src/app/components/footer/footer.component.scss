@@ -11,27 +11,26 @@
   &__carapace {
     grid-column: cara-start / cara-end;
 
-    align-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 300;
 
     padding-left: 1rem;
-
-    z-index: 300;
   }
 
   &__nav {
     grid-column: nav-start / nav-end;
 
-    display: grid;
-    grid-template-columns: max-content;
-    grid-template-rows: repeat(5, min-content);
-    justify-content: flex-end;
-    justify-items: flex-end;
-    align-self: flex-end;
-
-    padding-bottom: 0.5rem;
-    padding-right: 1rem;
-    
+    position: absolute;
+    bottom: 0;
+    right: 0;
     z-index: 300;
+
+    padding-bottom: 2.5rem;
+    padding-right: 1rem;
+
+    text-align: end;
 
     &--link {
       font-size: var(--font-small);
@@ -41,9 +40,18 @@
   }
 
   &__copyright {
-    text-transform: uppercase;
-
+    position: absolute;
+    bottom: 0;
+    right: 0;
     z-index: 300;
+
+    width: 20rem;
+
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+
+    text-transform: uppercase;
+    text-align: end;
   }
 
   &__bg1 {

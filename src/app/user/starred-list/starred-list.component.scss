@@ -1,0 +1,27 @@
+.starred-list-container {
+  display: grid;
+  grid-template-rows: 8vh 68vh;
+}
+
+.sort {
+  height: 8vh;
+
+  border-top: 0.01rem solid var(--color-mocha);
+  border-bottom: 0.01rem solid var(--color-mocha);
+}
+
+.main {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  &__cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    justify-content: space-around;
+    column-gap: 10rem;
+    row-gap: 5rem;
+
+    padding: 5rem 10rem;
+  }
+}

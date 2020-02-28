@@ -9,16 +9,19 @@
 
 .drink-card {
   display: grid;
-  grid-template-rows: 20% 1fr 75%;
+  grid-template-rows: 0.01rem 8rem 3rem 1fr;
   justify-items: center;
   row-gap: 1.5rem;
 
   max-height: 50rem;
   width: 30rem;
   padding: 3rem 2rem;
-  padding-bottom: 8rem;
 
   border-radius: 0.8rem;
+  box-shadow: 0 0.28rem 0.22rem rgba(0, 0, 0, 0.034),
+    0 0.67rem 0.53rem rgba(0, 0, 0, 0.048), 0 1.25rem 1rem rgba(0, 0, 0, 0.06),
+    0 2.23rem 1.79rem rgba(0, 0, 0, 0.072),
+    0 4.18rem 3.34rem rgba(0, 0, 0, 0.086), 0 10rem 8rem rgba(0, 0, 0, 0.12);
 
   //VARIABLE STYLE
   &__style {
@@ -50,14 +53,27 @@
     }
   }
 
+  &__star {
+    &--btn {
+      position: relative;
+      transform: translate(-14rem, -8.5rem) rotate(-90deg);
+
+      font-size: 9rem;
+    }
+  }
+
   &__code {
     display: grid;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 50% 25%;
     align-items: center;
-    justify-content: center;
     justify-items: center;
 
     &--letter {
-      position: absolute;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      position: relative;
 
       font-family: "Italiana", sans-serif;
       font-size: 8rem;
@@ -65,20 +81,16 @@
     }
 
     &--box {
-      position: absolute;
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+
+      position: relative;
 
       height: 4.8rem;
       width: 8.5rem;
 
       border: 0.1rem solid var(--color-white);
       opacity: 0.2;
-    }
-
-    &--star {
-      position: absolute;
-      transform: translate(-12rem, -4.5rem) rotate(-90deg);
-
-      font-size: 9rem;
     }
   }
 
@@ -203,8 +215,9 @@
   }
 }
 
+//drink-card__value
 .scroll-container {
-  //CONTROL WITH .drink-card padding-bottom
+  //CONTROL WITH .starred-card padding-bottom
   height: 108%;
   //CREATES GAP
   padding-right: 3.5rem;

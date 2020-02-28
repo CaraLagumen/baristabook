@@ -1,8 +1,12 @@
 .drink-item-card {
-  height: 10rem;
+  height: 15rem;
   width: 18rem;
 
   border-radius: 0.4rem;
+  box-shadow: 0 0.28rem 0.22rem rgba(0, 0, 0, 0.034),
+    0 0.67rem 0.53rem rgba(0, 0, 0, 0.048), 0 1.25rem 1rem rgba(0, 0, 0, 0.06),
+    0 2.23rem 1.79rem rgba(0, 0, 0, 0.072),
+    0 4.18rem 3.34rem rgba(0, 0, 0, 0.086), 0 10rem 8rem rgba(0, 0, 0, 0.12);
 
   //VARIABLE STYLE
   &__style {
@@ -29,9 +33,9 @@
     }
   }
 
-  &__container {
+  &__front {
     display: grid;
-    grid-template-columns: 25% 50% 25%;
+    grid-template-columns: 30% 40% 30%;
     align-content: center;
     align-items: center;
     justify-content: center;
@@ -40,11 +44,14 @@
     position: relative;
     transform: translateY(-6.2rem);
 
-    height: 10rem;
+    height: 15rem;
     width: 18rem;
     padding: 1rem;
 
     &--misc {
+      position: relative;
+      transform: translateY(3rem);
+
       height: 3rem;
 
       &-season {
@@ -90,6 +97,9 @@
     }
 
     &--form {
+      position: relative;
+      transform: translateY(3rem);
+
       height: 2rem;
       width: 4rem;
 
@@ -100,18 +110,20 @@
     }
   }
 
-  &__preview {
+  &__back {
     display: grid;
     grid-auto-columns: 18rem;
 
     position: relative;
     transform: translateY(-6.2rem);
 
-    height: 10rem;
+    height: 15rem;
     width: 18rem;
     padding: 1rem;
     padding-right: 2rem;
-    border-radius: 0.8rem;
+    border-radius: 0.4rem;
+
+    background-color: rgba(0, 0, 0, 0.2);
 
     overflow-x: hidden;
     overflow-y: auto;

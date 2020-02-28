@@ -1,29 +1,186 @@
-<!-- STARRED DELETE -->
-<button
-  (click)="onDeleteStarred()"
-  [disabled]="isDisabled"
->
-  {{ star }}
-</button>
+<div class="container">
+  <div
+    [ngClass]="{ 'starred-card__style--hot': starredDrink.form === 'Hot',
+    'starred-card__style--iced': starredDrink.form === 'Iced',
+    'starred-card__style--frozen': starredDrink.form === 'Frozen'}"
+    class="starred-card"
+  >
 
-<!-- STARRED LINK -->
-<button (click)="onViewStarred()">
-  ▼
-</button>
+    <!-- STAR -->
+    <div class="drink-card__star">
+      <button
+        (click)="onDeleteStarred()"
+        [disabled]="isDisabled"
+        class="starred-card__star--btn emboss"
+      >{{ star }}</button>
+    </div>
 
-<!-- STARRED CODE -->
-<a
-  [routerLink]="['/drinks', starredDrink.id]"
-  routerLinkActive="active"
->
-  {{ starredDrink.code }}
-</a>
+    <!-- CODE -->
+    <div class="starred-card__code">
+      <span class="starred-card__code--box"></span>
+      <a
+        [routerLink]="['/drinks', starredDrink.id]"
+        routerLinkActive="active"
+        class="starred-card__code--letter"
+      >{{ starredDrink?.code }}</a>
+    </div>
 
-<br>
-<!-- STARRED PREVIEW -->
-<div *ngIf="viewStarred">
-  {{ starredDrink.name }}<br>
-  {{ starredDrink.form }}<br>
-  {{ starredDrink.season }}<br>
-  {{ starredDrink.size }}<br>
+    <!-- MISC -->
+    <div class="starred-card__misc">
+
+      <span class="starred-card__misc--season">
+        <span *ngIf="starredDrink.season === 'Year round'"><img
+            src="assets/season-year.svg"
+            alt="Fall icon"
+            style="height: 2.6rem;"
+          ></span>
+
+        <span *ngIf="starredDrink.season === 'Winter'"><img
+            src="assets/season-winter.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span *ngIf="starredDrink.season === 'Spring'"><img
+            src="assets/season-spring.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span *ngIf="starredDrink.season === 'Summer'"><img
+            src="assets/season-summer.svg"
+            alt="Fall icon"
+          ></span>
+
+        <span *ngIf="starredDrink.season === 'Fall'"><img
+            src="assets/season-fall.svg"
+            alt="Fall icon"
+          ></span>
+      </span>
+
+      <span
+        [ngClass]="{ 'starred-card__misc--form-hot': starredDrink.form === 'Hot',
+      'starred-card__misc--form-iced': starredDrink.form === 'Iced',
+      'starred-card__misc--form-frozen': starredDrink.form === 'Frozen'}"
+        class="starred-card__misc--form text-xsmall"
+      >{{ starredDrink?.form }}</span>
+
+    </div>
+
+    <!-- VALUES -->
+    <div class="scroll-container">
+      <ul class="starred-card__value">
+
+        <li class="starred-card__value--pair">
+          <span class="starred-card__value--pair-key">Name</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.name }}</span>
+        </li>
+
+        <li class="starred-card__value--pair">
+          <span class="starred-card__value--pair-key">Size</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.size[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.size[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.size[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.size[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.caffeine"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">{{ starredDrink?.caffeine }}</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.caffeineCount[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.caffeineCount[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.caffeineCount[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.caffeineCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.syrup"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">{{ starredDrink?.syrup }}</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.syrupCount[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.syrupCount[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.syrupCount[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.syrupCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.body"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Body</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.body }}</span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.base"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">{{ starredDrink?.base }}</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.baseCount[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.baseCount[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.baseCount[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.baseCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.whippedCream"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Whipped Cream</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.whippedCream }}</span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.topping"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Topping</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.topping }}</span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.shaker"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Shaker</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.shaker }}</span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.shakerAddition"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Shaker Addition</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.shakerAddition }}</span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.driedFruit"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Dried Fruit</span>
+          <span class="starred-card__value--pair-value">{{ starredDrink?.driedFruit }}</span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.custom"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">Custom</span>
+          <span class="starred-card__value--pair-value text-xsmall">{{ starredDrink?.custom }}</span>
+        </li>
+
+      </ul>
+    </div>
+
+  </div>
 </div>

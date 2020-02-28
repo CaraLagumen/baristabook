@@ -13,7 +13,6 @@ import { delay, map } from 'rxjs/operators';
 export class StarredListComponent implements OnInit {
    starredsDrinks$: Observable<Drink[]>;
    starreds: any[];
-   index: number;
 
    isLoading = false;
 
