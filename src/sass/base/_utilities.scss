@@ -1,0 +1,59 @@
+.box-shadow-sharp {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2),
+    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.05);
+}
+
+.loading {
+  position: relative;
+
+  margin: 8rem auto;
+
+  color: var(--color-blonde);
+  font-size: 1rem;
+  text-indent: -9999rem;
+
+  animation-delay: -0.15s;
+
+  &,
+  &:before,
+  &:after {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    animation-fill-mode: both;
+    animation: load 1.8s infinite ease-in-out;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+  }
+
+  &:before {
+    left: -3.5rem;
+
+    animation-delay: -0.3s;
+  }
+
+  &:after {
+    left: 3.5rem;
+
+    animation-delay: -0.3s;
+  }
+
+  @keyframes load {
+    0%,
+    60%,
+    100% {
+      box-shadow: 0 2.5rem 0 -1.3rem;
+    }
+
+    40% {
+      box-shadow: 0 2.5rem 0 0;
+    }
+  }
+}

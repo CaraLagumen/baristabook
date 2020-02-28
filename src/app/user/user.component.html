@@ -1,62 +1,100 @@
-<span *ngIf="isLoading">Loading...</span>
+<div class="container">
 
-<div *ngIf="!isLoading">
-  Info
-  <form
-    (submit)="onUpdateUser()"
-    [formGroup]="updateUserForm"
+  <span class="title heading-1">
+    Profile
+  </span>
+
+  <div
     *ngIf="!isLoading"
+    class="user"
   >
-    <input
-      type="text"
-      formControlName="name"
-      placeholder="{{ user?.name }}"
-    > Name
-    <br>
-    <input
-      type="email"
-      formControlName="email"
-      placeholder="{{ user?.email }}"
-    > Email
-    <br>
-    <input
-      type="text"
-      formControlName="location"
-      placeholder="{{ user?.location }}"
-    > Location
-    <br>
-    <button type="submit">Update Info</button>
-  </form>
 
-  Change Password
-  <form
-    (submit)="onChangePassword(changePasswordForm)"
-    #changePasswordForm="ngForm"
-  >
-    <input
-      type="password"
-      required
-      ngModel
-      name="passwordCurrent"
-      #passwordCurrentInput="ngModel"
-    > Current Password
-    <br>
-    <input
-      type="password"
-      required
-      ngModel
-      name="password"
-      #passwordInput="ngModel"
-    > New Password
-    <br>
-    <input
-      type="password"
-      required
-      ngModel
-      name="passwordConfirm"
-      #passwordConfirmInput="ngModel"
-    > Confirm New Password
-    <br>
-    <button *ngIf="!isLoading">Update Password</button>
+    <span class="user__form--title heading-2">Info</span>
+
+    <form
+      (submit)="onUpdateUser()"
+      [formGroup]="updateUserForm"
+      *ngIf="!isLoading"
+      class="user__form"
+    >
+
+      <span class="user__form--label">Name</span>
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="{{ user?.name }}"
+        class="user__form--input"
+      >
+
+      <span class="user__form--label">Email</span>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="{{ user?.email }}"
+        class="user__form--input"
+      >
+
+      <span class="user__form--label">Location</span>
+      <input
+        type="text"
+        formControlName="location"
+        placeholder="{{ user?.location }}"
+        class="user__form--input"
+      >
+
+      <button
+        type="submit"
+        class="user__form--submit cta-btn"
+      >Update Info</button>
     </form>
+
+    <span class="user__form--title heading-2">Change Password</span>
+
+    <form
+      (submit)="onChangePassword(changePasswordForm)"
+      #changePasswordForm="ngForm"
+      class="user__form"
+    >
+
+      <span class="user__form--label">Current password</span>
+      <input
+        type="password"
+        required
+        ngModel
+        name="passwordCurrent"
+        #passwordCurrentInput="ngModel"
+        class="user__form--input"
+      >
+
+      <span class="user__form--label">New Password</span>
+      <input
+        type="password"
+        required
+        ngModel
+        name="password"
+        #passwordInput="ngModel"
+        class="user__form--input"
+      >
+
+      <span class="user__form--label">New Password Confirm</span>
+      <input
+        type="password"
+        required
+        ngModel
+        name="passwordConfirm"
+        #passwordConfirmInput="ngModel"
+        class="user__form--input"
+      >
+
+      <button class="user__form--submit cta-btn">Update Password</button>
+
+    </form>
+
+  </div>
+
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
+
 </div>

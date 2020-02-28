@@ -1,0 +1,57 @@
+.container {
+  display: grid;
+  grid-template-rows: 10vh 50vh;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.title {
+  align-self: center;
+}
+
+.user {
+  align-self: center;
+
+  background-color: rgba(black, 0.6);
+  border-radius: 0.8rem;
+
+  padding: 1.5rem;
+
+  &__form {
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem;
+
+    &--label {
+      font-size: 1.8rem;
+      text-align: right;
+      text-transform: lowercase;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    &--input {
+      height: 3.6rem;
+      width: 18.8rem;
+
+      background-color: var(--color-mocha);
+      border-radius: 0.4rem;
+
+      color: var(--color-star);
+    }
+
+    &--submit {
+      grid-column: 2;
+      justify-self: flex-end;
+
+      position: relative;
+      transform: translateX(-5rem);
+    }
+  }
+}

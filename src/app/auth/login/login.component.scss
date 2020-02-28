@@ -1,0 +1,47 @@
+.login {
+  display: grid;
+  grid-template-rows: 10vh 10vh 6vh 34vh;
+  justify-content: center;
+  justify-items: center;
+
+  padding: 6rem 12rem;
+
+  &__form {
+    align-self: center;
+
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    gap: 1rem;
+
+    transform: translateY(-4rem);
+
+    padding: 3rem 5rem;
+
+    background-color: rgba(black, 0.6);
+    border-radius: 0.8rem;
+
+    &--label {
+      font-size: 1.8rem;
+      text-align: right;
+      text-transform: lowercase;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    &--input {
+      height: 3.6rem;
+      width: 18.8rem;
+
+      background-color: var(--color-mocha);
+      border-radius: 0.4rem;
+
+      color: var(--color-star);
+    }
+
+    &--login {
+      grid-column: 2;
+      justify-self: flex-end;
+    }
+  }
+}

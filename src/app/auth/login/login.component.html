@@ -1,25 +1,53 @@
-<span *ngIf="isLoading">Loading...</span>
+<div class="login">
 
-<form
-  (submit)="onLogin(loginForm)"
-  #loginForm="ngForm"
-  *ngIf="!isLoading"
->
-  <input
-    type="email"
-    required
-    ngModel
-    name="email"
-    #emailInput="ngModel"
-  > Email
-  <br>
-  <input
-    type="password"
-    required
-    ngModel
-    name="password"
-    #passwordInput="ngModel"
-  > Password
-  <br>
-  <button *ngIf="!isLoading">Login</button>
-</form>
+  <span class="login__title heading-1">
+    Login
+  </span>
+
+  <p class="login__welcome greeting">
+    Welcome. Are you the people's barista champion yet?
+    If not, get started by signing up first! Have fun!
+  </p>
+
+  <a
+    routerLink="/auth/signup"
+    class="login__signup btn-2 "
+  >Join Baristabook</a>
+
+  <form
+    (submit)="onLogin(loginForm)"
+    #loginForm="ngForm"
+    *ngIf="!isLoading"
+    class="login__form"
+  >
+
+    <span class="login__form--label">Email</span>
+    <input
+      type="email"
+      required
+      ngModel
+      name="email"
+      #emailInput="ngModel"
+      class="login__form--input"
+    >
+
+    <span class="login__form--label">Password</span>
+    <input
+      type="password"
+      required
+      ngModel
+      name="password"
+      #passwordInput="ngModel"
+      class="login__form--input"
+    >
+
+    <button class="login__form--login cta-btn">Login</button>
+
+  </form>
+
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
+
+</div>

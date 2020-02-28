@@ -18,10 +18,6 @@
   padding: 3rem 2rem;
 
   border-radius: 0.8rem;
-  box-shadow: 0 0.28rem 0.22rem rgba(0, 0, 0, 0.034),
-    0 0.67rem 0.53rem rgba(0, 0, 0, 0.048), 0 1.25rem 1rem rgba(0, 0, 0, 0.06),
-    0 2.23rem 1.79rem rgba(0, 0, 0, 0.072),
-    0 4.18rem 3.34rem rgba(0, 0, 0, 0.086), 0 10rem 8rem rgba(0, 0, 0, 0.12);
 
   //VARIABLE STYLE
   &__style {
@@ -162,7 +158,7 @@
       &-key {
         text-align: right;
         text-transform: lowercase;
-        font-weight: 100;
+        font-weight: 300;
         line-height: 1;
       }
 

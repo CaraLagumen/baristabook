@@ -7,8 +7,11 @@ a {
   }
 }
 
-input {
+input,
+textarea {
+  padding: 0.5rem;
   border: none;
+
   font-family: "Open Sans", sans-serif;
   font-size: var(--font-small);
 }
@@ -35,6 +38,17 @@ ul {
   text-transform: uppercase;
 }
 
+.cta-btn {
+  padding: 0.2rem 1rem;
+
+  background-color: var(--color-star);
+  border-radius: 2.4rem;
+
+  color: var(--color-espresso);
+  font-size: var(--font-medium);
+  text-transform: uppercase;
+}
+
 .btn-1 {
   font-size: var(--font-small);
   text-transform: uppercase;
@@ -44,7 +58,29 @@ ul {
 }
 
 .btn-2 {
-  font-size: var(--font-xsmall);
+  font-size: var(--font-medium);
+  text-transform: uppercase;
+}
+
+.greeting {
+  max-width: 60rem;
+
+  font-size: var(--font-medium);
+  text-align: justify;
+  font-weight: 300;
+}
+
+.blurb {
+  max-width: 60rem;
+
+  font-size: var(--font-medium);
+  font-weight: 300;
+  text-align: justify;
+  text-indent: 5rem;
+}
+
+.text-small {
+  font-size: var(--font-small);
   text-transform: uppercase;
 }
 

@@ -1,0 +1,56 @@
+.signup {
+  display: grid;
+  grid-template-rows: 10vh 15vh 35vh;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+
+  padding: 6rem 12rem;
+
+  &__welcome {
+    max-width: 60rem;
+
+    font-size: var(--font-medium);
+    text-align: justify;
+  }
+
+  &__form {
+    align-self: flex-start;
+
+    display: grid;
+    grid-template-columns: 31% 69%;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 3rem;
+
+    background-color: rgba(black, 0.6);
+    border-radius: 0.8rem;
+
+    &--label {
+      font-size: 1.8rem;
+      text-align: right;
+      text-transform: lowercase;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    &--input {
+      height: 3.6rem;
+      width: 18.8rem;
+
+      background-color: var(--color-mocha);
+      border-radius: 0.4rem;
+
+      color: var(--color-star);
+    }
+
+    &--signup {
+      grid-column: 2;
+      justify-self: flex-end;
+
+      position: relative;
+      transform: translateX(-4.5rem);
+    }
+  }
+}

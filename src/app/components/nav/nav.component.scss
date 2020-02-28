@@ -1,0 +1,78 @@
+.brief {
+  display: grid;
+  grid-template-rows: 10vh 50vh;
+  justify-content: center;
+  justify-items: center;
+
+  padding: 6rem 12rem;
+}
+
+.share {
+  display: grid;
+  grid-template-rows: 10vh 50vh;
+  justify-content: center;
+  justify-items: center;
+}
+
+.contact-us {
+  display: grid;
+  grid-template-rows: 10vh 10vh 48vh;
+  justify-content: center;
+  justify-items: center;
+
+  padding: 6rem 12rem;
+
+  &__form {
+    align-self: flex-start;
+
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 60% 30% 10%;
+    align-items: center;
+    gap: 1rem;
+
+    transform: translateY(-2rem);
+
+    padding: 3rem 5rem;
+
+    &--text {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+
+      height: 20rem;
+      width: 28rem;
+      resize: none;
+
+      background-color: var(--color-mocha);
+      border-radius: 0.4rem;
+
+      color: var(--color-star);
+    }
+
+    &--label {
+      font-size: 1.8rem;
+      text-align: right;
+      text-transform: lowercase;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    &--email {
+      height: 3.6rem;
+      width: 18.8rem;
+      padding: 0.5rem;
+
+      background-color: var(--color-mocha);
+      border-radius: 0.4rem;
+
+      color: var(--color-star);
+    }
+
+    &--send {
+      grid-column: 2;
+      justify-self: flex-end;
+
+      transform: translateX(-1rem);
+    }
+  }
+}

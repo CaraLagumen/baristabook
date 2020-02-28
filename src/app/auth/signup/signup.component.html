@@ -1,40 +1,68 @@
-<span *ngIf="isLoading">Loading...</span>
+<div class="signup">
 
-<form
-  (submit)="onSignup(signupForm)"
-  #signupForm="ngForm"
-  *ngIf="!isLoading"
->
-  <input
-    required
-    ngModel
-    name="name"
-    #nameInput="ngModel"
-  > Name
-  <br>
-  <input
-    type="email"
-    required
-    ngModel
-    name="email"
-    #emailInput="ngModel"
-  > Email
-  <br>
-  <input
-    type="password"
-    required
-    ngModel
-    name="password"
-    #passwordInput="ngModel"
-  > Password
-  <br>
-  <input
-    type="password"
-    required
-    ngModel
-    name="passwordConfirm"
-    #passwordConfirmInput="ngModel"
-  > Password Confirm
-  <br>
-  <button *ngIf="!isLoading">Sign Up</button>
-</form>
+  <span class="signup__title heading-1">
+    Sign up
+  </span>
+
+  <p class="signup__welcome">
+    Create your own personalized Baristabook by signing up and starring drinks.
+    Keep it handy and you’ll never have to remake a drink again!
+    <small>(For the most part...)</small>
+  </p>
+
+  <form
+    (submit)="onSignup(signupForm)"
+    #signupForm="ngForm"
+    *ngIf="!isLoading"
+    class="signup__form"
+  >
+
+    <span class="signup__form--label">Name</span>
+    <input
+      required
+      ngModel
+      name="name"
+      #nameInput="ngModel"
+      class="signup__form--input"
+    >
+
+    <span class="signup__form--label">Email</span>
+    <input
+      type="email"
+      required
+      ngModel
+      name="email"
+      #emailInput="ngModel"
+      class="signup__form--input"
+    >
+
+    <span class="signup__form--label">Password</span>
+    <input
+      type="password"
+      required
+      ngModel
+      name="password"
+      #passwordInput="ngModel"
+      class="signup__form--input"
+    >
+
+    <span class="signup__form--label">Password confirm</span>
+    <input
+      type="password"
+      required
+      ngModel
+      name="passwordConfirm"
+      #passwordConfirmInput="ngModel"
+      class="signup__form--input"
+    >
+
+    <button
+      *ngIf="!isLoading"
+      class="signup__form--signup cta-btn"
+    >Sign Up</button>
+
+  </form>
+
+  <span *ngIf="isLoading">Loading...</span>
+
+</div>
