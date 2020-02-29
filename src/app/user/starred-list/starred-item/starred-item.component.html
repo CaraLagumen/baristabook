@@ -19,7 +19,7 @@
     <div class="starred-card__code">
       <span class="starred-card__code--box"></span>
       <a
-        [routerLink]="['/drinks', starredDrink.id]"
+        [routerLink]="['/drinks/name', starredDrink.slug]"
         routerLinkActive="active"
         class="starred-card__code--letter"
       >{{ starredDrink?.code }}</a>

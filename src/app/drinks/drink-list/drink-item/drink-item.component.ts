@@ -62,6 +62,13 @@ export class DrinkItemComponent implements OnInit {
          });
    }
 
+   //UPDATE STARRED DATA FOR DISPLAY
+   updateStarred() {
+      this.userService.getStarred().subscribe((starred: any) => {
+         this.starreds = starred.doc;
+      });
+   }
+   
    //ENABLES TOGGLE BUTTON
    clickHandler() {
       if (this.drinkIsStarred) {
@@ -69,12 +76,5 @@ export class DrinkItemComponent implements OnInit {
       } else if (!this.drinkIsStarred) {
          this.onSaveStarred();
       }
-   }
-
-   //UPDATE STARRED DATA FOR DISPLAY
-   updateStarred() {
-      this.userService.getStarred().subscribe((starred: any) => {
-         this.starreds = starred.doc;
-      });
    }
 }

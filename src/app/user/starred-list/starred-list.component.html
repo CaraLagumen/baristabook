@@ -1,15 +1,17 @@
-<div class="starred-list-container">
+<div class="container">
 
-  <button
-    (click)="onSort()"
-    class="sort btn-1 emboss"
-  >Sort A - Z</button>
+  <div class="sort border-inset">
+    <button
+      (click)="onSort()"
+      class="sort__btn btn-small emboss"
+    >Sort A - Z</button>
+  </div>
 
   <div
     *ngIf="!isLoading"
     class="main"
   >
-    <div class="main__cards-container">
+    <div class="main__cards">
       <app-starred-item
         *ngFor="let starredDrink of (starredsDrinks$ | async);"
         [starredDrink]="starredDrink"

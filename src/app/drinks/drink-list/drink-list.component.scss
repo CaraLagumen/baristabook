@@ -1,4 +1,4 @@
-.drink-list-container {
+.container {
   display: grid;
   grid-template-rows:
     [search-start] 8vh
@@ -17,12 +17,16 @@
     [bar-end sort-start] 25vw
     [sort-end];
 
-  border-top: 0.01rem solid var(--color-mocha);
-  border-bottom: 0.01rem solid var(--color-mocha);
-
   &__list {
     grid-column: list-start / list-end;
-    justify-self: center;
+
+    display: grid;
+    grid-template-rows: 99% 1%;
+
+    &--btn {
+      align-self: center;
+      justify-self: center;
+    }
   }
 
   &__bar {
@@ -43,7 +47,7 @@
       color: var(--color-espresso);
       text-transform: uppercase;
       text-align: center;
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      border: 0.1rem solid rgba(0, 0, 0, 0.1);
       box-shadow: inset 0 0.1rem 0 rgba(0, 0, 0, 0.7);
 
       transition: all 0.2s ease;
@@ -61,7 +65,14 @@
 
   &__sort {
     grid-column: sort-start / sort-end;
-    justify-self: center;
+
+    display: grid;
+    grid-template-rows: 99% 1%;
+
+    &--btn {
+      align-self: center;
+      justify-self: center;
+    }
   }
 
   &__results {
@@ -107,7 +118,7 @@
   }
 }
 
-.main__cards-container {
+.main__cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, 18rem);
   justify-content: center;

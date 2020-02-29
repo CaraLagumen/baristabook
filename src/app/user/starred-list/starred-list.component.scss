@@ -1,13 +1,17 @@
-.starred-list-container {
+.container {
   display: grid;
   grid-template-rows: 8vh 68vh;
 }
 
 .sort {
+  display: grid;
+
   height: 8vh;
 
-  border-top: 0.01rem solid var(--color-mocha);
-  border-bottom: 0.01rem solid var(--color-mocha);
+  &__btn {
+    align-self: center;
+    justify-self: center;
+  }
 }
 
 .main {
@@ -15,7 +19,7 @@
   overflow-y: auto;
   scrollbar-width: thin;
 
-  &__cards-container {
+  &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, 30rem);
     justify-content: space-around;

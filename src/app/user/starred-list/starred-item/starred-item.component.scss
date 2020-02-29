@@ -46,6 +46,11 @@
       transform: translate(-14rem, -8.5rem) rotate(-90deg);
 
       font-size: 9rem;
+
+      &:hover {
+        text-shadow: 0 0 0.5rem currentColor, 0 0 1rem var(--color-blonde),
+          0 0 2rem var(--color-white);
+      }
     }
   }
 

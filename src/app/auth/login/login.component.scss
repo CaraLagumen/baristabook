@@ -1,14 +1,20 @@
 .login {
   display: grid;
-  grid-template-rows: 10vh 10vh 6vh 34vh;
+  grid-template-rows: 8vh 10vh 10vh 30vh;
+  align-items: flex-start;
   justify-content: center;
   justify-items: center;
+  row-gap: 2rem;
 
   padding: 6rem 12rem;
 
-  &__form {
-    align-self: center;
+  &__signup {
+    justify-self: flex-end;
 
+    transform: translateY(-1rem);
+  }
+
+  &__form {
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: center;
@@ -44,4 +50,8 @@
       justify-self: flex-end;
     }
   }
+}
+
+.loading {
+  transform: translateY(-10rem);
 }

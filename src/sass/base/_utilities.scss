@@ -1,7 +1,14 @@
 .box-shadow-sharp {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 2px rgba(0, 0, 0, 0.2),
-    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1),
-    0 16px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.25),
+    0 0.2rem 0.2rem rgba(0, 0, 0, 0.2), 0 0.4rem 0.4rem rgba(0, 0, 0, 0.15),
+    0 0.8rem 0.8rem rgba(0, 0, 0, 0.1), 0 1.6rem 1.6rem rgba(0, 0, 0, 0.05);
+}
+
+.border-inset {
+  border-top: 0.01rem solid var(--color-mocha);
+  border-bottom: 0.01rem solid var(--color-mocha);
+  box-shadow: inset 0 0.1rem 0 rgba(255, 255, 255, 0.1),
+    inset 0 -0.1rem 0 rgba(255, 255, 255, 0.1);
 }
 
 .loading {

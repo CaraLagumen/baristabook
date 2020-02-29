@@ -1,6 +1,5 @@
-<div class="drink-container">
+<div class="container">
   <div
-    *ngIf="drink$ | async as drink;"
     [ngClass]="{ 'drink-card__style--hot': drink.form === 'Hot',
     'drink-card__style--iced': drink.form === 'Iced',
     'drink-card__style--frozen': drink.form === 'Frozen'}"
@@ -18,7 +17,7 @@
 
       <button
         *ngIf="!userIsAuth"
-        [routerLink]="['/auth/login']"
+        [routerLink]="['/auth/login/star']"
         routerLinkActive="active"
         class="drink-card__star--btn emboss"
         style="color: var(--color-earth);"

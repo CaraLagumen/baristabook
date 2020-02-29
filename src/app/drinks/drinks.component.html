@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div
+    *ngIf="!isLoading"
+    class="main__cards"
+  >
+    <app-drink
+      *ngFor="let drink of (drinks$ | async);"
+      [drink]="drink"
+      [userIsAuth]="userIsAuth"
+      [starreds]="starreds"
+    ></app-drink>
+  </div>
+
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
+
+</div>

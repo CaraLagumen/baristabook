@@ -1,9 +1,11 @@
-<div class="drink-list-container">
+<div class="container">
 
   <!-- SEARCH FEATURE -->
-  <div class="search">
+  <div class="search border-inset">
 
-    <button class="search__list btn-1 emboss">List view</button>
+    <div class="search__list">
+      <button class="search__list--btn btn-small emboss">List view</button>
+    </div>
 
     <div class="search__bar">
       <form>
@@ -19,10 +21,12 @@
       </form>
     </div>
 
-    <button
-      (click)="onSort()"
-      class="search__sort btn-1 emboss"
-    >Sort A - Z</button>
+    <div class="search__sort">
+      <button
+        (click)="onSort()"
+        class="search__sort--btn btn-small emboss"
+      >Sort A - Z</button>
+    </div>
 
     <div
       class="search__results"
@@ -36,7 +40,7 @@
 
       <ul *ngFor="let result of searchResults | slice:0:9">
         <a
-          [routerLink]="['/drinks', result.id]"
+          [routerLink]="['/drinks/name', result.slug]"
           class="search__results--item"
         >{{ result?.name }}</a>
       </ul>
@@ -49,7 +53,7 @@
     *ngIf="!isLoading"
     class="main"
   >
-    <div class="main__cards-container">
+    <div class="main__cards">
 
       <app-drink-item
         *ngFor="let drink of (drinks$ | async);"

@@ -4,6 +4,16 @@
 
   border-radius: 0.4rem;
 
+  transition: transform 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+  &:hover {
+    transform: translateY(-0.5rem) scale(1.02);
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.125),
+      0 0.35rem 0.35rem rgba(0, 0, 0, 0.1),
+      0 0.45rem 0.45rem rgba(0, 0, 0, 0.75),
+      0 0.65rem 0.65rem rgba(0, 0, 0, 0.5), 0 1.1rem 1.1rem rgba(0, 0, 0, 0.025);
+  }
+
   //VARIABLE STYLE
   &__style {
     &--hot {
@@ -26,6 +36,11 @@
       z-index: 100;
 
       font-size: 4.5rem;
+
+      &:hover {
+        text-shadow: 0 0 0.5rem currentColor, 0 0 1rem var(--color-blonde),
+          0 0 2rem var(--color-white);
+      }
     }
   }
 

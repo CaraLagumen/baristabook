@@ -1,17 +1,29 @@
 <div class="login">
 
-  <span class="login__title heading-1">
+  <span class="login__title heading-big">
     Login
   </span>
 
-  <p class="login__welcome greeting">
+  <p
+    *ngIf="state !== 'star'"
+    class="login__welcome greeting"
+  >
     Welcome. Are you the people's barista champion yet?
-    If not, get started by signing up first! Have fun!
+    If not, get started by signing up! Have fun!
+  </p>
+
+  <p
+    *ngIf="state === 'star'"
+    class="login__welcome greeting"
+  >
+    Please log in to star drinks and have an easier access
+    to the ones you're currently having trouble with.
+    If you do not have an account, then please sign up.
   </p>
 
   <a
     routerLink="/auth/signup"
-    class="login__signup btn-2 "
+    class="login__signup btn-medium "
   >Join Baristabook</a>
 
   <form

@@ -36,6 +36,12 @@
       font-size: var(--font-small);
       font-weight: 300;
       text-transform: lowercase;
+
+      transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+      &:hover {
+        font-weight: 600;
+      }
     }
   }
 

@@ -16,7 +16,7 @@
 
     <button
       *ngIf="!userIsAuth"
-      [routerLink]="['/auth/login']"
+      [routerLink]="['/auth/login/star']"
       routerLinkActive="active"
       class="drink-item-card__star--btn emboss"
       style="color: var(--color-earth);"
@@ -62,7 +62,7 @@
 
     <div class="drink-item-card__front--code">
       <a
-        [routerLink]="['/drinks', drink.id]"
+        [routerLink]="['/drinks/name', drink.slug]"
         routerLinkActive="active"
         class="drink-item-card__front--code-letter"
       >{{ drink?.code }}</a>

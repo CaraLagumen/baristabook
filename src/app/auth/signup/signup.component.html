@@ -1,10 +1,10 @@
 <div class="signup">
 
-  <span class="signup__title heading-1">
+  <span class="signup__title heading-big">
     Sign up
   </span>
 
-  <p class="signup__welcome">
+  <p class="signup__welcome greeting">
     Create your own personalized Baristabook by signing up and starring drinks.
     Keep it handy and you’ll never have to remake a drink again!
     <small>(For the most part...)</small>
@@ -56,13 +56,13 @@
       class="signup__form--input"
     >
 
-    <button
-      *ngIf="!isLoading"
-      class="signup__form--signup cta-btn"
-    >Sign Up</button>
+    <button class="signup__form--signup cta-btn">Sign Up</button>
 
   </form>
 
-  <span *ngIf="isLoading">Loading...</span>
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
 
 </div>

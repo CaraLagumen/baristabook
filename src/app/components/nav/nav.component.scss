@@ -9,9 +9,17 @@
 
 .share {
   display: grid;
-  grid-template-rows: 10vh 50vh;
+  grid-template-rows: 10vh 5vh 45vh;
   justify-content: center;
   justify-items: center;
+
+  padding: 6rem 12rem;
+
+  &__btns {
+    align-self: center;
+
+    transform: translateY(-4rem);
+  }
 }
 
 .contact-us {

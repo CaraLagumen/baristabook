@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-rows: 10vh 40vh 10vh;
+  align-content: center;
+  justify-content: center;
+}
+
+.main__cards {
+  grid-row: 2 / 3;
+
+  display: flex;
+}
