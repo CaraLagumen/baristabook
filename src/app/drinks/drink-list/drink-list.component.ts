@@ -31,6 +31,8 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   searchTerm = new Subject<string>();
   searchResults: any;
   hidden = false;
+  listView = false;
+  view = "List view";
 
   constructor(
     private drinksService: DrinksService,
@@ -83,6 +85,16 @@ export class DrinkListComponent implements OnInit, OnDestroy {
       .pipe(map((drinks: any) => drinks.doc));
 
     this.isLoading = false;
+  }
+
+  onListView() {
+    this.listView = !this.listView;
+
+    if (this.listView === true) {
+      this.view = "Grid view";
+    } else {
+      this.view = "List view";
+    }
   }
 
   onSort() {

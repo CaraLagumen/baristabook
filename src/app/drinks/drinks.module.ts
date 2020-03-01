@@ -7,13 +7,17 @@ import { DrinkComponent } from './drink/drink.component';
 import { DrinkItemComponent } from './drink-list/drink-item/drink-item.component';
 import { DrinkListComponent } from './drink-list/drink-list.component';
 import { DrinksRoutingModule } from './drinks-routing.module';
+import { RemoveDuplicatesPipe } from '../shared/remove-duplicates.pipe';
+import { DrinkLineComponent } from './drink-list/drink-line/drink-line.component';
 
 @NgModule({
    declarations: [
       DrinksComponent,
       DrinkComponent,
       DrinkItemComponent,
-      DrinkListComponent
+      DrinkListComponent,
+      RemoveDuplicatesPipe,
+      DrinkLineComponent
    ],
    imports: [DrinksRoutingModule, RouterModule, CommonModule]
 })

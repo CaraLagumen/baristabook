@@ -4,7 +4,10 @@
   <div class="search border-inset">
 
     <div class="search__list">
-      <button class="search__list--btn btn-small emboss">List view</button>
+      <button
+        (click)="onListView()"
+        class="search__list--btn btn-small emboss"
+      >{{ view }}</button>
     </div>
 
     <div class="search__bar">
@@ -38,7 +41,7 @@
         class="search__results--close"
       >Close</button>
 
-      <ul *ngFor="let result of searchResults | slice:0:9">
+      <ul *ngFor="let result of searchResults | slice:0:9 | removeDuplicates">
         <a
           [routerLink]="['/drinks/name', result.slug]"
           class="search__results--item"
@@ -48,9 +51,9 @@
 
   </div>
 
-  <!-- MAIN -->
+  <!-- MAIN VIEW -->
   <div
-    *ngIf="!isLoading"
+    *ngIf="!isLoading && !listView"
     class="main"
   >
     <div class="main__cards">
@@ -63,6 +66,47 @@
       ></app-drink-item>
 
     </div>
+  </div>
+
+  <!-- LIST VIEW -->
+  <div
+    *ngIf="!isLoading && listView"
+    class="list"
+  >
+
+    <table class="list__titles">
+
+      <th class="list__titles--cell">Name</th>
+      <th class="list__titles--cell">Season</th>
+      <th class="list__titles--cell">Form</th>
+      <th class="list__titles--cell">Size</th>
+      <th class="list__titles--cell">Caffeine Name</th>
+      <th class="list__titles--cell">Caffeine Count</th>
+      <th class="list__titles--cell">Syrup Name</th>
+      <th class="list__titles--cell">Syrup Count</th>
+      <th class="list__titles--cell">Body</th>
+      <th class="list__titles--cell">Base Style</th>
+      <th class="list__titles--cell">Base Count</th>
+      <th class="list__titles--cell">Whipped Cream</th>
+      <th class="list__titles--cell">Topping</th>
+      <th class="list__titles--cell">Shaker</th>
+      <th class="list__titles--cell">Shaker Addition</th>
+      <th class="list__titles--cell">Dried Fruit</th>
+      <th class="list__titles--cell">Custom</th>
+
+    </table>
+
+    <div class="list__items">
+
+      <app-drink-line
+        *ngFor="let drink of (drinks$ | async);"
+        [drink]="drink"
+        [userIsAuth]="userIsAuth"
+        [starreds]="starreds"
+      ></app-drink-line>
+
+    </div>
+
   </div>
 
   <span

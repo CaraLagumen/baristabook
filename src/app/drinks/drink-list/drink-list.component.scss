@@ -132,3 +132,53 @@
   overflow-y: auto;
   scrollbar-width: thin;
 }
+
+.list {
+  padding-top: 3rem;
+
+  text-transform: uppercase;
+
+  &__titles {
+    display: table;
+
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    height: 5vh;
+    width: 90vw;
+    border-spacing: 0.5rem;
+
+    font-size: var(--font-xsmall);
+
+    &--cell {
+      display: table-cell;
+
+      width: 5vw;
+
+      border-bottom: 0.1rem solid var(--color-blonde);
+
+      text-align: start;
+      vertical-align: bottom;
+      font-weight: 400;
+    }
+  }
+
+  &__items {
+    position: fixed;
+    transform: translateY(5vh);
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+    height: 52vh;
+    width: 90.5vw;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+}

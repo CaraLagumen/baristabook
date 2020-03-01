@@ -140,7 +140,7 @@
     overflow-y: auto;
     scrollbar-width: thin;
 
-    &--value-pair {
+    &--pair {
       display: grid;
       grid-template-columns: 30% 50%;
       column-gap: 0.5rem;

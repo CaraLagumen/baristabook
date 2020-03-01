@@ -1,0 +1,39 @@
+.drink-line {
+  display: grid;
+  grid-template-rows: 5vh 63vh;
+  justify-content: center;
+
+  padding-top: 3rem;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  &__items {
+    display: table;
+
+    border-spacing: 0.5rem;
+
+    width: 90vw;
+
+    &:hover {
+      background-color: var(--color-mocha);
+    }
+
+    &--cell {
+      display: table-cell;
+
+      height: 5rem;
+      width: 5vw;
+
+      border-bottom: 0.1rem solid var(--color-mocha);
+
+      font-weight: 300;
+      text-align: end;
+
+      &:hover {
+        background-color: var(--color-coffee);
+      }
+    }
+  }
+}
