@@ -12,11 +12,13 @@ import { DrinksService } from "../drinks.service";
 import { Drink } from "../../shared/drink.model";
 import { AuthService } from "src/app/auth/auth.service";
 import { UserService } from "src/app/user/user.service";
+import { fadeTrigger } from "src/app/shared/route-animations";
 
 @Component({
   selector: "app-drink-list",
   templateUrl: "./drink-list.component.html",
-  styleUrls: ["./drink-list.component.scss"]
+  styleUrls: ["./drink-list.component.scss"],
+  animations: [fadeTrigger]
 })
 export class DrinkListComponent implements OnInit, OnDestroy {
   private authListenerSub: Subscription;

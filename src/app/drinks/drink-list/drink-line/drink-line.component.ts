@@ -2,11 +2,13 @@ import { Component, Input, OnInit } from "@angular/core";
 
 import { Drink } from "../../../shared/drink.model";
 import { UserService } from "src/app/user/user.service";
+import { fadeTrigger } from "src/app/shared/route-animations";
 
 @Component({
   selector: "app-drink-line",
   templateUrl: "./drink-line.component.html",
-  styleUrls: ["./drink-line.component.scss"]
+  styleUrls: ["./drink-line.component.scss"],
+  animations: [fadeTrigger]
 })
 export class DrinkLineComponent implements OnInit {
   @Input() drink: Drink;

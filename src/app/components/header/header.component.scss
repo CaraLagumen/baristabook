@@ -11,6 +11,12 @@
 
     padding-bottom: 2vh;
     padding-left: 4.5vw;
+
+    transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__user {

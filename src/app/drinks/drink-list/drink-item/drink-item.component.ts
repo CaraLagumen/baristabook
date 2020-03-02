@@ -1,80 +1,82 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
-import { Drink } from '../../../shared/drink.model';
-import { UserService } from 'src/app/user/user.service';
+import { Drink } from "../../../shared/drink.model";
+import { UserService } from "src/app/user/user.service";
+import { fadeTrigger } from "src/app/shared/route-animations";
 
 @Component({
-   selector: 'app-drink-item',
-   templateUrl: './drink-item.component.html',
-   styleUrls: ['./drink-item.component.scss']
+  selector: "app-drink-item",
+  templateUrl: "./drink-item.component.html",
+  styleUrls: ["./drink-item.component.scss"],
+  animations: [fadeTrigger]
 })
 export class DrinkItemComponent implements OnInit {
-   @Input() drink: Drink;
-   @Input() userIsAuth: boolean;
-   @Input() userId: any;
-   @Input() starreds: any[];
+  @Input() drink: Drink;
+  @Input() userIsAuth: boolean;
+  @Input() userId: any;
+  @Input() starreds: any[];
 
-   previewDrink = false;
-   //STARRED FEATURE
-   drinkIsStarred = false;
-   star = '★';
+  previewDrink = false;
+  //STARRED FEATURE
+  drinkIsStarred = false;
+  star = "★";
 
-   constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {}
 
-   ngOnInit() {
-      if (this.userIsAuth) {
-         //FIND IF DRINK IS STARRED, TOGGLE drinkIsStarred BUTTON
-         this.starreds.forEach(el => {
-            if (el.drink.id === this.drink.id) {
-               this.drinkIsStarred = true;
-               this.star = '☆';
-            }
-         });
-      }
-   }
-
-   //TOGGLE DRINK PREVIEW
-   onPreviewDrink() {
-      this.previewDrink = !this.previewDrink;
-   }
-
-   onSaveStarred() {
-      //SERVER REQUIRES THE DRINK ID & USER ID FOR STARRED CREATION
-      this.userService.saveStarred(this.drink.id, this.userId).subscribe(() => {
-         //UPDATE VALUES & starreds ARR
-         this.drinkIsStarred = true;
-         this.star = '☆';
-
-         this.updateStarred();
+  ngOnInit() {
+    if (this.userIsAuth) {
+      //FIND IF DRINK IS STARRED, TOGGLE drinkIsStarred BUTTON
+      this.starreds.forEach(el => {
+        if (el.drink.id === this.drink.id) {
+          this.drinkIsStarred = true;
+          this.star = "☆";
+        }
       });
-   }
+    }
+  }
 
-   onDeleteStarred() {
-      //PLUG IN STARRED ARR & DRINK ID FOR COMPARISON IN DELETE SERVICE
-      this.userService
-         .deleteStarred(this.starreds, this.drink.id)
-         .subscribe(() => {
-            //UPDATE VALUES & STARRED ARR
-            this.drinkIsStarred = false;
-            this.star = '★';
+  //TOGGLE DRINK PREVIEW
+  onPreviewDrink() {
+    this.previewDrink = !this.previewDrink;
+  }
 
-            this.updateStarred();
-         });
-   }
+  onSaveStarred() {
+    //SERVER REQUIRES THE DRINK ID & USER ID FOR STARRED CREATION
+    this.userService.saveStarred(this.drink.id, this.userId).subscribe(() => {
+      //UPDATE VALUES & starreds ARR
+      this.drinkIsStarred = true;
+      this.star = "☆";
 
-   //UPDATE STARRED DATA FOR DISPLAY
-   updateStarred() {
-      this.userService.getStarred().subscribe((starred: any) => {
-         this.starreds = starred.doc;
+      this.updateStarred();
+    });
+  }
+
+  onDeleteStarred() {
+    //PLUG IN STARRED ARR & DRINK ID FOR COMPARISON IN DELETE SERVICE
+    this.userService
+      .deleteStarred(this.starreds, this.drink.id)
+      .subscribe(() => {
+        //UPDATE VALUES & STARRED ARR
+        this.drinkIsStarred = false;
+        this.star = "★";
+
+        this.updateStarred();
       });
-   }
-   
-   //ENABLES TOGGLE BUTTON
-   clickHandler() {
-      if (this.drinkIsStarred) {
-         this.onDeleteStarred();
-      } else if (!this.drinkIsStarred) {
-         this.onSaveStarred();
-      }
-   }
+  }
+
+  //UPDATE STARRED DATA FOR DISPLAY
+  updateStarred() {
+    this.userService.getStarred().subscribe((starred: any) => {
+      this.starreds = starred.doc;
+    });
+  }
+
+  //ENABLES TOGGLE BUTTON
+  clickHandler() {
+    if (this.drinkIsStarred) {
+      this.onDeleteStarred();
+    } else if (!this.drinkIsStarred) {
+      this.onSaveStarred();
+    }
+  }
 }

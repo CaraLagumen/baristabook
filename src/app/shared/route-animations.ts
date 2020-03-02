@@ -13,15 +13,20 @@ export const fade = trigger("fadeAnimation", [
     query(
       ":enter",
       [
-        style({
-          opacity: "0"
-        })
+        style({ opacity: "0" }),
+        animate("500ms ease-in-out", style({ opacity: "1" }))
       ],
-      { optional: true }
+      {
+        optional: true
+      }
     ),
-    query(":enter", [animate("500ms ease-in-out", style({ opacity: "1" }))], {
-      optional: true
-    }),
     query(":enter", animateChild(), { optional: true })
+  ])
+]);
+
+export const fadeTrigger = trigger("fadeTrigger", [
+  transition(":enter", [
+    style({ opacity: 0 }),
+    animate("500ms", style({ opacity: 1 }))
   ])
 ]);

@@ -2,10 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { NgForm } from "@angular/forms";
 
+import { fadeTrigger } from "src/app/shared/route-animations";
+
 @Component({
   selector: "app-nav",
   templateUrl: "./nav.component.html",
-  styleUrls: ["./nav.component.scss"]
+  styleUrls: ["./nav.component.scss"],
+  animations: [fadeTrigger]
 })
 export class NavComponent implements OnInit {
   state: string;

@@ -53,6 +53,7 @@
 
   <!-- MAIN VIEW -->
   <div
+    @fadeTrigger
     *ngIf="!isLoading && !listView"
     class="main"
   >
@@ -70,6 +71,7 @@
 
   <!-- LIST VIEW -->
   <div
+    @fadeTrigger
     *ngIf="!isLoading && listView"
     class="list"
   >
