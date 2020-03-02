@@ -1,6 +1,25 @@
 <div class="drink__line">
 
+
   <table class="drink-line__items">
+
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--shot-star">
+        <button
+         *ngIf="userIsAuth"
+          (click)="clickHandler($event)"
+        >{{ star }}
+        </button>
+
+        <button
+          *ngIf="!userIsAuth"
+          [routerLink]="['/auth/login/star']"
+          routerLinkActive="active"
+          style="color: var(--color-earth);"
+        >★
+        </button>
+      </div>
+    </tr>
 
     <tr class="drink-line__items--cell">
       <div
@@ -11,23 +30,23 @@
     <tr class="drink-line__items--cell">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.season }}</div>
     </tr>
-    <tr class="drink-line__items--cell">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.form }}</div>
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--short-text scrollable">{{ drink?.form }}</div>
     </tr>
-    <tr class="drink-line__items--cell">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.size }}</div>
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--short-text scrollable">{{ drink?.size }}</div>
     </tr>
     <tr class="drink-line__items--cell">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.caffeine }}</div>
     </tr>
-    <tr class="drink-line__items--cell">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.caffeineCount }}</div>
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--short-text scrollable">{{ drink?.caffeineCount }}</div>
     </tr>
     <tr class="drink-line__items--cell">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.syrup }}</div>
     </tr>
-    <tr class="drink-line__items--cell">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.syrupCount }}</div>
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--short-text scrollable">{{ drink?.syrupCount }}</div>
     </tr>
     <tr class="drink-line__items--cell">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.body }}</div>
@@ -35,11 +54,11 @@
     <tr class="drink-line__items--cell">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.base }}</div>
     </tr>
-    <tr class="drink-line__items--cell">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.baseCount }}</div>
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--short-text scrollable">{{ drink?.baseCount }}</div>
     </tr>
-    <tr class="drink-line__items--cell">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.whippedCream }}</div>
+    <tr class="drink-line__items--short">
+      <div class="drink-line__items--short-text scrollable">{{ drink?.whippedCream }}</div>
     </tr>
     <tr class="drink-line__items--cell">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.topping }}</div>

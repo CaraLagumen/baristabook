@@ -14,7 +14,7 @@
 
     border-spacing: 0.5rem;
 
-    width: 90vw;
+    width: 95vw;
 
     &:hover {
       background-color: var(--color-mocha);
@@ -24,7 +24,25 @@
       display: table-cell;
 
       height: 5rem;
-      width: 5vw;
+      width: 4.5vw;
+      padding: 0.5rem;
+
+      border-bottom: 0.1rem solid var(--color-mocha);
+
+      font-weight: 300;
+      text-align: end;
+
+      &:hover {
+        background-color: var(--color-coffee);
+      }
+    }
+
+    &--short {
+      display: table-cell;
+
+      height: 5rem;
+      width: 2vw;
+      padding: 0.5rem;
 
       border-bottom: 0.1rem solid var(--color-mocha);
 

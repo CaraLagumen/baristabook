@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
   isLoading = false;
 
   constructor(private route: ActivatedRoute) {
-    //FETCH STATE FROM ROUTE LINK TO SET NAV CLASSES
+    //FETCH STATE FROM ROUTE LINK TO SET NAV CLASSES FOR BROWSING DIFFERENT PAGES
     this.route.params.subscribe(param => (this.state = param["link"]));
   }
 

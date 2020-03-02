@@ -1,8 +1,11 @@
 <div class="container">
   <app-header></app-header>
 
-  <div class="main">
-    <router-outlet></router-outlet>
+  <div
+    [@fadeAnimation]="prepareRoute(outlet)"
+    class="main"
+  >
+    <router-outlet #outlet="outlet"></router-outlet>
 
     <img
       src="assets/main-bg1.svg"

@@ -6,13 +6,26 @@ import { AuthGuard } from "./auth/auth.guard";
 
 const routes: Routes = [
   { path: "", redirectTo: "/drinks", pathMatch: "full" },
-  { path: "nav/:link", component: NavComponent },
-  { path: "drinks", loadChildren: "./drinks/drinks.module#DrinksModule" },
-  { path: "auth", loadChildren: "./auth/auth.module#AuthModule" },
+  {
+    path: "nav/:link",
+    component: NavComponent,
+    data: { animation: "NavPage" }
+  },
+  {
+    path: "drinks",
+    loadChildren: "./drinks/drinks.module#DrinksModule",
+    data: { animation: "DrinksPage" }
+  },
+  {
+    path: "auth",
+    loadChildren: "./auth/auth.module#AuthModule",
+    data: { animation: "AuthPage" }
+  },
   {
     path: "user",
     loadChildren: "./user/user.module#UserModule",
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    data: { animation: "UserPage" }
   }
 ];
 

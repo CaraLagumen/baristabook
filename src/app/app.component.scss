@@ -17,6 +17,8 @@ app-header {
 .main {
   grid-row: main-start / main-end;
 
+  position: relative;
+
   &__bg {
     position: fixed;
     bottom: 0;
