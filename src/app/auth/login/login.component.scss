@@ -45,8 +45,28 @@
       color: var(--color-star);
     }
 
+    &--forgot {
+      grid-column: 1 / -1;
+      grid-row: 3;
+      justify-self: flex-start;
+
+      transform: translateX(1rem);
+
+      padding: 0.5rem;
+
+      font-size: 1.2rem;
+      text-align: right;
+      text-transform: uppercase;
+      font-weight: 300;
+
+      &:hover {
+        background-color: var(--color-mocha);
+      }
+    }
+
     &--login {
       grid-column: 2;
+      grid-row: 3;
       justify-self: flex-end;
     }
   }

@@ -4,10 +4,11 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
+import { ForgotComponent } from "./forgot/forgot.component";
 
 const routes: Routes = [
   {
-    path: "login/:star",
+    path: "login/:state",
     component: LoginComponent,
     data: { animation: "LoginPage" }
   },
@@ -15,6 +16,11 @@ const routes: Routes = [
     path: "signup",
     component: SignupComponent,
     data: { animation: "SignupPage" }
+  },
+  {
+    path: "forgot/:state",
+    component: ForgotComponent,
+    data: { animation: "ForgotPage" }
   }
 ];
 

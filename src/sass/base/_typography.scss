@@ -47,6 +47,10 @@ ul {
   color: var(--color-espresso);
   font-size: var(--font-medium);
   text-transform: uppercase;
+
+  &:hover {
+    background-color: var(--color-blonde);
+  }
 }
 
 .btn-medium {

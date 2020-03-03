@@ -5,14 +5,16 @@
   </span>
 
   <p
-    *ngIf="state !== 'star'"
+    @fadeTrigger
+    *ngIf="state === 'welcome'"
     class="login__welcome greeting"
   >
     Welcome. Are you the people's barista champion yet?
-    If not, get started by signing up! Have fun!
+    If not, get started by signing up. Otherwise, go ahead and log in, champ!
   </p>
 
   <p
+    @fadeTrigger
     *ngIf="state === 'star'"
     class="login__welcome greeting"
   >
@@ -23,7 +25,7 @@
 
   <a
     routerLink="/auth/signup"
-    class="login__signup btn-medium "
+    class="login__signup btn-small"
   >Join Baristabook</a>
 
   <form
@@ -52,6 +54,11 @@
       #passwordInput="ngModel"
       class="login__form--input"
     >
+
+    <a
+      routerLink="/auth/forgot/password"
+      class="login__form--forgot"
+    >Forgot password</a>
 
     <button class="login__form--login cta-btn">Login</button>
 

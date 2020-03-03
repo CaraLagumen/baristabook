@@ -43,6 +43,7 @@
 
     padding: 3rem 5rem;
 
+    
     &--text {
       grid-column: 1 / -1;
       grid-row: 1 / 2;
@@ -55,6 +56,8 @@
       border-radius: 0.4rem;
 
       color: var(--color-star);
+
+      scrollbar-width: thin;
     }
 
     &--label {

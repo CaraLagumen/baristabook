@@ -1,8 +1,11 @@
-<div @fadeTrigger class="drink__line">
+<div
+  @fadeTrigger
+  class="drink__line"
+>
   <table class="drink-line__items">
 
     <tr class="drink-line__items--short">
-      <div class="drink-line__items--shot-star">
+      <div class="drink-line__items--short-star">
         <button
           *ngIf="userIsAuth"
           (click)="clickHandler($event)"
@@ -19,7 +22,11 @@
       </div>
     </tr>
 
-    <tr class="drink-line__items--cell">
+    <tr
+      [routerLink]="['/drinks/name', drink.slug]"
+      routerLinkActive="active"
+      class="drink-line__items--cell pointer"
+    >
       <div
         class="drink-line__items--cell-text scrollable"
         style="font-weight: 600;"
