@@ -5,6 +5,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from "./signup/signup.component";
 import { ForgotComponent } from "./forgot/forgot.component";
+import { ResetComponent } from './reset/reset.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
     path: "forgot/:state",
     component: ForgotComponent,
     data: { animation: "ForgotPage" }
+  },
+  {
+    path: "reset/:token",
+    component: ResetComponent,
+    data: { animation: "ResetPage" }
   }
 ];
 

@@ -1,22 +1,30 @@
-<div
-  @fadeTrigger
-  *ngIf="state === 'password'"
-  class="forgot"
->
+<div class="forgot">
 
   <span class="forgot__title heading-big">
     Forgot password
   </span>
 
-  <p class="forgot__welcome greeting">
+  <p
+    @fadeTrigger
+    *ngIf="state === 'email'"
+    class="forgot__welcome greeting"
+  >
     Forgot your password? No biggie. Please enter your account's email address to receive an email with a unique link
     for a password reset.
+  </p>
+
+  <p
+    @fadeTrigger
+    *ngIf="state === 'sent'"
+    class="forgot__welcome greeting"
+  >
+    Thanks! Email sent.
   </p>
 
   <form
     (submit)="onForgot(forgotForm)"
     #forgotForm="ngForm"
-    *ngIf="!isLoading"
+    *ngIf="!isLoading && state !== 'sent'"
     class="forgot__form"
   >
 
@@ -35,60 +43,7 @@
   </form>
 
   <span
-    *ngIf="isLoading"
-    class="loading"
-  >Loading...</span>
-
-</div>
-
-<div
-  @fadeTrigger
-  *ngIf="state === 'reset'"
-  class="reset"
->
-
-  <span class="reset__title heading-big">
-    Reset password
-  </span>
-
-  <p class="reset__welcome greeting">
-    Nice! Kudos to you for knowing your email and its password. Please enter a new password and relog with your new
-    credentials.
-  </p>
-
-  <form
-    (submit)="onReset(resetForm)"
-    #resetForm="ngForm"
-    *ngIf="!isLoading"
-    class="reset__form"
-  >
-
-    <span class="reset__form--label">New Password</span>
-    <input
-      type="password"
-      required
-      ngModel
-      name="password"
-      #passwordInput="ngModel"
-      class="reset__form--input"
-    >
-
-    <span class="reset__form--label">Confirm New Password</span>
-    <input
-      type="password"
-      required
-      ngModel
-      name="newPassword"
-      #newPasswordInput="ngModel"
-      class="reset__form--input"
-    >
-
-    <button class="reset__form--reset cta-btn">Reset</button>
-
-  </form>
-
-  <span
-    *ngIf="isLoading"
+    *ngIf="isLoading && state !== 'sent'"
     class="loading"
   >Loading...</span>
 

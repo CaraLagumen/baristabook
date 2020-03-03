@@ -4,7 +4,7 @@ import { Router } from "@angular/router";
 import { Subject } from "rxjs";
 
 import { environment } from "src/environments/environment";
-import { AuthData, AuthUpdateData } from "./auth-data.model";
+import { AuthData, AuthUpdateData, AuthResetData } from "./auth-data.model";
 
 const ROOT_URL = `${environment.apiUrl}/users`;
 
@@ -163,7 +163,7 @@ export class AuthService {
   forgotPassword(email: string) {
     this.http.post(`${ROOT_URL}/forgotPassword`, { email }).subscribe(
       () => {
-        this.router.navigate(["/forgot/reset"]);
+        this.router.navigate(["/auth/forgot/sent"]);
       },
       err => {
         this.authStatusListener.next(false);
@@ -171,12 +171,43 @@ export class AuthService {
     );
   }
 
-  resetPassword(password: string, passwordConfirm: string) {
+  resetPassword(token: string, password: string, passwordConfirm: string) {
+    const authResetData: AuthResetData = {
+      password,
+      passwordConfirm
+    };
+
     this.http
-      .patch(`${ROOT_URL}/resetPassword`, { password, passwordConfirm })
+      .patch<{ token: string; user: any; expiresIn: number }>(
+        `${ROOT_URL}/resetPassword/${token}`,
+        authResetData
+      )
       .subscribe(
-        () => {
-          this.router.navigate(["/auth/login"]);
+        res => {
+          //FETCH TOKEN FROM RESPONSE & SET
+          const token = res.token;
+          this.token = token;
+
+          //RELATE TOKEN EXPIRATION FROM BACKEND TO UI
+          if (token) {
+            const expiresInDuration = res.expiresIn;
+            const now = new Date();
+            const expirationDate = new Date(
+              now.getTime() + expiresInDuration * 1000
+            );
+
+            //START TIMER & SAVE AUTH
+            this.setAuthTimer(expiresInDuration);
+            this.userId = res.user._id;
+            this.saveAuthData(token, this.userId, expirationDate);
+
+            //EXPOSE USER IS LOGGED
+            this.isAuth = true;
+            //DISPLAY IN UI USER IS LOGGED
+            this.authStatusListener.next(true);
+
+            this.router.navigate(["/"]);
+          }
         },
         err => {
           this.authStatusListener.next(false);

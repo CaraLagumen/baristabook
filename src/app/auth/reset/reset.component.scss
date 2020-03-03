@@ -1,4 +1,8 @@
-.forgot {
+.loading {
+  transform: translateY(-10rem);
+}
+
+.reset {
   display: grid;
   grid-template-rows: 8vh 10vh 40vh;
   align-items: flex-start;
@@ -10,11 +14,11 @@
 
   &__form {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 40% 60%;
     align-items: center;
     gap: 1rem;
 
-    padding: 3rem 5rem;
+    padding: 3rem;
 
     background-color: rgba(black, 0.6);
     border-radius: 0.8rem;
@@ -37,9 +41,11 @@
       color: var(--color-star);
     }
 
-    &--forgot {
+    &--reset {
       grid-column: 2;
       justify-self: flex-end;
+
+      transform: translateX(-4rem);
     }
   }
 }

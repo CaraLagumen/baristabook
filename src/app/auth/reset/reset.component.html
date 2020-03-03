@@ -1,0 +1,48 @@
+<div class="reset">
+
+  <span class="reset__title heading-big">
+    Reset password
+  </span>
+
+  <p class="reset__welcome greeting">
+    Nice! Kudos to you for knowing your email and its password. Please enter a new password to be logged in
+    automatically.
+  </p>
+
+  <form
+    (submit)="onReset(resetForm)"
+    #resetForm="ngForm"
+    *ngIf="!isLoading"
+    class="reset__form"
+  >
+
+    <span class="reset__form--label">New Password</span>
+    <input
+      type="password"
+      required
+      ngModel
+      name="password"
+      #passwordInput="ngModel"
+      class="reset__form--input"
+    >
+
+    <span class="reset__form--label">Confirm New Password</span>
+    <input
+      type="password"
+      required
+      ngModel
+      name="passwordConfirm"
+      #passwordConfirmInput="ngModel"
+      class="reset__form--input"
+    >
+
+    <button class="reset__form--reset cta-btn">Reset</button>
+
+  </form>
+
+  <span
+    *ngIf="isLoading"
+    class="loading"
+  >Loading...</span>
+
+</div>
