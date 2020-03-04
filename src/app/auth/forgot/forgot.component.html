@@ -35,10 +35,13 @@
       ngModel
       name="email"
       #emailInput="ngModel"
-      class="forgot__form--input"
+      class="forgot__form--input input-bar"
     >
 
-    <button class="forgot__form--forgot cta-btn">Send</button>
+    <button
+      [disabled]="!forgotForm.valid"
+      class="forgot__form--forgot cta-btn"
+    >Send</button>
 
   </form>
 

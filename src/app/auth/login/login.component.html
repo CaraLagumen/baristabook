@@ -42,17 +42,18 @@
       ngModel
       name="email"
       #emailInput="ngModel"
-      class="login__form--input"
+      class="login__form--input input-bar"
     >
 
     <span class="login__form--label">Password</span>
     <input
       type="password"
       required
+      minlength="8"
       ngModel
       name="password"
       #passwordInput="ngModel"
-      class="login__form--input"
+      class="login__form--input input-bar"
     >
 
     <a
@@ -60,7 +61,10 @@
       class="login__form--forgot"
     >Forgot password</a>
 
-    <button class="login__form--login cta-btn">Login</button>
+    <button
+      [disabled]="!loginForm.valid"
+      class="login__form--login cta-btn"
+    >Login</button>
 
   </form>
 

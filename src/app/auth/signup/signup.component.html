@@ -23,7 +23,7 @@
       ngModel
       name="name"
       #nameInput="ngModel"
-      class="signup__form--input"
+      class="signup__form--input input-bar"
     >
 
     <span class="signup__form--label">Email</span>
@@ -33,30 +33,35 @@
       ngModel
       name="email"
       #emailInput="ngModel"
-      class="signup__form--input"
+      class="signup__form--input input-bar"
     >
 
     <span class="signup__form--label">Password</span>
     <input
       type="password"
       required
+      minlength="8"
       ngModel
       name="password"
       #passwordInput="ngModel"
-      class="signup__form--input"
+      class="signup__form--input input-bar"
     >
 
     <span class="signup__form--label">Password confirm</span>
     <input
       type="password"
       required
+      minlength="8"
       ngModel
       name="passwordConfirm"
       #passwordConfirmInput="ngModel"
-      class="signup__form--input"
+      class="signup__form--input input-bar"
     >
 
-    <button class="signup__form--signup cta-btn">Sign Up</button>
+    <button
+      [disabled]="!signupForm.valid"
+      class="signup__form--signup cta-btn"
+    >Sign Up</button>
 
   </form>
 

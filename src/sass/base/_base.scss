@@ -10,7 +10,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   background-color: var(--color-espresso);
-  
+
   overflow: hidden;
 }
 
@@ -21,4 +21,9 @@ body {
   line-height: 1.6;
 
   overflow: hidden;
+}
+
+::selection {
+  color: var(--color-espresso);
+  background-color: var(--color-blonde);
 }

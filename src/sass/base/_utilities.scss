@@ -27,56 +27,23 @@
   scrollbar-width: thin;
 }
 
-.loading {
-  position: relative;
+.input-bar {
+  height: 3.6rem;
+  width: 18.8rem;
 
-  margin: 8rem auto;
+  background-color: var(--color-mocha);
+  border-radius: 0.4rem;
 
-  color: var(--color-blonde);
-  font-size: 1rem;
-  text-indent: -9999rem;
+  color: var(--color-star);
 
-  animation-delay: -0.15s;
+  transition: all 0.5s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
-  &,
-  &:before,
-  &:after {
-    width: 2.5rem;
-    height: 2.5rem;
-
-    animation-fill-mode: both;
-    animation: load 1.8s infinite ease-in-out;
+  &:focus {
+    transform: translateY(-0.1rem);
+    border-bottom: 0.3rem solid var(--color-blonde);
   }
 
-  &:before,
-  &:after {
-    content: "";
-
-    position: absolute;
-    top: 0;
-  }
-
-  &:before {
-    left: -3.5rem;
-
-    animation-delay: -0.3s;
-  }
-
-  &:after {
-    left: 3.5rem;
-
-    animation-delay: -0.3s;
-  }
-
-  @keyframes load {
-    0%,
-    60%,
-    100% {
-      box-shadow: 0 2.5rem 0 -1.3rem;
-    }
-
-    40% {
-      box-shadow: 0 2.5rem 0 0;
-    }
+  &:focus:invalid {
+    border-bottom: 0.3rem solid var(--color-hot);
   }
 }

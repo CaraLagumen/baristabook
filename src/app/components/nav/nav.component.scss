@@ -43,7 +43,6 @@
 
     padding: 3rem 5rem;
 
-    
     &--message {
       grid-column: 1 / -1;
       grid-row: 1 / 2;
@@ -58,6 +57,15 @@
       color: var(--color-star);
 
       scrollbar-width: thin;
+
+      &:focus {
+        transform: translateY(-0.1rem);
+        border-bottom: 0.3rem solid var(--color-blonde);
+      }
+
+      &:focus:invalid {
+        border-bottom: 0.3rem solid var(--color-hot);
+      }
     }
 
     &--label {
@@ -77,6 +85,15 @@
       border-radius: 0.4rem;
 
       color: var(--color-star);
+
+      &:focus {
+        transform: translateY(-0.1rem);
+        border-bottom: 0.3rem solid var(--color-blonde);
+      }
+
+      &:focus:invalid {
+        border-bottom: 0.3rem solid var(--color-hot);
+      }
     }
 
     &--send {

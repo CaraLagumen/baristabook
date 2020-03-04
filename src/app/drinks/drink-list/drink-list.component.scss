@@ -37,6 +37,8 @@
     align-content: center;
     padding: 1rem;
 
+    transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
     &--input {
       height: 4.5vh;
       width: 30rem;

@@ -27,6 +27,7 @@
 
   <!-- FRONT -->
   <div
+    @fadeTrigger
     *ngIf="!previewDrink"
     class="drink-item-card__front"
   >
@@ -76,6 +77,7 @@
 
   <!-- BACK -->
   <div
+    @fadeTrigger
     *ngIf="previewDrink"
     class="drink-item-card__back"
   >

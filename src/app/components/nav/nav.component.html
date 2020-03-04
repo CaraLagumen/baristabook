@@ -7,7 +7,9 @@
   <span class="share__title heading-big">Share</span>
 
   <div class="contact-us__text greeting">
-    Thank you for using our app! Please feel free to share with your coworkers and managers.
+    Thank you for using our app! Please feel free
+    to share with your coworkers, managers, neighbors, and
+    especially your cat and dog.
   </div>
 
   <div class="elfsight-app-48a864ce-4cc5-4923-91d2-9f0ec1ab24ae share__btns"></div>
@@ -24,12 +26,16 @@
   <span class="about__title heading-big">About</span>
 
   <div class="about__text blurb">
-    Baristas often need to memorize a great deal of recipes. With multiple updates and
-    additions of new drinks every year, it's no wonder that many could get confused with the proper way to make them.
+    Baristas often need to memorize a great deal of recipes.
+    With multiple updates and additions of new drinks every year,
+    it's no wonder that many could get confused with the proper
+    way to make them.
     <br>
     <br>
-    Baristabook was created to enable baristas of all levels to craft drinks with a consistent quality. They can
-    browse drink info to refresh their memory or save difficult ones in a personalized list for further study.
+    Baristabook was created to enable baristas of all levels
+    to craft drinks with a consistent quality. They can browse
+    drink info to refresh their memory or save difficult ones in
+    a personalized list for further study.
   </div>
 
 </div>
@@ -44,14 +50,17 @@
   <span class="disclaimer__title heading-big">Disclaimer</span>
 
   <div class="disclaimer__text blurb">
-    Baristabook is a fan-made app and is not affiliated with the Starbucks Coffee
-    Company or any of its subsidiaries. The information shown on Baristabook is shared knowledge among baristas and does
-    not represent actual Starbucks drinks or recipes. The trademark 'Frappuccino' used in this site is for informational
-    purposes only. No Starbucks logos or copyrights were used in the creation of this app.
+    Baristabook is a fan-made app and is not affiliated with the
+    Starbucks Coffee Company or any of its subsidiaries. The information
+    shown on Baristabook is shared knowledge among baristas and does
+    not represent actual Starbucks drinks or recipes. The trademark
+    'Frappuccino' used in this site is for informational purposes only.
+    No Starbucks logos or copyrights were used in the creation of this app.
     <br>
     <br>
-    The information Baristabook provides is for general informational purposes only. Under no circumstance should we
-    have liability to you for loss or damage as use of information on our site.
+    The information Baristabook provides is for general informational purposes
+    only. Under no circumstance should we have liability to you for loss or
+    damage as use of information on our site.
     <br>
     <br>
     Special thanks to:
@@ -88,8 +97,9 @@
     *ngIf="state === 'contact-us'"
     class="contact-us__text greeting"
   >
-    Have a question, suggestion, or even correction?
-    Don’t hesitate to send us a message.</div>
+    Have a question, suggestion, or correction?
+    Don’t hesitate to send us a message.
+    Nice messages also accepted. Thank you Sharon.</div>
 
   <div
     @fadeTrigger
@@ -115,6 +125,7 @@
 
     <textarea
       required
+      minlength="50"
       ngModel
       name="message"
       #messageInput="ngModel"
@@ -133,7 +144,10 @@
       class="contact-us__form--email"
     >
 
-    <button class="contact-us__form--send cta-btn">Send</button>
+    <button
+      [disabled]="!contactForm.valid"
+      class="contact-us__form--send cta-btn"
+    >Send</button>
 
   </form>
 </div>

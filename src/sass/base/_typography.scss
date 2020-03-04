@@ -43,13 +43,24 @@ ul {
 
   background-color: var(--color-star);
   border-radius: 2.4rem;
+  box-shadow: inset 0 0.1rem 0 rgba(255, 255, 255, 0.25),
+    0 0.2rem 0.2rem rgba(0, 0, 0, 0.15), 0 0 0.4rem 0.1rem rgba(0, 0, 0, 0.1);
 
   color: var(--color-espresso);
   font-size: var(--font-medium);
   text-transform: uppercase;
 
+  &:active {
+    background-color: var(--color-mocha) !important;
+    color: var(--color-star);
+  }
+
   &:hover {
     background-color: var(--color-blonde);
+  }
+
+  &:disabled {
+    opacity: 0.5;
   }
 }
 
@@ -63,7 +74,7 @@ ul {
   color: var(--color-star);
   text-decoration: none;
 
-  transition: all 0.2s;
+  transition: all 0.5s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
   &:hover:before {
     visibility: visible;
@@ -99,7 +110,7 @@ ul {
   color: var(--color-star);
   text-decoration: none;
 
-  transition: all 0.2s;
+  transition: all 0.5s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
   &:hover:before {
     visibility: visible;

@@ -17,15 +17,15 @@
   //VARIABLE STYLE
   &__style {
     &--hot {
-      background-color: (var(--color-hot));
+      background: radial-gradient(var(--color-blonde), var(--color-hot));
     }
 
     &--iced {
-      background-color: (var(--color-iced));
+      background: radial-gradient(var(--color-frozen), var(--color-iced));
     }
 
     &--frozen {
-      background-color: (var(--color-frozen));
+      background: radial-gradient(var(--color-white), var(--color-frozen));
     }
   }
 
@@ -71,6 +71,8 @@
         img {
           width: 3rem;
           filter: invert(100%) opacity(0.5);
+
+          background: radial-gradient(rgba(255, 255, 255, 0.3), transparent);
         }
       }
     }
@@ -86,9 +88,14 @@
         grid-column: 2 / 3;
         grid-row: 2 / 3;
 
+        z-index: 10;
+
         font-family: "Italiana", sans-serif;
         font-size: 4rem;
         color: var(--color-white);
+
+        text-shadow: -0.1rem -0.1rem 0.1rem rgba(0, 0, 0, 0.4),
+          0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
       }
 
       &-box {
@@ -100,8 +107,11 @@
         height: 2.4rem;
         width: 4.25rem;
 
+        background: none;
         border: 0.1rem solid var(--color-white);
         opacity: 0.2;
+        box-shadow: 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.5),
+          inset 0 0 0.5rem 0.2rem rgba(0, 0, 0, 0.5);
 
         pointer-events: none;
       }
@@ -113,6 +123,9 @@
 
       height: 2rem;
       width: 4rem;
+
+      text-shadow: -0.1rem -0.1rem 0.1rem rgba(0, 0, 0, 0.2),
+        0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.2);
 
       color: var(--color-white);
       font-size: 1rem;

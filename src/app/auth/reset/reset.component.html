@@ -20,23 +20,28 @@
     <input
       type="password"
       required
+      minlength="8"
       ngModel
       name="password"
       #passwordInput="ngModel"
-      class="reset__form--input"
+      class="reset__form--input input-bar"
     >
 
     <span class="reset__form--label">Confirm New Password</span>
     <input
       type="password"
       required
+      minlength="8"
       ngModel
       name="passwordConfirm"
       #passwordConfirmInput="ngModel"
-      class="reset__form--input"
+      class="reset__form--input input-bar"
     >
 
-    <button class="reset__form--reset cta-btn">Reset</button>
+    <button
+      [disabled]="!resetForm.valid"
+      class="reset__form--reset cta-btn"
+    >Reset</button>
 
   </form>
 

@@ -41,7 +41,10 @@
         class="search__results--close"
       >Close</button>
 
-      <ul *ngFor="let result of searchResults | slice:0:9 | removeDuplicates">
+      <ul
+        @fadeTrigger
+        *ngFor="let result of searchResults | slice:0:9 | removeDuplicates"
+      >
         <a
           [routerLink]="['/drinks/name', result.slug]"
           class="search__results--item"

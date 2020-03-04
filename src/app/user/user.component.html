@@ -23,7 +23,7 @@
         type="text"
         formControlName="name"
         placeholder="{{ user?.name }}"
-        class="user__form--input"
+        class="user__form--input input-bar"
       >
 
       <span class="user__form--label">Email</span>
@@ -31,18 +31,20 @@
         type="email"
         formControlName="email"
         placeholder="{{ user?.email }}"
-        class="user__form--input"
+        class="user__form--input input-bar"
       >
 
       <span class="user__form--label">Location</span>
       <input
         type="text"
+        minlength="5"
         formControlName="location"
         placeholder="{{ user?.location }}"
-        class="user__form--input"
+        class="user__form--input input-bar"
       >
 
       <button
+        [disabled]="!updateUserForm.valid"
         type="submit"
         class="user__form--submit cta-btn"
       >Update Info</button>
@@ -60,33 +62,39 @@
       <input
         type="password"
         required
+        minlength="8"
         ngModel
         name="passwordCurrent"
         #passwordCurrentInput="ngModel"
-        class="user__form--input"
+        class="user__form--input input-bar"
       >
 
       <span class="user__form--label">New Password</span>
       <input
         type="password"
         required
+        minlength="8"
         ngModel
         name="password"
         #passwordInput="ngModel"
-        class="user__form--input"
+        class="user__form--input input-bar"
       >
 
       <span class="user__form--label">New Password Confirm</span>
       <input
         type="password"
         required
+        minlength="8"
         ngModel
         name="passwordConfirm"
         #passwordConfirmInput="ngModel"
-        class="user__form--input"
+        class="user__form--input input-bar"
       >
 
-      <button class="user__form--submit cta-btn">Update Password</button>
+      <button
+        [disabled]="!changePasswordForm.valid"
+        class="user__form--submit cta-btn"
+      >Update Password</button>
 
     </form>
 
