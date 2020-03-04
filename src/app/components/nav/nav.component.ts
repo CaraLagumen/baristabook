@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { NgForm } from "@angular/forms";
 
 import { fadeTrigger } from "src/app/shared/route-animations";
+import { UserService } from "src/app/user/user.service";
 
 @Component({
   selector: "app-nav",
@@ -15,7 +16,7 @@ export class NavComponent implements OnInit {
 
   isLoading = false;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private userService: UserService) {
     //FETCH STATE FROM ROUTE LINK TO SET NAV CLASSES FOR BROWSING DIFFERENT PAGES
     this.route.params.subscribe(param => (this.state = param["link"]));
   }
@@ -28,5 +29,6 @@ export class NavComponent implements OnInit {
     }
 
     this.isLoading = true;
+    this.userService.contact(form.value.email, form.value.message);
   }
 }

@@ -77,31 +77,50 @@
 <!-- CONTACT US -->
 <div
   @fadeTrigger
-  *ngIf="state === 'contact-us'"
+  *ngIf="state === 'contact-us' || state === 'sent' || state === 'fail'"
   class="contact-us"
 >
 
   <span class="contact-us__title heading-big">Contact us</span>
 
-  <div class="contact-us__text greeting">
+  <div
+    @fadeTrigger
+    *ngIf="state === 'contact-us'"
+    class="contact-us__text greeting"
+  >
     Have a question, suggestion, or even correction?
     Don’t hesitate to send us a message.</div>
 
+  <div
+    @fadeTrigger
+    *ngIf="state === 'sent'"
+    class="contact-us__text greeting"
+  >
+    Thank you, your message has been sent!</div>
+
+  <div
+    @fadeTrigger
+    *ngIf="state === 'fail'"
+    class="contact-us__text greeting"
+  >
+    Sorry, there was an error. Please try again.</div>
+
   <form
+    @fadeTrigger
+    *ngIf="!isLoading && state === 'contact-us' || state === 'fail'"
     (submit)="onContact(contactForm)"
     #contactForm="ngForm"
-    *ngIf="!isLoading"
     class="contact-us__form"
   >
 
     <textarea
       required
       ngModel
-      name="text"
-      #textInput="ngModel"
+      name="message"
+      #messageInput="ngModel"
       cols="30"
       rows="10"
-      class="contact-us__form--text"
+      class="contact-us__form--message"
     ></textarea>
 
     <span class="contact-us__form--label">Email</span>
