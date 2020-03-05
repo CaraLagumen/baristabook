@@ -17,6 +17,12 @@
     z-index: 300;
 
     padding-left: 1rem;
+
+    transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__nav {

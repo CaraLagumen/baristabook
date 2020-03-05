@@ -16,8 +16,8 @@ import { DrinkLineComponent } from './drink-list/drink-line/drink-line.component
       DrinkComponent,
       DrinkItemComponent,
       DrinkListComponent,
-      RemoveDuplicatesPipe,
-      DrinkLineComponent
+      DrinkLineComponent,
+      RemoveDuplicatesPipe
    ],
    imports: [DrinksRoutingModule, RouterModule, CommonModule]
 })

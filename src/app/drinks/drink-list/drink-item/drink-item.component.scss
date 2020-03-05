@@ -25,7 +25,10 @@
     }
 
     &--frozen {
-      background: radial-gradient(var(--color-white), var(--color-frozen));
+      background: radial-gradient(
+        rgba(255, 255, 255, 0.8),
+        var(--color-frozen)
+      );
     }
   }
 

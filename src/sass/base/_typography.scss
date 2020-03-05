@@ -76,6 +76,10 @@ ul {
 
   transition: all 0.5s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
+  &:active {
+    transform: translateY(0.5rem);
+  }
+
   &:hover:before {
     visibility: visible;
     transform: scaleX(1);
@@ -111,6 +115,10 @@ ul {
   text-decoration: none;
 
   transition: all 0.5s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+  &:active {
+    transform: translateY(0.5rem);
+  }
 
   &:hover:before {
     visibility: visible;

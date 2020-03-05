@@ -5,6 +5,7 @@ import { Subject } from "rxjs";
 
 import { environment } from "src/environments/environment";
 import { AuthData, AuthUpdateData, AuthResetData } from "./auth-data.model";
+import { AlertService } from "../components/alert/alert.service";
 
 const ROOT_URL = `${environment.apiUrl}/users`;
 
@@ -18,7 +19,11 @@ export class AuthService {
   private isAuth = false;
   private tokenTimer: any;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private alertService: AlertService
+  ) {}
 
   //FUNCTIONS----------------------------------------------------------
 
@@ -32,9 +37,20 @@ export class AuthService {
 
     this.http.post(`${ROOT_URL}/signup`, authData).subscribe(
       () => {
+        this.alertService.success("Welcome, you signed up successfully.", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
         this.login(email, password);
       },
       err => {
+        this.alertService.error(
+          "Unable to sign you up with that info, please try again.",
+          {
+            autoClose: true,
+            keepAfterRouteChange: true
+          }
+        );
         this.authStatusListener.next(false);
       }
     );
@@ -56,6 +72,10 @@ export class AuthService {
       this.userId = authData.userId;
       this.isAuth = true;
       this.setAuthTimer(expiresIn / 1000);
+      this.alertService.info("You've been logged in automatically.", {
+        autoClose: true,
+        keepAfterRouteChange: true
+      });
       this.authStatusListener.next(true);
     }
   }
@@ -89,6 +109,10 @@ export class AuthService {
 
             //EXPOSE USER IS LOGGED
             this.isAuth = true;
+            this.alertService.success("You logged in successfully.", {
+              autoClose: true,
+              keepAfterRouteChange: true
+            });
             //DISPLAY IN UI USER IS LOGGED
             this.authStatusListener.next(true);
 
@@ -96,7 +120,16 @@ export class AuthService {
           }
         },
 
-        err => this.authStatusListener.next(false)
+        err => {
+          this.authStatusListener.next(false);
+          this.alertService.error(
+            "Your email or password is incorrect, please try again.",
+            {
+              autoClose: true,
+              keepAfterRouteChange: true
+            }
+          );
+        }
       );
   }
 
@@ -105,6 +138,10 @@ export class AuthService {
     this.token = null;
     this.userId = null;
     this.isAuth = false;
+    this.alertService.warn("You logged out successfully.", {
+      autoClose: true,
+      keepAfterRouteChange: true
+    });
     this.authStatusListener.next(false);
     clearTimeout(this.tokenTimer);
     this.clearAuthData();
@@ -149,23 +186,47 @@ export class AuthService {
 
             //EXPOSE USER IS LOGGED
             this.isAuth = true;
+            this.alertService.success(
+              "You successfully changed your password. Your page will reload in 8 seconds.",
+              {
+                autoClose: true,
+                keepAfterRouteChange: true
+              }
+            );
             //DISPLAY IN UI USER IS LOGGED
             this.authStatusListener.next(true);
 
-            location.reload();
+            //DELAY RELOAD FOR ALERT
+            setTimeout(() => {
+              location.reload();
+            }, 8000);
           }
         },
 
-        err => this.authStatusListener.next(false)
+        err => {
+          this.alertService.error("Your passwords don't match.", {
+            autoClose: true,
+            keepAfterRouteChange: true
+          });
+          this.authStatusListener.next(false);
+        }
       );
   }
 
   forgotPassword(email: string) {
     this.http.post(`${ROOT_URL}/forgotPassword`, { email }).subscribe(
       () => {
+        this.alertService.success("Your email has been sent.", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
         this.router.navigate(["/auth/forgot/sent"]);
       },
       err => {
+        this.alertService.error("That email does not exist in our server.", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
         this.authStatusListener.next(false);
       }
     );
@@ -203,6 +264,10 @@ export class AuthService {
 
             //EXPOSE USER IS LOGGED
             this.isAuth = true;
+            this.alertService.success("You successfully reset your password.", {
+              autoClose: true,
+              keepAfterRouteChange: true
+            });
             //DISPLAY IN UI USER IS LOGGED
             this.authStatusListener.next(true);
 
@@ -210,6 +275,10 @@ export class AuthService {
           }
         },
         err => {
+          this.alertService.error("Your passwords don't match.", {
+            autoClose: true,
+            keepAfterRouteChange: true
+          });
           this.authStatusListener.next(false);
         }
       );

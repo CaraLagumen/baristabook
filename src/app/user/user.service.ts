@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 
 import { environment } from "src/environments/environment";
 import { UserData } from "./user-data.model";
+import { AlertService } from "../components/alert/alert.service";
 
 const ROOT_URL = `${environment.apiUrl}`;
 
@@ -13,7 +14,11 @@ const ROOT_URL = `${environment.apiUrl}`;
   providedIn: "root"
 })
 export class UserService {
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private alertService: AlertService
+  ) {}
 
   //STARRED FEATURE----------------------------------------------------------
 
@@ -52,6 +57,11 @@ export class UserService {
   saveStarred(drinkId: string, userId: string): Observable<any> {
     const starredData = { drinkId, userId };
 
+    this.alertService.info("Your drink has been saved.", {
+      autoClose: true,
+      keepAfterRouteChange: true
+    });
+
     return this.http.post<any>(`${ROOT_URL}/drinks/${drinkId}`, starredData);
   }
 
@@ -63,6 +73,11 @@ export class UserService {
       if (el.drink.id === drinkId) {
         starredId = el.id;
       }
+    });
+
+    this.alertService.warn("Your star has been deleted.", {
+      autoClose: true,
+      keepAfterRouteChange: true
     });
 
     return this.http.delete(`${ROOT_URL}/starred/me/${starredId}`);
@@ -90,16 +105,27 @@ export class UserService {
     userData = { name, email, location };
 
     this.http.patch(`${ROOT_URL}/users/updateMe`, userData).subscribe(() => {
-      this.router.navigate(["/user/profile"]);
+      this.alertService.success("Your info has been updated.", {
+        autoClose: true,
+        keepAfterRouteChange: true
+      });
     });
   }
 
   contact(email: string, message: string) {
     this.http.post(`${ROOT_URL}/users/send`, { email, message }).subscribe(
       () => {
+        this.alertService.success("Your email has been sent.", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
         this.router.navigate(["/nav/sent"]);
       },
       err => {
+        this.alertService.error("There was a problem in sending your email.", {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
         this.router.navigate(["/nav/fail"]);
       }
     );

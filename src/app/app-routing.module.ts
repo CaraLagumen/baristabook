@@ -1,16 +1,11 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
-import { NavComponent } from "./components/nav/nav.component";
 import { AuthGuard } from "./auth/auth.guard";
+import { NavComponent } from "./components/nav/nav.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/drinks", pathMatch: "full" },
-  {
-    path: "nav/:link",
-    component: NavComponent,
-    data: { animation: "NavPage" }
-  },
   {
     path: "drinks",
     loadChildren: "./drinks/drinks.module#DrinksModule",
@@ -26,6 +21,11 @@ const routes: Routes = [
     loadChildren: "./user/user.module#UserModule",
     canActivate: [AuthGuard],
     data: { animation: "UserPage" }
+  },
+  {
+    path: "nav/:link",
+    component: NavComponent,
+    data: { animation: "NavPage" }
   }
 ];
 

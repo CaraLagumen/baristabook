@@ -64,7 +64,7 @@ export class DrinksComponent implements OnInit, OnDestroy {
     } else if (!this.userIsAuth) {
       //IF NOT, SET UNUSED VARS TO NULL
       this.userId = null;
-      this.starreds = [];
+      this.starreds = null;
     }
   }
 

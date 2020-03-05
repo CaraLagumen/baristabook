@@ -38,7 +38,7 @@
 
   transition: all 0.5s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
-  &:focus {
+  &:valid {
     transform: translateY(-0.1rem);
     border-bottom: 0.3rem solid var(--color-blonde);
   }
