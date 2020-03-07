@@ -20,6 +20,10 @@
 
     transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
+    img {
+      height: 4vh;
+    }
+
     &:hover {
       transform: scale(1.05);
     }
@@ -44,6 +48,16 @@
       text-transform: lowercase;
 
       transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+      @media only screen and (min-width: 215em) and (min-height: 90em) {
+        //3440 x 1440 ULTRAWIDE
+        font-size: 120%;
+      }
+
+      @media only screen and (min-height: 135em) {
+        //2160
+        font-size: 150%;
+      }
 
       &:hover {
         font-weight: 600;

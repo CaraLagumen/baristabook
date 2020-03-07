@@ -1,10 +1,25 @@
 .brief {
   display: grid;
-  grid-template-rows: 10vh 50vh;
+  grid-template-rows: 5vh 63vh;
+  align-content: flex-start;
   justify-content: center;
   justify-items: center;
+  row-gap: 3rem;
 
-  padding: 6rem 12rem;
+  padding: 4rem 2rem;
+
+  .about__text,
+  .disclaimer__text {
+    height: 50vh;
+
+    //SPACE FOR SCROLL BAR
+    padding-right: 1rem;
+
+    @media only screen and (max-width: 26em) {
+      //414
+      padding: 0;
+    }
+  }
 }
 
 .share {
@@ -13,12 +28,37 @@
   justify-content: center;
   justify-items: center;
 
-  padding: 6rem 12rem;
+  padding: 6rem 2rem;
 
   &__btns {
     align-self: center;
 
     transform: translateY(-4rem);
+
+    @media only screen and (max-width: 26em) {
+      //414
+      width: 150%;
+    }
+
+    @media only screen and (min-height: 45em) {
+      //720
+      transform: translateY(-4rem) scale(0.75);
+    }
+
+    @media only screen and (min-height: 67em) {
+      //1080
+      transform: translateY(-4rem) scale(1.15);
+    }
+
+    @media only screen and (min-height: 90em) {
+      //1440
+      transform: translateY(-4rem) scale(1.5);
+    }
+
+    @media only screen and (min-height: 135em) {
+      //2160
+      transform: translateY(-4rem) scale(2);
+    }
   }
 }
 
@@ -28,7 +68,7 @@
   justify-content: center;
   justify-items: center;
 
-  padding: 6rem 12rem;
+  padding: 6rem 2rem;
 
   &__form {
     align-self: flex-start;
@@ -41,7 +81,7 @@
 
     transform: translateY(-2rem);
 
-    padding: 3rem 5rem;
+    padding-top: 5rem;
 
     &--message {
       grid-column: 1 / -1;

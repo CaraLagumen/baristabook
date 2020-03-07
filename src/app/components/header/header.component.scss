@@ -6,6 +6,15 @@
     [user-start] 34vw
     [user-end];
 
+  @media only screen and (max-width: 87em) {
+    //1400
+    grid-template-columns:
+      [logo-start] 43vw
+      [logo-end] 1fr
+      [user-start] 44vw
+      [user-end];
+  }
+
   &__logo {
     grid-column: logo-start / logo-end;
 
@@ -13,6 +22,10 @@
     padding-left: 4.5vw;
 
     transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+    img {
+      height: 10vh;
+    }
 
     &:hover {
       transform: scale(1.05);

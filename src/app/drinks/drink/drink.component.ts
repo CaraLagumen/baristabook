@@ -7,7 +7,7 @@ import { UserService } from "src/app/user/user.service";
 @Component({
   selector: "app-drink",
   templateUrl: "./drink.component.html",
-  styleUrls: ["./drink.component.scss"]
+  styleUrls: ["./drink.component.scss", '../../shared/drink-card.scss']
 })
 export class DrinkComponent implements OnInit {
   @Input() drink: Drink;

@@ -12,6 +12,31 @@ html {
   background-color: var(--color-espresso);
 
   overflow: hidden;
+
+  @media only screen and (min-height: 45em) {
+    //720
+    font-size: 52%;
+  }
+
+  @media only screen and (min-height: 56em) {
+    //900
+    font-size: 62.5%;
+  }
+
+  @media only screen and (min-height: 67em) {
+    //1080
+    font-size: 80%;
+  }
+
+  @media only screen and (min-height: 90em) {
+    //1440
+    font-size: 120%;
+  }
+
+  @media only screen and (min-height: 135em) {
+    //2160
+    font-size: 150%;
+  }
 }
 
 body {

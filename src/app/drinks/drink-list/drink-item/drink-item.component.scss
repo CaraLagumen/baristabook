@@ -3,13 +3,14 @@
   width: 18rem;
 
   border-radius: 0.4rem;
+  box-shadow: inset 0 0.1rem 0 rgba(255, 255, 255, 0.7);
 
   transition: transform 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
   &:hover {
     transform: translateY(-0.5rem) scale(1.02);
-    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.125),
-      0 0.35rem 0.35rem rgba(0, 0, 0, 0.1),
+    box-shadow: inset 0 0.1rem 0 rgba(255, 255, 255, 0.7),
+      0 0.3rem 0.3rem rgba(0, 0, 0, 0.125), 0 0.35rem 0.35rem rgba(0, 0, 0, 0.1),
       0 0.45rem 0.45rem rgba(0, 0, 0, 0.75),
       0 0.65rem 0.65rem rgba(0, 0, 0, 0.5), 0 1.1rem 1.1rem rgba(0, 0, 0, 0.025);
   }
@@ -39,6 +40,11 @@
       z-index: 100;
 
       font-size: 4.5rem;
+
+      @media only screen and (max-width: 26em) {
+        //414
+        transform: translateY(-0.6rem) rotate(-90deg);
+      }
 
       &:hover {
         text-shadow: 0 0 0.5rem currentColor, 0 0 1rem var(--color-blonde),
@@ -96,7 +102,6 @@
         font-family: "Italiana", sans-serif;
         font-size: 4rem;
         color: var(--color-white);
-
         text-shadow: -0.1rem -0.1rem 0.1rem rgba(0, 0, 0, 0.4),
           0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.4);
       }
@@ -187,6 +192,11 @@
   &__expand {
     position: relative;
     transform: translate(15.5rem, -8.5rem);
+
+    @media only screen and (max-width: 26em) {
+      //414
+      transform: translate(19rem, -9rem) scale(1.4);
+    }
 
     &--btn {
       color: var(--color-mocha);

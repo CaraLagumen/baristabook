@@ -52,7 +52,7 @@
       border: 0.1rem solid rgba(0, 0, 0, 0.1);
       box-shadow: inset 0 0.1rem 0 rgba(0, 0, 0, 0.7);
 
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
       &:focus {
         width: 35rem;
@@ -78,7 +78,6 @@
   }
 
   &__results {
-    //CENTER
     position: absolute;
     top: 50%;
     left: 50%;
@@ -107,6 +106,15 @@
       border-bottom: 0.01rem solid var(--color-mocha);
     }
 
+    &--item {
+      transition: all 0.2s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+      &:hover {
+        color: var(--color-white);
+        letter-spacing: 0.2rem;
+      }
+    }
+
     &--close {
       position: fixed;
       top: -2rem;
@@ -116,6 +124,10 @@
       color: var(--color-earth);
       text-transform: lowercase;
       font-weight: 300;
+
+      &:hover {
+        color: var(--color-white);
+      }
     }
   }
 }
@@ -133,6 +145,13 @@
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
+
+  @media only screen and (max-width: 26em) {
+    //414
+    gap: 1rem;
+
+    padding: 1rem;
+  }
 }
 
 .list {

@@ -1,17 +1,16 @@
 .user-container {
   display: grid;
-  grid-template-rows: 10vh 50vh;
-  align-content: center;
+  grid-template-rows: 10vh 58vh;
   justify-content: center;
   justify-items: center;
 }
 
 .title {
-  align-self: center;
+  align-self: flex-start;
 }
 
 .user {
-  align-self: center;
+  align-self: flex-start;
 
   background-color: rgba(black, 0.6);
   border-radius: 0.8rem;
