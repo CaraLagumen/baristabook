@@ -6,8 +6,11 @@
     <div class="search__list">
       <button
         (click)="onListView()"
+        [attr.btn-content]="mobileView"
         class="search__list--btn btn-small emboss"
-      >{{ view }}</button>
+      >
+        <span>{{ view }}</span>
+      </button>
     </div>
 
     <div class="search__bar">
@@ -28,7 +31,9 @@
       <button
         (click)="onSort()"
         class="search__sort--btn btn-small emboss"
-      >Sort A - Z</button>
+      >
+        <span>Sort A - Z</span>
+      </button>
     </div>
 
     <div

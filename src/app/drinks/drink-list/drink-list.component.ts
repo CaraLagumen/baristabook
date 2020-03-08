@@ -35,6 +35,7 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   hidden = false;
   listView = false;
   view = "List view";
+  mobileView = "≡";
 
   constructor(
     private drinksService: DrinksService,
@@ -94,8 +95,10 @@ export class DrinkListComponent implements OnInit, OnDestroy {
 
     if (this.listView === true) {
       this.view = "Grid view";
+      this.mobileView = "⊞"; //⊞
     } else {
       this.view = "List view";
+      this.mobileView = "≡"; //≡
     }
   }
 
