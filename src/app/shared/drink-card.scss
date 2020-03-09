@@ -14,7 +14,7 @@
   box-shadow: inset 0 0.1rem 0 rgba(255, 255, 255, 0.7);
 
   transition: transform 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
-  
+
   &:hover {
     transform: translateY(-0.5rem) scale(1.02);
     box-shadow: inset 0 0.1rem 0 rgba(255, 255, 255, 0.7),
@@ -121,7 +121,8 @@
 
       img {
         width: 3rem;
-        filter: invert(100%) opacity(0.5);
+
+        opacity: 0.5;
       }
     }
 

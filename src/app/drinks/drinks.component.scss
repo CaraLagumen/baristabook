@@ -1,12 +1,26 @@
 .drinks-container {
   display: grid;
-  grid-template-rows: 10vh 50vh;
+  grid-template-rows: 68vh;
   align-content: center;
   justify-content: center;
 }
 
 .main__cards {
-  grid-row: 2;
 
   display: flex;
+
+  @media only screen and (max-width: 26em) {
+    //414
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
 }

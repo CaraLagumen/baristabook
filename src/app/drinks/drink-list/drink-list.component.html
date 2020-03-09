@@ -21,7 +21,6 @@
             (keyup)="searchTerm.next($event)"
             placeholder="Search"
             class="search__bar--input"
-            [ngClass]="{ 'search__bar--input-loading': searching }"
           >
         </label>
       </form>
@@ -56,6 +55,11 @@
         >{{ result?.name }}</a>
       </ul>
     </div>
+
+    <div
+      *ngIf="searching"
+      class="search__loading loading"
+    ></div>
 
   </div>
 

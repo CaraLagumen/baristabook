@@ -18,35 +18,73 @@
       *ngIf="!userIsAuth"
       class="header__user--container"
     >
+
       <!-- PLACEHOLDER FOR GRID COLUMNS TO BE 3 -->
-      <span></span>
+      <span class="placeholder"></span>
+
       <a
         routerLink="/auth/login/welcome"
-        class="btn-medium emboss"
-      >Login</a>
+        class="header__user--container-login btn-medium pointer"
+      >
+        <span class="emboss">Login</span>
+        <img
+          src="assets/auth-login.svg"
+          alt="Login icon"
+        >
+      </a>
+
       <a
         routerLink="/auth/signup"
-        class="btn-medium emboss"
-      >Sign Up</a>
+        class="header__user--container-signup btn-medium pointer"
+      >
+        <span class="emboss">Sign Up</span>
+        <img
+          src="assets/auth-signup.svg"
+          alt="Signup icon"
+        >
+      </a>
+
     </div>
 
     <div
       *ngIf="userIsAuth"
       class="header__user--container"
     >
-      <button class="btn-medium emboss"><a
-          routerLink="/user/profile"
-          class="btn-medium emboss"
-        >Profile</a></button>
-      <button class="btn-medium emboss"><a
-          routerLink="/user/starred"
-          class="btn-medium emboss"
-        >Starred</a></button>
+
+      <a
+        routerLink="/user/profile"
+        class="header__user--container-profile btn-medium pointer"
+      >
+        <span class="emboss">Profile</span>
+        <img
+          src="assets/auth-profile.svg"
+          alt="Profile icon"
+        >
+      </a>
+
+      <a
+        routerLink="/user/starred"
+        class="header__user--container-starred btn-medium pointer"
+      >
+        <span class="emboss">Starred</span>
+        <img
+          src="assets/auth-starred.svg"
+          alt="Starred icon"
+        >
+      </a>
+
       <button
         (click)="onLogout()"
         *ngIf="userIsAuth"
-        class="btn-medium emboss"
-      >Logout</button>
+        class="header__user--container-logout btn-medium pointer"
+      >
+        <span class="emboss">Logout</span>
+        <img
+          src="assets/auth-logout.svg"
+          alt="Logout icon"
+        >
+      </button>
+
     </div>
 
     <!-- COSMETICS -->

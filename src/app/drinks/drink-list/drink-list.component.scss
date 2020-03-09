@@ -26,12 +26,11 @@
     @media only screen and (max-width: 26em) {
       //414
       align-self: center;
+      justify-self: center;
       z-index: 100;
 
       height: 4.5vh;
       width: 6rem;
-      margin-left: 2rem;
-      padding-left: 1rem;
       border-top-left-radius: 10rem;
       border-bottom-left-radius: 10rem;
 
@@ -104,12 +103,11 @@
     @media only screen and (max-width: 26em) {
       //414
       align-self: center;
+      justify-self: center;
       z-index: 100;
 
       height: 4.5vh;
       width: 6rem;
-      margin-left: 2rem;
-      padding-right: 1rem;
       border-top-right-radius: 10rem;
       border-bottom-right-radius: 10rem;
 
@@ -189,6 +187,14 @@
         color: var(--color-white);
       }
     }
+  }
+
+  &__loading {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5000;
   }
 }
 

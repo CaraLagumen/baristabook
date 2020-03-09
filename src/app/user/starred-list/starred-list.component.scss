@@ -1,6 +1,6 @@
 .starred-list-container {
   display: grid;
-  grid-template-rows: 8vh 68vh;
+  grid-template-rows: 8vh 60vh;
 }
 
 .sort {
@@ -28,5 +28,22 @@
     row-gap: 5rem;
 
     padding: 5rem 10rem;
+
+    @media only screen and (max-width: 26em) {
+      //414
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      margin: 0;
+      padding: 0;
+
+      height: 60vh;
+      width: auto;
+
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: thin;
+    }
   }
 }

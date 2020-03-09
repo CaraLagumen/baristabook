@@ -38,15 +38,45 @@
     &--container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      height: 100%;
-      width: 100%;
-
       align-content: flex-end;
       justify-content: space-between;
       justify-items: center;
 
+      height: 100%;
+      width: 100%;
+
       padding-bottom: 4vh;
       padding-right: 4.5vw;
+
+      img,
+      .starred-icon {
+        display: none;
+      }
+
+      @media only screen and (max-width: 26em) {
+        //414
+        grid-template-columns: repeat(3, 4.5rem);
+        justify-content: flex-end;
+        justify-items: flex-end;
+
+        padding-bottom: 3vh;
+        padding-right: 2rem;
+
+        span {
+          display: none;
+        }
+
+        .placeholder {
+          display: inline-block;
+        }
+
+        img {
+          display: inline-block;
+
+          height: 3rem;
+          width: 3rem;
+        }
+      }
     }
   }
 
