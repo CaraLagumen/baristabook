@@ -1,7 +1,18 @@
 .starred-item-container {
-  @media only screen and (max-width: 26em) {
-    //414
+  @media only screen and (max-width: 32em) {
+    //500
     padding: 0 4rem;
     transform: scale(0.9);
+  }
+
+  @media only screen and (max-width: 24em) {
+    //375
+    transform: scale(0.85);
+  }
+
+  @media only screen and (max-width: 22em) {
+    //320
+    padding: 0 2rem;
+    transform: scale(0.7);
   }
 }

@@ -106,6 +106,13 @@
     </span>
 
     <span
+      *ngIf="drink.tea"
+      class="drink-item-card__back--pair"
+    ><span class="drink-item-card__back--pair-key">{{ drink?.tea }}</span>
+      <span class="drink-item-card__back--pair-value">{{ drink?.teaCount }}</span>
+    </span>
+
+    <span
       *ngIf="drink.body"
       class="drink-item-card__back--pair"
     ><span class="drink-item-card__back--pair-key">Body</span>

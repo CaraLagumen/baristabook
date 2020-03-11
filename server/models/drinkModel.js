@@ -13,8 +13,8 @@ const drinkSchema = new mongoose.Schema(
       type: String,
       required: [true, `Drink name required.`],
       trim: true,
-      maxlength: [20, `Drink name can't have more than 20 characters.`],
-      minlength: [5, `Drink name can't have less than 5 characters.`]
+      maxlength: [40, `Drink name can't have more than 40 characters.`],
+      minlength: [3, `Drink name can't have less than 3 characters.`]
     },
     code: {
       type: String,
@@ -24,7 +24,7 @@ const drinkSchema = new mongoose.Schema(
     form: {
       type: String,
       required: [true, `Drink form required.`],
-      enum: [`Hot`, `Iced`, `Blended`]
+      enum: [`Hot`, `Iced`, `Frozen`]
     },
     season: {
       type: String,
@@ -44,20 +44,37 @@ const drinkSchema = new mongoose.Schema(
     size: {
       type: [String],
       required: [true, `Drink size required.`],
-      enum: [`Short`, `Mini`, `Tall`, `Grande`, `Venti`, `Trenta`]
+      enum: [`S`, `M`, `T`, `G`, `V`, `TR`]
     },
     caffeine: {
       type: String,
-      enum: [`Espresso`, `Frappuccino roast`]
+      enum: [`Espresso`, `Blonde espresso`, `Frappuccino roast`]
     },
     caffeineCount: { type: [Number], default: undefined },
     syrup: {
       type: String,
       trim: true,
-      maxlength: [10, `Drink syrup can't have more than 10 characters.`],
-      minlength: [5, `Drink syrup can't have less than 5 characters.`]
+      maxlength: [20, `Drink syrup can't have more than 20 characters.`],
+      minlength: [3, `Drink syrup can't have less than 3 characters.`]
     },
     syrupCount: { type: [Number], default: undefined },
+    tea: {
+      type: String,
+      enum: [
+        `Royal english breakfast`,
+        `Emperor's cloud`,
+        `Earl grey`,
+        `Jade citrus mint`,
+        `Mint majesty`,
+        `Peach tranquility`,
+        `Comfort`,
+        `Defense`,
+        `Rev up`,
+        `Peach tranquility and jade citrus mint`,
+        `Assorted`
+      ]
+    },
+    teaCount: { type: [Number], default: undefined },
     body: {
       type: String,
       trim: true,

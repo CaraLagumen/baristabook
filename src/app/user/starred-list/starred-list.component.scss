@@ -15,9 +15,19 @@
 }
 
 .main {
+  //ADD ROOM FOR SCROLL
+  height: 112%;
+  padding-bottom: 10rem;
+
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: thin;
+
+  @media only screen and (max-width: 65em) {
+    //1024
+    height: 100%;
+    padding: 0 0;
+  }
 
   &__cards {
     display: grid;
@@ -29,8 +39,8 @@
 
     padding: 5rem 10rem;
 
-    @media only screen and (max-width: 26em) {
-      //414
+    @media only screen and (max-width: 65em) {
+      //1024
       display: flex;
       flex-wrap: nowrap;
       justify-content: flex-start;

@@ -49,13 +49,18 @@
 
       transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
+      @media only screen and (max-height: 45em) {
+        //414
+        line-height: 1;
+      }
+
       @media only screen and (min-width: 215em) and (min-height: 90em) {
         //3440 x 1440 ULTRAWIDE
         font-size: 120%;
       }
 
-      @media only screen and (min-height: 135em) {
-        //2160
+      @media only screen and (min-width: 215em) and (min-height: 135em) {
+        //3440 x 2160
         font-size: 150%;
       }
 

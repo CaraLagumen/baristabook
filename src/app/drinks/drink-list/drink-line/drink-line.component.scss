@@ -25,12 +25,16 @@
 
       height: 5rem;
       width: 4.5vw;
-      padding: 0.5rem;
 
       border-bottom: 0.1rem solid var(--color-mocha);
 
       font-weight: 300;
       text-align: end;
+
+      @media only screen and (max-width: 76em) {
+        //1200 CONTROL WITH drink-list
+        width: 19vw;
+      }
 
       &:hover {
         background-color: var(--color-coffee);
@@ -42,16 +46,32 @@
 
       height: 5rem;
       width: 2vw;
-      padding: 0.5rem;
 
       border-bottom: 0.1rem solid var(--color-mocha);
 
       font-weight: 300;
       text-align: end;
+      word-break: break-all;
+
+      @media only screen and (max-width: 76em) {
+        //1200 CONTROL WITH drink-list
+        width: 15vw;
+
+        button {
+          font-size: 2rem;
+        }
+      }
 
       &:hover {
         background-color: var(--color-coffee);
       }
     }
+  }
+}
+
+.mobile-hide {
+  @media only screen and (max-width: 76em) {
+    //1200 CONTROL WITH drink-list
+    display: none;
   }
 }

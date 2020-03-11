@@ -13,6 +13,11 @@ html {
 
   overflow: hidden;
 
+  @media only screen and (max-height: 45em) {
+    //720
+    font-size: 52%;
+  }
+
   @media only screen and (min-height: 45em) {
     //720
     font-size: 52%;

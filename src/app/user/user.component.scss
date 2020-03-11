@@ -17,6 +17,15 @@
 
   padding: 1.5rem;
 
+  @media only screen and (max-height: 41em) {
+    //650
+    height: 58vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
   &__form {
     align-self: center;
 
@@ -27,6 +36,11 @@
 
     padding: 1rem;
 
+    @media only screen and (max-width: 26em) {
+      //414
+      width: 80vw;
+    }
+
     &--label {
       font-size: 1.8rem;
       text-align: right;
@@ -35,12 +49,26 @@
       line-height: 1;
     }
 
+    &--input {
+      @media only screen and (max-width: 22em) {
+        //320
+        width: 98%;
+      }
+    }
+
     &--submit {
       grid-column: 2;
       justify-self: flex-end;
 
       position: relative;
       transform: translateX(-5rem);
+
+      white-space: nowrap;
+
+      @media only screen and (max-width: 26em) {
+        //414
+        transform: translateX(0);
+      }
     }
   }
 }

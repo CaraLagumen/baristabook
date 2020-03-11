@@ -23,8 +23,8 @@
     display: grid;
     grid-template-rows: 99% 1%;
 
-    @media only screen and (max-width: 26em) {
-      //414
+    @media only screen and (max-width: 32em) {
+      //500
       align-self: center;
       justify-self: center;
       z-index: 100;
@@ -42,8 +42,8 @@
       align-self: center;
       justify-self: center;
 
-      @media only screen and (max-width: 26em) {
-        //414
+      @media only screen and (max-width: 32em) {
+        //500
         color: var(--color-mocha);
         font-size: var(--font-medium);
         text-shadow: none;
@@ -84,8 +84,18 @@
 
       transition: all 0.2s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
+      @media only screen and (max-width: 32em) {
+        //500
+        width: 80vw;
+      }
+
       &:focus {
         width: 35rem;
+
+        @media only screen and (max-width: 32em) {
+          //500
+          width: 80vw;
+        }
       }
 
       &-loading {
@@ -100,8 +110,8 @@
     display: grid;
     grid-template-rows: 99% 1%;
 
-    @media only screen and (max-width: 26em) {
-      //414
+    @media only screen and (max-width: 32em) {
+      //500
       align-self: center;
       justify-self: center;
       z-index: 100;
@@ -119,8 +129,8 @@
       align-self: center;
       justify-self: center;
 
-      @media only screen and (max-width: 26em) {
-        //414
+      @media only screen and (max-width: 32em) {
+        //500
         color: var(--color-mocha);
         text-shadow: none;
 
@@ -151,6 +161,10 @@
     justify-content: center;
     grid-auto-rows: max-content;
     gap: 0.2rem;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
 
     &:empty {
       display: none;
@@ -205,6 +219,7 @@
   column-gap: 5rem;
   row-gap: 2.5rem;
 
+  //ADD ROOM FOR SCROLL
   height: 112%;
   padding: 5rem 10rem;
 
@@ -212,8 +227,8 @@
   overflow-y: auto;
   scrollbar-width: thin;
 
-  @media only screen and (max-width: 26em) {
-    //414
+  @media only screen and (max-width: 32em) {
+    //500
     gap: 1rem;
 
     padding: 1rem;
@@ -224,6 +239,11 @@
   padding-top: 3rem;
 
   text-transform: uppercase;
+
+  @media only screen and (max-width: 32em) {
+    //500
+    padding-top: 1rem;
+  }
 
   &__titles {
     display: table;
@@ -250,6 +270,11 @@
       text-align: start;
       vertical-align: bottom;
       font-weight: 400;
+
+      @media only screen and (max-width: 76em) {
+        //1200 CONTROL WITH drink-list
+        width: 19vw;
+      }
     }
 
     &--short {
@@ -262,6 +287,11 @@
       text-align: start;
       vertical-align: bottom;
       font-weight: 400;
+
+      @media only screen and (max-width: 76em) {
+        //1200 CONTROL WITH drink-list
+        width: 15vw;
+      }
     }
   }
 
@@ -279,5 +309,12 @@
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
+  }
+}
+
+.mobile-hide {
+  @media only screen and (max-width: 76em) {
+    //500 CONTROL WITH drink-line
+    display: none;
   }
 }

@@ -117,6 +117,19 @@
         </li>
 
         <li
+          *ngIf="drink.tea"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.tea }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.teaCount[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.teaCount[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.teaCount[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.teaCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
           *ngIf="drink.body"
           class="drink-card__value--pair"
         >

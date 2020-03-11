@@ -40,9 +40,21 @@
       width: 150%;
     }
 
-    @media only screen and (min-height: 45em) {
-      //720
-      transform: translateY(-4rem) scale(0.75);
+    @media only screen and (max-width: 24em) {
+      //375
+      position: absolute;
+      transform: translate(-2rem, 0rem) scale(0.7);
+    }
+
+    @media only screen and (max-width: 22em) {
+      //320
+      position: absolute;
+      transform: translate(-2rem, 4rem) scale(0.6);
+    }
+
+    @media only screen and (min-width: 25em) and (min-height: 45em) {
+      //AT LEAST 720 x 400
+      transform: translateY(-2rem) scale(0.75);
     }
 
     @media only screen and (min-height: 67em) {
@@ -70,6 +82,15 @@
 
   padding: 6rem 2rem;
 
+  @media only screen and (max-width: 22em) {
+    //320
+    padding: 0rem 2rem;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+  }
+
   &__form {
     align-self: flex-start;
 
@@ -82,6 +103,11 @@
     transform: translateY(-2rem);
 
     padding-top: 5rem;
+
+    @media only screen and (max-width: 22em) {
+      //320
+      transform: translateY(2rem);
+    }
 
     &--message {
       grid-column: 1 / -1;
