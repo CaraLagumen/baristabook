@@ -8,7 +8,7 @@ const cookieParser = require(`cookie-parser`);
 const mongoSanitize = require(`express-mongo-sanitize`);
 const xss = require(`xss-clean`);
 const compression = require(`compression`);
-const { expressCspHeader, SELF } = require("express-csp-header");
+const { expressCspHeader, NONE } = require("express-csp-header");
 
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
@@ -65,7 +65,7 @@ app.use(globalErrorHandler);
 app.use(
   expressCspHeader({
     directives: {
-      "default-src": [SELF]
+      "default-src": [NONE]
     }
   })
 );
