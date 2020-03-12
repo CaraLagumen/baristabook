@@ -8,6 +8,7 @@ const cookieParser = require(`cookie-parser`);
 const mongoSanitize = require(`express-mongo-sanitize`);
 const xss = require(`xss-clean`);
 const compression = require(`compression`);
+const csp = require("express-csp-header");
 
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
@@ -36,12 +37,12 @@ console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === `development`) app.use(morgan(`dev`));
 
 //LIMIT SAME API REQUESTS
-// const limiter = rateLimit({
-//    max: 100,
-//    windowMs: 60 * 60 * 1000,
-//    message: `Too many requests from this IP, try again in an hour.`
-// });
-// app.use(`/api`, limiter);
+const limiter = rateLimit({
+  max: 100,
+  windowMs: 60 * 60 * 1000,
+  message: `Too many requests from this IP, try again in an hour.`
+});
+app.use(`/api`, limiter);
 
 //BODY PARSER
 app.use(express.json({ limit: `100kb` }));
