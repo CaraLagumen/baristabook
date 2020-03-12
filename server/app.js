@@ -27,7 +27,7 @@ app.use(cors());
 app.options(`*`, cors());
 
 //SERVE STATIC FILES
-app.use(express.static(path.join(__dirname, `dist/baristabook`)));
+app.use(`/`, express.static(path.join(__dirname, `dist/baristabook`)));
 
 //SET HTTP SECURITY HEADERS
 app.use(helmet());
