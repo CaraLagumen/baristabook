@@ -8,7 +8,7 @@ const cookieParser = require(`cookie-parser`);
 const mongoSanitize = require(`express-mongo-sanitize`);
 const xss = require(`xss-clean`);
 const compression = require(`compression`);
-const { expressCspHeader, NONE } = require("express-csp-header");
+const { expressCspHeader, NONE, SELF } = require(`express-csp-header`);
 
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
@@ -36,6 +36,13 @@ app.use(helmet());
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === `development`) app.use(morgan(`dev`));
 
+//BODY PARSER
+app.use(express.json({ limit: `100kb` }));
+//URL PARSER
+app.use(express.urlencoded({ extended: true, limit: `10kb` }));
+//COOKIE PARSER
+app.use(cookieParser());
+
 //LIMIT SAME API REQUESTS
 const limiter = rateLimit({
   max: 100,
@@ -43,13 +50,6 @@ const limiter = rateLimit({
   message: `Too many requests from this IP, try again in an hour.`
 });
 app.use(`/api`, limiter);
-
-//BODY PARSER
-app.use(express.json({ limit: `100kb` }));
-//URL PARSER
-app.use(express.urlencoded({ extended: true, limit: `10kb` }));
-//COOKIE PARSER
-app.use(cookieParser());
 
 //DATA SECURITY
 app.use(mongoSanitize());
@@ -65,7 +65,8 @@ app.use(globalErrorHandler);
 app.use(
   expressCspHeader({
     directives: {
-      "default-src": [NONE]
+      "default-src": [NONE],
+      "img-src": [SELF]
     }
   })
 );
