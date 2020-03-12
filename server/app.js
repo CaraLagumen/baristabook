@@ -60,6 +60,16 @@ app.use(compression());
 //ERROR HANDLER
 app.use(globalErrorHandler);
 
+//UNBLOCK LOADING OF RESOURCE (HEROKU)
+app.use(
+  csp({
+    policies: {
+      "default-src": [csp.NONE],
+      "img-src": [csp.SELF]
+    }
+  })
+);
+
 //MOUNT ROUTERS
 app.use(`/`, viewRouter);
 app.use(`/api/v1/drinks`, drinkRouter);
