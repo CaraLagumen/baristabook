@@ -57,6 +57,9 @@ app.use(xss());
 //COMPRESS FILES
 app.use(compression());
 
+//ERROR HANDLER
+app.use(globalErrorHandler);
+
 //MOUNT ROUTERS
 app.use(`/`, viewRouter);
 app.use(`/api/v1/drinks`, drinkRouter);
@@ -64,9 +67,12 @@ app.use(`/api/v1/users`, userRouter);
 app.use(`/api/v1/starred`, starredRouter);
 
 app.all(`*`, (req, res, next) => {
-   next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404));
+  next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404));
 });
 
-app.use(globalErrorHandler);
+//SETUP BUILD PATH
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, `../dist/baristabook/index.html`));
+});
 
 module.exports = app;

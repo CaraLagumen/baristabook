@@ -4,12 +4,6 @@ const dotenv = require(`dotenv`);
 dotenv.config({ path: `./config.env` });
 const app = require(`./server/app`);
 
-process.on(`uncaughtException`, err => {
-   console.log(`Uncaught exception. Shutting down...`);
-   console.log(err.name, err.message);
-   process.exit(1);
-});
-
 //CONNECT TO DB
 const DB = process.env.DATABASE.replace(
    `<PASSWORD>`,
@@ -30,13 +24,19 @@ const server = app.listen(port, () =>
    console.log(`App running on port ${port}...`)
 );
 
-process.on(`unhandledRejection`, err => {
-   console.log(`Unhandled rejection. Shutting down...`);
+process.on(`uncaughtException`, err => {
+   console.log(`Uncaught exception. Shutting down...`);
    console.log(err.name, err.message);
-   server.close(() => process.exit(1));
+   process.exit(1);
+ });
+
+process.on(`unhandledRejection`, err => {
+  console.log(`Unhandled rejection. Shutting down...`);
+  console.log(err.name, err.message);
+  server.close(() => process.exit(1));
 });
 
 process.on(`SIGTERM`, () => {
-   console.log(`SIGTERM RECEIVED. Shutting down gracefully...`);
-   server.close(() => console.log(`Process terminated.`));
+  console.log(`SIGTERM RECEIVED. Shutting down gracefully...`);
+  server.close(() => console.log(`Process terminated.`));
 });
