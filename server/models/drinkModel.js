@@ -48,16 +48,40 @@ const drinkSchema = new mongoose.Schema(
     },
     caffeine: {
       type: String,
-      enum: [`Espresso`, `Blonde espresso`, `Frappuccino roast`]
+      enum: [
+        `Espresso`,
+        `Blonde espresso`,
+        `Decaf espresso`,
+        `Half caf espresso`,
+        `Frappuccino roast`
+      ]
     },
     caffeineCount: { type: [Number], default: undefined },
+    caffeine2: {
+      type: String,
+      enum: [
+        `Espresso`,
+        `Blonde espresso`,
+        `Decaf espresso`,
+        `Half caf espresso`,
+        `Frappuccino roast`
+      ]
+    },
+    caffeine2Count: { type: [Number], default: undefined },
     syrup: {
       type: String,
       trim: true,
-      maxlength: [20, `Drink syrup can't have more than 20 characters.`],
+      maxlength: [30, `Drink syrup can't have more than 30 characters.`],
       minlength: [3, `Drink syrup can't have less than 3 characters.`]
     },
     syrupCount: { type: [Number], default: undefined },
+    syrup2: {
+      type: String,
+      trim: true,
+      maxlength: [30, `Drink syrup can't have more than 30 characters.`],
+      minlength: [3, `Drink syrup can't have less than 3 characters.`]
+    },
+    syrup2Count: { type: [Number], default: undefined },
     tea: {
       type: String,
       enum: [
@@ -70,28 +94,28 @@ const drinkSchema = new mongoose.Schema(
         `Comfort`,
         `Defense`,
         `Rev up`,
-        `Peach tranquility and jade citrus mint`,
+        `Peach tranquility & jade citrus mint`,
         `Assorted`
       ]
     },
     teaCount: { type: [Number], default: undefined },
-    body: {
-      type: String,
-      trim: true,
-      maxlength: [10, `Drink body can't have more than 10 characters.`],
-      minlength: [5, `Drink body can't have less than 5 characters.`]
-    },
     base: {
       type: String,
       enum: [`Coffee base`, `Creme base`]
     },
     baseCount: { type: [Number], default: undefined },
+    body: {
+      type: String,
+      trim: true,
+      maxlength: [30, `Drink body can't have more than 30 characters.`],
+      minlength: [5, `Drink body can't have less than 5 characters.`]
+    },
     whippedCream: Boolean,
     topping: {
       type: String,
       trim: true,
-      maxlength: [10, `Drink topping can't have more than 10 characters.`],
-      minlength: [5, `Drink topping can't have less than 5 characters.`]
+      maxlength: [20, `Drink topping can't have more than 20 characters.`],
+      minlength: [3, `Drink topping can't have less than 3 characters.`]
     },
     shaker: {
       type: String,

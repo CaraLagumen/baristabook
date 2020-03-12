@@ -4,7 +4,17 @@
     [search-start] 8vh
     [search-end main-start] 60vh
     [main-end];
+
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    grid-template-rows:
+      [search-start] 12vh
+      [search-end main-start] 56vh
+      [main-end];
+  }
 }
+
+//SEARCH BAR----------------------------------------------------------
 
 .search {
   grid-row: search-start / search-end;
@@ -89,6 +99,11 @@
         width: 80vw;
       }
 
+      @media only screen and (max-height: 26em) {
+        //414 LANDSCAPE
+        height: 6.5vh;
+      }
+
       &:focus {
         width: 35rem;
 
@@ -146,36 +161,49 @@
   }
 
   &__results {
+    display: grid;
+    justify-content: center;
+    grid-auto-rows: max-content;
+    gap: 0.2rem;
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5000;
 
+    max-height: 70%;
     width: 30rem;
-    padding: 2rem 3rem;
+    padding: 0rem 3rem;
+    padding-top: 2rem; //TO BE USED WITH ul:last-child
     border-radius: 0.8rem;
     background-color: rgba(black, 0.8);
-
-    display: grid;
-    justify-content: center;
-    grid-auto-rows: max-content;
-    gap: 0.2rem;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: thin;
-
-    &:empty {
-      display: none;
-    }
 
     font-size: var(--font-small);
     text-transform: uppercase;
     text-align: center;
 
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+
+    @media only screen and (max-height: 26em) {
+      //414 LANDSCAPE
+      transform: translate(-50%, -30%);
+    }
+
+    &:empty {
+      //CREATES UNIFORM BORDER
+      display: none;
+    }
+
     ul:not(:last-child) {
       border-bottom: 0.01rem solid var(--color-mocha);
+    }
+
+    ul:last-child {
+      //SCROLL PADDING FIX
+      padding-bottom: 2rem;
     }
 
     &--item {
@@ -189,11 +217,13 @@
 
     &--close {
       position: fixed;
-      top: -2rem;
+      top: 1rem;
       right: 1rem;
 
       background: none;
       color: var(--color-earth);
+
+      font-size: var(--font-xsmall);
       text-transform: lowercase;
       font-weight: 300;
 
@@ -211,6 +241,8 @@
     z-index: 5000;
   }
 }
+
+//GRID VIEW----------------------------------------------------------
 
 .main__cards {
   display: grid;
@@ -233,7 +265,16 @@
 
     padding: 1rem;
   }
+
+  @media only screen and (max-width: 21em) {
+    //325 CONTROL WITH drink-item
+    gap: 0rem;
+
+    padding: 0rem;
+  }
 }
+
+//LIST VIEW----------------------------------------------------------
 
 .list {
   padding-top: 3rem;
@@ -242,6 +283,11 @@
 
   @media only screen and (max-width: 32em) {
     //500
+    padding-top: 1rem;
+  }
+
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
     padding-top: 1rem;
   }
 

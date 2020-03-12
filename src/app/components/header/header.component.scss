@@ -25,6 +25,13 @@
 
     img {
       height: 10vh;
+
+      @media only screen and (max-height: 26em) {
+        //414 LANDSCAPE
+        transform: translateY(1rem);
+
+        height: 14vh;
+      }
     }
 
     &:hover {
@@ -48,13 +55,21 @@
       padding-bottom: 4vh;
       padding-right: 4.5vw;
 
+      @media only screen and (max-height: 26em) {
+        //414 LANDSCAPE
+        transform: translateY(1rem);
+
+        padding-right: 2vw;
+      }
+
       img,
       .starred-icon {
+        //ONLY SHOW ON MOBILE
         display: none;
       }
 
-      @media only screen and (max-width: 32em) {
-        //500
+      @media only screen and (max-width: 44em) {
+        //700
         grid-template-columns: repeat(3, 4.5rem);
         justify-content: flex-end;
         justify-items: flex-end;

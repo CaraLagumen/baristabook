@@ -99,10 +99,24 @@
     </span>
 
     <span
+      *ngIf="drink.caffeine2"
+      class="drink-item-card__back--pair"
+    ><span class="drink-item-card__back--pair-key">{{ drink?.caffeine2 }}</span>
+      <span class="drink-item-card__back--pair-value">{{ drink?.caffeine2Count }}</span>
+    </span>
+
+    <span
       *ngIf="drink.syrup"
       class="drink-item-card__back--pair"
     ><span class="drink-item-card__back--pair-key">{{ drink?.syrup }}</span>
       <span class="drink-item-card__back--pair-value">{{ drink?.syrupCount }}</span>
+    </span>
+
+    <span
+      *ngIf="drink.syrup2"
+      class="drink-item-card__back--pair"
+    ><span class="drink-item-card__back--pair-key">{{ drink?.syrup2 }}</span>
+      <span class="drink-item-card__back--pair-value">{{ drink?.syrup2Count }}</span>
     </span>
 
     <span

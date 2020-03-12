@@ -8,6 +8,21 @@
 
   padding: 6rem 2rem;
 
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  @media only screen and (max-width: 22em) {
+    //320
+    padding: 3rem 2rem;
+  }
+
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+  }
+
   &__form {
     display: grid;
     grid-template-columns: 20% 80%;

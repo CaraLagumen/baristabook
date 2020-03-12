@@ -8,6 +8,15 @@
 
   color: var(--color-white);
 
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    grid-template-columns:
+      [cara-start] 30vw
+      [cara-end] 1fr
+      [nav-start] 40vw
+      [nav-end];
+  }
+
   &__carapace {
     grid-column: cara-start / cara-end;
 
@@ -22,6 +31,11 @@
 
     img {
       height: 4vh;
+
+      @media only screen and (max-height: 26em) {
+        //414 LANDSCAPE
+        height: 8vh;
+      }
     }
 
     &:hover {
@@ -42,6 +56,20 @@
 
     text-align: end;
 
+    @media only screen and (max-height: 28em) {
+      //446 LANDSCAPE
+      display: inline;
+      padding-right: 0;
+    }
+
+    &--item {
+      @media only screen and (max-height: 28em) {
+        //446 LANDSCAPE
+        display: inline;
+        padding-left: 1rem;
+      }
+    }
+
     &--link {
       font-size: var(--font-small);
       font-weight: 300;
@@ -50,7 +78,7 @@
       transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
       @media only screen and (max-height: 45em) {
-        //414
+        //720
         line-height: 1;
       }
 

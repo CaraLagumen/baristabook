@@ -8,8 +8,12 @@ export interface Drink {
   size: string;
   caffeine?: string;
   caffeineCount?: number;
+  caffeine2?: string;
+  caffeine2Count?: number;
   syrup?: string;
   syrupCount?: number;
+  syrup2?: string;
+  syrup2Count?: number;
   body?: string;
   base?: string;
   baseCount?: number;

@@ -8,6 +8,11 @@
 
   padding: 4rem 2rem;
 
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    padding: 2rem;
+  }
+
   .about__text,
   .disclaimer__text {
     height: 50vh;
@@ -30,14 +35,20 @@
 
   padding: 6rem 2rem;
 
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    padding: 4rem 2rem;
+  }
+
   &__btns {
     align-self: center;
 
     transform: translateY(-4rem);
 
-    @media only screen and (max-width: 26em) {
-      //414
+    @media only screen and (max-width: 28em) {
+      //446
       width: 150%;
+      transform: translate(-2rem, 0rem) scale(0.8);
     }
 
     @media only screen and (max-width: 24em) {
@@ -50,6 +61,12 @@
       //320
       position: absolute;
       transform: translate(-2rem, 4rem) scale(0.6);
+    }
+
+    @media only screen and (max-height: 28em) {
+      //446 LANDSCAPE
+      position: absolute;
+      transform: translate(-2rem, 2rem) scale(0.5);
     }
 
     @media only screen and (min-width: 25em) and (min-height: 45em) {
@@ -82,13 +99,19 @@
 
   padding: 6rem 2rem;
 
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
   @media only screen and (max-width: 22em) {
     //320
-    padding: 0rem 2rem;
+    padding: 3rem 2rem;
+  }
 
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scrollbar-width: thin;
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    padding-top: 2rem;
+    padding-bottom: 0rem;
   }
 
   &__form {

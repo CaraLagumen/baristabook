@@ -9,13 +9,13 @@
     class="user"
   >
 
-    <span class="user__form--title heading-medium">Info</span>
+    <span class="user__form--title heading-medium title1">Info</span>
 
     <form
       (submit)="onUpdateUser()"
       [formGroup]="updateUserForm"
       *ngIf="!isLoading"
-      class="user__form"
+      class="user__form form1"
     >
 
       <span class="user__form--label">Name</span>
@@ -46,16 +46,16 @@
       <button
         [disabled]="!updateUserForm.valid"
         type="submit"
-        class="user__form--submit cta-btn"
+        class="user__form--submit cta-btn button-left"
       >Update Info</button>
     </form>
 
-    <span class="user__form--title heading-medium">Change Password</span>
+    <span class="user__form--title heading-medium title2">Change Password</span>
 
     <form
       (submit)="onChangePassword(changePasswordForm)"
       #changePasswordForm="ngForm"
-      class="user__form"
+      class="user__form form2"
     >
 
       <span class="user__form--label">Current password</span>

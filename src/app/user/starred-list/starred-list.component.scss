@@ -29,6 +29,12 @@
     padding: 0 0;
   }
 
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    height: 112%;
+    padding-bottom: 10rem;
+  }
+
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, 30rem);
@@ -53,6 +59,22 @@
 
       overflow-x: auto;
       overflow-y: hidden;
+      scrollbar-width: thin;
+    }
+
+    @media only screen and (max-height: 26em) {
+      //414 LANDSCAPE
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 30rem);
+      align-items: center;
+      justify-content: space-around;
+      column-gap: 10rem;
+      row-gap: 5rem;
+
+      padding: 5rem 10rem;
+
+      overflow-x: hidden;
+      overflow-y: auto;
       scrollbar-width: thin;
     }
   }

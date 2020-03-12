@@ -104,6 +104,19 @@
         </li>
 
         <li
+          *ngIf="drink.caffeine2"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.caffeine2 }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.caffeine2Count[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.caffeine2Count[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.caffeine2Count[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.caffeine2Count[3] }}</span>
+          </span>
+        </li>
+
+        <li
           *ngIf="drink.syrup"
           class="drink-card__value--pair"
         >
@@ -113,6 +126,19 @@
             <span class="drink-card__value--pair-box2">{{ drink?.syrupCount[1] }}</span>
             <span class="drink-card__value--pair-box3">{{ drink?.syrupCount[2] }}</span>
             <span class="drink-card__value--pair-box4">{{ drink?.syrupCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="drink.syrup2"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.syrup2 }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.syrup2Count[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.syrup2Count[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.syrup2Count[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.syrup2Count[3] }}</span>
           </span>
         </li>
 

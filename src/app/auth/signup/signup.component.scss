@@ -7,6 +7,25 @@
 
   padding: 6rem 2rem;
 
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  @media only screen and (max-width: 22em) {
+    //320
+    grid-template-rows: 10vh 18vh 35vh;
+
+    padding: 3rem 2rem;
+  }
+
+  @media only screen and (max-height: 28em) {
+    //446 LANDSCAPE
+    grid-template-rows: 10vh 18vh 35vh;
+
+    padding-top: 0rem;
+    padding-bottom: 6rem;
+  }
+
   &__welcome {
     max-width: 60rem;
 

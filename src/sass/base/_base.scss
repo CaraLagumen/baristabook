@@ -18,6 +18,16 @@ html {
     font-size: 52%;
   }
 
+  @media only screen and (max-height: 24em) {
+    //375 LANDSCAPE
+    font-size: 42%
+  }
+
+  @media only screen and (max-width: 21em) {
+    //375
+    font-size: 42%
+  }
+
   @media only screen and (min-height: 45em) {
     //720
     font-size: 52%;
