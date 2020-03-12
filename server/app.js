@@ -8,7 +8,7 @@ const cookieParser = require(`cookie-parser`);
 const mongoSanitize = require(`express-mongo-sanitize`);
 const xss = require(`xss-clean`);
 const compression = require(`compression`);
-const csp = require("express-csp-header");
+const { expressCspHeader, SELF } = require("express-csp-header");
 
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
@@ -27,7 +27,7 @@ app.use(cors());
 app.options(`*`, cors());
 
 //SERVE STATIC FILES
-app.use(express.static(path.join(__dirname, `dist`)));
+app.use(express.static(path.join(__dirname, `dist/baristabook`)));
 
 //SET HTTP SECURITY HEADERS
 app.use(helmet());
@@ -63,10 +63,9 @@ app.use(globalErrorHandler);
 
 //UNBLOCK LOADING OF RESOURCE (HEROKU)
 app.use(
-  csp({
-    policies: {
-      "default-src": [csp.NONE],
-      "img-src": [csp.SELF]
+  expressCspHeader({
+    directives: {
+      "default-src": [SELF]
     }
   })
 );
