@@ -23,7 +23,7 @@ const app = express();
 app.enable(`trust proxy`);
 
 //SERVE STATIC FILES
-app.use(`/`, express.static(path.join(__dirname, `../dist/baristabook`)));
+app.use("/", express.static(path.join(__dirname, "../dist")));
 
 //ENABLE OUTSIDE API USAGE
 app.use(cors());
@@ -83,7 +83,7 @@ app.all(`*`, (req, res, next) => {
 
 //SETUP BUILD PATH
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, `../dist/baristabook/index.html`));
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
 module.exports = app;
