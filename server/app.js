@@ -8,7 +8,7 @@ const cookieParser = require(`cookie-parser`);
 const mongoSanitize = require(`express-mongo-sanitize`);
 const xss = require(`xss-clean`);
 const compression = require(`compression`);
-const { expressCspHeader, NONE, SELF } = require(`express-csp-header`);
+const csp = require("express-csp-header");
 
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
@@ -63,10 +63,10 @@ app.use(globalErrorHandler);
 
 //UNBLOCK LOADING OF RESOURCE (HEROKU)
 app.use(
-  expressCspHeader({
-    directives: {
-      "default-src": [NONE],
-      "img-src": [SELF]
+  csp({
+    policies: {
+      "default-src": [csp.NONE],
+      "img-src": [csp.SELF]
     }
   })
 );
