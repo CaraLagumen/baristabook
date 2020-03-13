@@ -13,7 +13,7 @@ const csp = require("express-csp-header");
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
 const starredRouter = require(`./routes/starredRoutes`);
-const viewRouter = require(`./routes/viewRoutes`);
+// const viewRouter = require(`./routes/viewRoutes`);
 const AppError = require(`./utils/appError`);
 const globalErrorHandler = require(`./controllers/errorController`);
 
@@ -22,12 +22,12 @@ const app = express();
 //TRUST HEROKU
 app.enable(`trust proxy`);
 
+//SERVE STATIC FILES
+app.use(`/`, express.static(path.join(__dirname, `../dist/baristabook`)));
+
 //ENABLE OUTSIDE API USAGE
 app.use(cors());
 app.options(`*`, cors());
-
-//SERVE STATIC FILES
-app.use(`/`, express.static(path.join(__dirname, `../dist/baristabook`)));
 
 //SET HTTP SECURITY HEADERS
 app.use(helmet());
@@ -72,7 +72,7 @@ app.use(
 );
 
 //MOUNT ROUTERS
-app.use(`/`, viewRouter);
+// app.use(`/`, viewRouter);
 app.use(`/api/v1/drinks`, drinkRouter);
 app.use(`/api/v1/users`, userRouter);
 app.use(`/api/v1/starred`, starredRouter);
