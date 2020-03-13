@@ -8,7 +8,6 @@ const cookieParser = require(`cookie-parser`);
 const mongoSanitize = require(`express-mongo-sanitize`);
 const xss = require(`xss-clean`);
 const compression = require(`compression`);
-const csp = require("express-csp-header");
 
 const drinkRouter = require(`./routes/drinkRoutes`);
 const userRouter = require(`./routes/userRoutes`);
@@ -37,7 +36,7 @@ console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === `development`) app.use(morgan(`dev`));
 
 //BODY PARSER
-app.use(express.json({ limit: `100kb` }));
+app.use(express.json({ limit: `10kb` }));
 //URL PARSER
 app.use(express.urlencoded({ extended: true, limit: `10kb` }));
 //COOKIE PARSER
@@ -60,16 +59,6 @@ app.use(compression());
 
 //ERROR HANDLER
 app.use(globalErrorHandler);
-
-//UNBLOCK LOADING OF RESOURCE (HEROKU)
-app.use(
-  csp({
-    policies: {
-      "default-src": [csp.NONE],
-      "img-src": [csp.SELF]
-    }
-  })
-);
 
 //MOUNT ROUTERS
 // app.use(`/`, viewRouter);
