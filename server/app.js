@@ -27,7 +27,7 @@ app.use(cors());
 app.options(`*`, cors());
 
 //SERVE STATIC FILES
-app.use(`/`, express.static(path.join(__dirname, `dist/baristabook`)));
+app.use(`/`, express.static(path.join(__dirname, `dist`)));
 
 //SET HTTP SECURITY HEADERS
 app.use(helmet());
@@ -83,7 +83,7 @@ app.all(`*`, (req, res, next) => {
 
 //SETUP BUILD PATH
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, `../dist/baristabook/index.html`));
+  res.sendFile(path.join(__dirname, `../dist/index.html`));
 });
 
 module.exports = app;
