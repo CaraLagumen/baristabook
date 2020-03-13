@@ -32,7 +32,9 @@ app.options(`*`, cors());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
-      defaultSrc: ["'self'", "baristabook.herokuapp.com", "elfsight.com"]
+      defaultSrc: ["'self'"],
+      scriptSrc: ["https://apps.elfsight.com/p/platform.js"],
+      styleSrc: ["https://fonts.googleapis.com"]
     }
   })
 );
