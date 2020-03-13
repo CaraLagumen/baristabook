@@ -28,9 +28,6 @@ app.use("/", express.static(path.join(__dirname, "../dist")));
 app.use(cors());
 app.options(`*`, cors());
 
-//SET HTTP SECURITY HEADERS
-app.use(helmet());
-
 //DEVELOPMENT LOGGING
 console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV === `development`) app.use(morgan(`dev`));

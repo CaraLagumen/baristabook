@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "ng": "ng",
-    "start": "serve -s dist",
+    "start": "node server.js",
     "dev": "ng serve",
     "devserver": "nodemon server.js",
     "start:dev": "npm-run-all --parallel dev devserver",
