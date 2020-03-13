@@ -29,10 +29,11 @@ app.use(cors());
 app.options(`*`, cors());
 
 //SET HTTP SECURITY HEADERS
-app.use(helmet());
 app.use(
   helmet.contentSecurityPolicy({
-    directives: { defaultSrc: [`'self'`, `baristabook.herokuapp.com`] }
+    directives: {
+      defaultSrc: ["'self'", "baristabook.herokuapp.com", "elfsight.com"]
+    }
   })
 );
 
