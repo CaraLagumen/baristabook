@@ -29,15 +29,7 @@ app.use(cors());
 app.options(`*`, cors());
 
 //SET HTTP SECURITY HEADERS
-app.use(
-  helmet.contentSecurityPolicy({
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["https://apps.elfsight.com/p/platform.js"],
-      styleSrc: ["https://fonts.googleapis.com"]
-    }
-  })
-);
+app.use(helmet());
 
 //DEVELOPMENT LOGGING
 console.log(process.env.NODE_ENV);
