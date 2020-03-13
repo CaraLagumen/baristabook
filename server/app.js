@@ -30,6 +30,11 @@ app.options(`*`, cors());
 
 //SET HTTP SECURITY HEADERS
 app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: { defaultSrc: [`self`, `baristabook.herokuapp.com`] }
+  })
+);
 
 //DEVELOPMENT LOGGING
 console.log(process.env.NODE_ENV);
