@@ -15,7 +15,7 @@
     "e2e": "ng e2e",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
-    "postinstall": "ng build --output-path dist"
+    "postinstall": "ng build --output-path dist/baristabook"
   },
   "private": true,
   "dependencies": {
