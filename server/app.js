@@ -22,7 +22,7 @@ const app = express();
 app.enable(`trust proxy`);
 
 //SERVE STATIC FILES
-app.use("/", express.static(path.join(__dirname, "/dist/")));
+app.use(express.static(path.join(__dirname, "/dist/")));
 
 //ENABLE OUTSIDE API USAGE
 app.use(cors());
@@ -62,7 +62,6 @@ app.use(globalErrorHandler);
 
 //MOUNT ROUTERS
 // app.use(`/`, viewRouter);
-app.use(`/`, drinkRouter);
 app.use(`/api/v1/drinks`, drinkRouter);
 app.use(`/api/v1/users`, userRouter);
 app.use(`/api/v1/starred`, starredRouter);
