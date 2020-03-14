@@ -62,6 +62,7 @@ app.use(globalErrorHandler);
 
 //MOUNT ROUTERS
 // app.use(`/`, viewRouter);
+app.use(`/`, drinkRouter);
 app.use(`/api/v1/drinks`, drinkRouter);
 app.use(`/api/v1/users`, userRouter);
 app.use(`/api/v1/starred`, starredRouter);
