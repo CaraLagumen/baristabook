@@ -22,7 +22,7 @@ const app = express();
 app.enable(`trust proxy`);
 
 //SERVE STATIC FILES
-app.use("/", express.static(path.join(__dirname, "/dist/baristabook")));
+app.use("/", express.static(path.join(__dirname, "../dist/baristabook")));
 
 //ENABLE OUTSIDE API USAGE
 app.use(cors());
