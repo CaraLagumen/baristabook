@@ -22,11 +22,14 @@ const app = express();
 app.enable(`trust proxy`);
 
 //SERVE STATIC FILES
-app.use("/", express.static(path.join(__dirname, "../dist")));
+app.use(express.static(path.join(__dirname, "/dist")));
 
 //ENABLE OUTSIDE API USAGE
 app.use(cors());
 app.options(`*`, cors());
+
+//SET HTTP SECURITY HEADERS
+app.use(helmet());
 
 //DEVELOPMENT LOGGING
 console.log(process.env.NODE_ENV);
@@ -69,7 +72,7 @@ app.all(`*`, (req, res, next) => {
 
 //SETUP BUILD PATH
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "../dist/index.html"));
+  res.sendFile(path.join(__dirname, "/dist/index.html"));
 });
 
 module.exports = app;
