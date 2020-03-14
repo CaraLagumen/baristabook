@@ -248,12 +248,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 18rem);
   justify-content: center;
-  column-gap: 5rem;
-  row-gap: 2.5rem;
+  gap: 1.5rem;
 
   //ADD ROOM FOR SCROLL
   height: 112%;
-  padding: 5rem 10rem;
+  padding: 5rem 5rem;
 
   overflow-x: hidden;
   overflow-y: auto;
