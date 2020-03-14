@@ -72,7 +72,7 @@ app.all(`*`, (req, res, next) => {
 
 //SETUP BUILD PATH
 app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "../dist/baristabook/index.html"));
+  res.sendFile(path.join(__dirname, "../dist/index.html"));
 });
 
 module.exports = app;
