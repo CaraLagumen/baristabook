@@ -7,7 +7,7 @@ export const environment = {
   // apiUrl: `http://localhost:3000/api/v1`
 
   production: true,
-  apiUrl: `https://baristabook.herokuapp.com/api`
+  apiUrl: `https://baristabook.herokuapp.com/api/v1`
 };
 
 /*
