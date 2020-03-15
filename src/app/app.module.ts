@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -14,7 +15,6 @@ import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { NavComponent } from "./components/nav/nav.component";
 import { AlertComponent } from "./components/alert/alert.component";
-import { LocationStrategy, HashLocationStrategy } from "@angular/common";
 
 @NgModule({
   declarations: [
