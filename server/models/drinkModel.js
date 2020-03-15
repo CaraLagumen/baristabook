@@ -146,7 +146,7 @@ const drinkSchema = new mongoose.Schema(
     custom: {
       type: String,
       trim: true,
-      maxlength: [100, `Drink custom can't have more than 100 characters.`],
+      maxlength: [150, `Drink custom can't have more than 150 characters.`],
       minlength: [5, `Drink custom can't have less than 5 characters.`]
     }
   },

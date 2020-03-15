@@ -19,7 +19,7 @@ export class DrinksService {
 
   //FETCH DRINKS DATA SORTED BY NAME
   getDrinksSorted(): Observable<Drink[]> {
-    return this.http.get<Drink[]>(`${ROOT_URL}?sort=name`);
+    return this.http.get<Drink[]>(`${ROOT_URL}?sort=code`);
   }
 
   getDrink(id: string): Observable<Drink> {
