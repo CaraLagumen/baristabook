@@ -6,6 +6,7 @@
 
     <tr class="drink-line__items--short">
       <div class="drink-line__items--short-star">
+        {{ drink?.code }}
         <button
           *ngIf="userIsAuth"
           (click)="clickHandler($event)"
@@ -58,14 +59,16 @@
     </tr>
     <tr class="drink-line__items--cell mobile-hide">
       <div class="drink-line__items--cell-text scrollable">
-        {{ drink?.syrup }}<br *ngIf="drink.syrup">
-        {{ drink?.syrup2 }}
+        {{ drink?.syrup }}<br *ngIf="drink.syrup2">
+        {{ drink?.syrup2 }}<br *ngIf="drink.syrup3">
+        {{ drink?.syrup3 }}
       </div>
     </tr>
     <tr class="drink-line__items--short mobile-hide">
       <div class="drink-line__items--short-text scrollable">
-        {{ drink?.syrupCount }}<br *ngIf="drink.syrupCount">
-        {{ drink?.syrup2Count }}
+        {{ drink?.syrupCount }}<br *ngIf="drink.syrup2Count">
+        {{ drink?.syrup2Count }}<br *ngIf="drink.syrup3Count">
+        {{ drink?.syrup3Count }}
       </div>
     </tr>
     <tr class="drink-line__items--cell mobile-hide">

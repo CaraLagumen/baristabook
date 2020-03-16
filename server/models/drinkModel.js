@@ -82,6 +82,13 @@ const drinkSchema = new mongoose.Schema(
       minlength: [3, `Drink syrup can't have less than 3 characters.`]
     },
     syrup2Count: { type: [Number], default: undefined },
+    syrup3: {
+      type: String,
+      trim: true,
+      maxlength: [30, `Drink syrup can't have more than 30 characters.`],
+      minlength: [3, `Drink syrup can't have less than 3 characters.`]
+    },
+    syrup3Count: { type: [Number], default: undefined },
     tea: {
       type: String,
       enum: [
@@ -114,7 +121,7 @@ const drinkSchema = new mongoose.Schema(
     topping: {
       type: String,
       trim: true,
-      maxlength: [20, `Drink topping can't have more than 20 characters.`],
+      maxlength: [30, `Drink topping can't have more than 30 characters.`],
       minlength: [3, `Drink topping can't have less than 3 characters.`]
     },
     shaker: {

@@ -14,6 +14,8 @@ export interface Drink {
   syrupCount?: number;
   syrup2?: string;
   syrup2Count?: number;
+  syrup3?: string;
+  syrup3Count?: number;
   body?: string;
   base?: string;
   baseCount?: number;
