@@ -47,7 +47,7 @@
 
       <ul
         @fadeTrigger
-        *ngFor="let result of searchResults | slice:0:9 | removeDuplicates"
+        *ngFor="let result of searchResults | removeDuplicates"
       >
         <a
           [routerLink]="['/drinks/name', result.slug]"
@@ -104,9 +104,6 @@
       <th class="list__titles--short mobile-hide">#</th>
       <th class="list__titles--short mobile-hide">WC</th>
       <th class="list__titles--cell mobile-hide">Topping</th>
-      <th class="list__titles--cell mobile-hide">Shaker</th>
-      <th class="list__titles--cell mobile-hide">Shaker Addition</th>
-      <th class="list__titles--cell mobile-hide">Dried Fruit</th>
       <th class="list__titles--cell mobile-hide">Custom</th>
 
     </table>

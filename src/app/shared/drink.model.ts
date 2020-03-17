@@ -24,6 +24,7 @@ export interface Drink {
   shaker?: string;
   shakerAddition?: string;
   driedFruit?: string;
+  driedFruitCount?: number;
   tea: string;
   teaCount: number;
   custom?: string;

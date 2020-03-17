@@ -111,6 +111,45 @@
         </li>
 
         <li
+          *ngIf="starredDrink.syrup2"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">{{ starredDrink?.syrup2 }}</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.syrup2Count[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.syrup2Count[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.syrup2Count[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.syrup2Count[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.syrup3"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">{{ starredDrink?.syrup3 }}</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.syrup3Count[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.syrup3Count[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.syrup3Count[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.syrup3Count[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="starredDrink.driedFruit"
+          class="starred-card__value--pair"
+        >
+          <span class="starred-card__value--pair-key">{{ starredDrink?.driedFruit }}</span>
+          <span class="starred-card__value--pair-value">
+            <span class="starred-card__value--pair-box1">{{ starredDrink?.driedFruitCount[0] }}</span>
+            <span class="starred-card__value--pair-box2">{{ starredDrink?.driedFruitCount[1] }}</span>
+            <span class="starred-card__value--pair-box3">{{ starredDrink?.driedFruitCount[2] }}</span>
+            <span class="starred-card__value--pair-box4">{{ starredDrink?.driedFruitCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
           *ngIf="starredDrink.body"
           class="starred-card__value--pair"
         >

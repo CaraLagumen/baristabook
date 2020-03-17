@@ -131,9 +131,9 @@ const drinkSchema = new mongoose.Schema(
         `Green tea`,
         `Passion tea`,
         `White tea`,
-        `Strawberry acai refresher`,
-        `Very berry hibiscus refresher`,
-        `Mango dragon refresher`
+        `Strawberry acai base`,
+        `Very berry hibiscus base`,
+        `Mango dragon base`
       ]
     },
     shakerAddition: {
@@ -141,6 +141,7 @@ const drinkSchema = new mongoose.Schema(
       enum: [
         `Water`,
         `Lemonade`,
+        `Coconutmilk`,
         `Blueberry infusion`,
         `Peach infusion`,
         `Guava infusion`
@@ -150,6 +151,7 @@ const drinkSchema = new mongoose.Schema(
       type: String,
       enum: [`Strawberries`, `Blackberries`, `Dragon fruits`]
     },
+    driedFruitCount: { type: [Number], default: undefined },
     custom: {
       type: String,
       trim: true,

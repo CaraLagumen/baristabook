@@ -62,6 +62,7 @@
         {{ drink?.syrup }}<br *ngIf="drink.syrup2">
         {{ drink?.syrup2 }}<br *ngIf="drink.syrup3">
         {{ drink?.syrup3 }}
+        {{ drink?.driedFruit }}
       </div>
     </tr>
     <tr class="drink-line__items--short mobile-hide">
@@ -69,10 +70,15 @@
         {{ drink?.syrupCount }}<br *ngIf="drink.syrup2Count">
         {{ drink?.syrup2Count }}<br *ngIf="drink.syrup3Count">
         {{ drink?.syrup3Count }}
+        {{ drink?.driedFruitCount }}
       </div>
     </tr>
     <tr class="drink-line__items--cell mobile-hide">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.body }}</div>
+      <div class="drink-line__items--cell-text scrollable">
+        {{ drink?.body }}
+        {{ drink?.shaker }}<br *ngIf="drink.shaker">
+        {{ drink?.shakerAddition }}
+      </div>
     </tr>
     <tr class="drink-line__items--cell mobile-hide">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.base }}</div>
@@ -85,15 +91,6 @@
     </tr>
     <tr class="drink-line__items--cell mobile-hide">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.topping }}</div>
-    </tr>
-    <tr class="drink-line__items--cell mobile-hide">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.shaker }}</div>
-    </tr>
-    <tr class="drink-line__items--cell mobile-hide">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.shakerAddition }}</div>
-    </tr>
-    <tr class="drink-line__items--cell mobile-hide">
-      <div class="drink-line__items--cell-text scrollable">{{ drink?.driedFruit }}</div>
     </tr>
     <tr class="drink-line__items--cell mobile-hide">
       <div class="drink-line__items--cell-text scrollable">{{ drink?.custom }}</div>

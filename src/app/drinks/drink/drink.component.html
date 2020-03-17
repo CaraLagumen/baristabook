@@ -143,6 +143,32 @@
         </li>
 
         <li
+          *ngIf="drink.syrup3"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.syrup3 }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.syrup3Count[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.syrup3Count[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.syrup3Count[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.syrup3Count[3] }}</span>
+          </span>
+        </li>
+
+        <li
+          *ngIf="drink.driedFruit"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">{{ drink?.driedFruit }}</span>
+          <span class="drink-card__value--pair-value">
+            <span class="drink-card__value--pair-box1">{{ drink?.driedFruitCount[0] }}</span>
+            <span class="drink-card__value--pair-box2">{{ drink?.driedFruitCount[1] }}</span>
+            <span class="drink-card__value--pair-box3">{{ drink?.driedFruitCount[2] }}</span>
+            <span class="drink-card__value--pair-box4">{{ drink?.driedFruitCount[3] }}</span>
+          </span>
+        </li>
+
+        <li
           *ngIf="drink.tea"
           class="drink-card__value--pair"
         >
@@ -206,14 +232,6 @@
         >
           <span class="drink-card__value--pair-key">Shaker Addition</span>
           <span class="drink-card__value--pair-value">{{ drink?.shakerAddition }}</span>
-        </li>
-
-        <li
-          *ngIf="drink.driedFruit"
-          class="drink-card__value--pair"
-        >
-          <span class="drink-card__value--pair-key">Dried Fruit</span>
-          <span class="drink-card__value--pair-value">{{ drink?.driedFruit }}</span>
         </li>
 
         <li

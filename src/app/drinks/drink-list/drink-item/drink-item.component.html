@@ -127,6 +127,13 @@
     </span>
 
     <span
+      *ngIf="drink.driedFruit"
+      class="drink-item-card__back--pair"
+    ><span class="drink-item-card__back--pair-key">{{ drink?.driedFruit }}</span>
+      <span class="drink-item-card__back--pair-value">{{ drink?.driedFruitCount }}</span>
+    </span>
+
+    <span
       *ngIf="drink.tea"
       class="drink-item-card__back--pair"
     ><span class="drink-item-card__back--pair-key">{{ drink?.tea }}</span>
@@ -173,13 +180,6 @@
       class="drink-item-card__back--pair"
     ><span class="drink-item-card__back--pair-key">Shaker Addition</span>
       <span class="drink-item-card__back--pair-value">{{ drink?.shakerAddition }}</span>
-    </span>
-
-    <span
-      *ngIf="drink.driedFruit"
-      class="drink-item-card__back--pair"
-    ><span class="drink-item-card__back--pair-key">Dried Fruit</span>
-      <span class="drink-item-card__back--pair-value">{{ drink?.driedFruit }}</span>
     </span>
 
     <span
