@@ -3,9 +3,16 @@ const factory = require(`./../controllers/handlerFactory`);
 const catchAsync = require(`./../utils/catchAsync`);
 
 exports.getSearch = catchAsync(async (req, res, next) => {
-  //FIND DRINK INCLUDING PARTIAL MATCHES
+  //FIND DRINK BY NAME OR CODE INCLUDING PARTIAL MATCHES
   const doc = await Drink.find({
-    name: { $regex: req.query.drink, $options: `i` }
+    $or: [
+      {
+        name: { $regex: req.query.drink, $options: `i` }
+      },
+      {
+        code: { $regex: req.query.drink, $options: `i` }
+      }
+    ]
   });
 
   res.status(200).json({

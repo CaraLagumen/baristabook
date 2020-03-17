@@ -71,21 +71,21 @@ const drinkSchema = new mongoose.Schema(
     syrup: {
       type: String,
       trim: true,
-      maxlength: [30, `Drink syrup can't have more than 30 characters.`],
+      maxlength: [40, `Drink syrup can't have more than 40 characters.`],
       minlength: [3, `Drink syrup can't have less than 3 characters.`]
     },
     syrupCount: { type: [Number], default: undefined },
     syrup2: {
       type: String,
       trim: true,
-      maxlength: [30, `Drink syrup can't have more than 30 characters.`],
+      maxlength: [40, `Drink syrup can't have more than 40 characters.`],
       minlength: [3, `Drink syrup can't have less than 3 characters.`]
     },
     syrup2Count: { type: [Number], default: undefined },
     syrup3: {
       type: String,
       trim: true,
-      maxlength: [30, `Drink syrup can't have more than 30 characters.`],
+      maxlength: [40, `Drink syrup can't have more than 40 characters.`],
       minlength: [3, `Drink syrup can't have less than 3 characters.`]
     },
     syrup3Count: { type: [Number], default: undefined },
@@ -114,14 +114,14 @@ const drinkSchema = new mongoose.Schema(
     body: {
       type: String,
       trim: true,
-      maxlength: [30, `Drink body can't have more than 30 characters.`],
+      maxlength: [40, `Drink body can't have more than 40 characters.`],
       minlength: [5, `Drink body can't have less than 5 characters.`]
     },
     whippedCream: Boolean,
     topping: {
       type: String,
       trim: true,
-      maxlength: [30, `Drink topping can't have more than 30 characters.`],
+      maxlength: [40, `Drink topping can't have more than 40 characters.`],
       minlength: [3, `Drink topping can't have less than 3 characters.`]
     },
     shaker: {
