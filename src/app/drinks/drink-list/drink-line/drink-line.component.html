@@ -5,7 +5,10 @@
   <table class="drink-line__items">
 
     <tr class="drink-line__items--short">
-      <div class="drink-line__items--short-star">
+      <div
+        class="drink-line__items--short-star"
+        style="font-weight: 700;"
+      >
         {{ drink?.code }}
         <button
           *ngIf="userIsAuth"
@@ -30,7 +33,7 @@
     >
       <div
         class="drink-line__items--cell-text scrollable"
-        style="font-weight: 600;"
+        style="font-weight: 700;"
       >{{ drink?.name }}</div>
     </tr>
 
