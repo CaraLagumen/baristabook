@@ -23,6 +23,7 @@ export interface Drink {
   topping?: string;
   shaker?: string;
   shakerAddition?: string;
+  shakerAddition2?: string;
   driedFruit?: string;
   driedFruitCount?: number;
   tea: string;

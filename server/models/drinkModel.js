@@ -13,7 +13,7 @@ const drinkSchema = new mongoose.Schema(
       type: String,
       required: [true, `Drink name required.`],
       trim: true,
-      maxlength: [40, `Drink name can't have more than 40 characters.`],
+      maxlength: [50, `Drink name can't have more than 50 characters.`],
       minlength: [3, `Drink name can't have less than 3 characters.`]
     },
     code: {
@@ -121,7 +121,7 @@ const drinkSchema = new mongoose.Schema(
     topping: {
       type: String,
       trim: true,
-      maxlength: [40, `Drink topping can't have more than 40 characters.`],
+      maxlength: [50, `Drink topping can't have more than 50 characters.`],
       minlength: [3, `Drink topping can't have less than 3 characters.`]
     },
     shaker: {
@@ -137,6 +137,17 @@ const drinkSchema = new mongoose.Schema(
       ]
     },
     shakerAddition: {
+      type: String,
+      enum: [
+        `Water`,
+        `Lemonade`,
+        `Coconutmilk`,
+        `Blueberry infusion`,
+        `Peach infusion`,
+        `Guava infusion`
+      ]
+    },
+    shakerAddition2: {
       type: String,
       enum: [
         `Water`,

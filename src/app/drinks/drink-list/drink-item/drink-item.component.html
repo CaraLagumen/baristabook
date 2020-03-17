@@ -183,6 +183,13 @@
     </span>
 
     <span
+      *ngIf="drink.shakerAddition2"
+      class="drink-item-card__back--pair"
+    ><span class="drink-item-card__back--pair-key">Shaker Addition 2</span>
+      <span class="drink-item-card__back--pair-value">{{ drink?.shakerAddition2 }}</span>
+    </span>
+
+    <span
       *ngIf="drink.custom"
       class="drink-item-card__back--pair"
     ><span class="drink-item-card__back--pair-key">Custom</span>

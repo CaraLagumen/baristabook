@@ -235,6 +235,14 @@
         </li>
 
         <li
+          *ngIf="drink.shakerAddition2"
+          class="drink-card__value--pair"
+        >
+          <span class="drink-card__value--pair-key">Shaker Addition 2</span>
+          <span class="drink-card__value--pair-value">{{ drink?.shakerAddition2 }}</span>
+        </li>
+
+        <li
           *ngIf="drink.custom"
           class="drink-card__value--pair"
         >
