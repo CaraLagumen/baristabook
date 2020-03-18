@@ -56,7 +56,7 @@ module.exports = class Email {
 
   //SIGNUPS
   async sendWelcome() {
-    await this.send(`Welcome`, `Welcome to Barista Book.`);
+    await this.send(`welcome`, `Welcome to Barista Book.`);
   }
 
   async sendPasswordReset() {
