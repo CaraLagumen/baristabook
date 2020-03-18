@@ -45,7 +45,7 @@ export class AuthService {
       },
       err => {
         this.alertService.error(
-          "Unable to sign you up with that info, please try again.",
+          "Unable to sign you up, please try again.",
           {
             autoClose: true,
             keepAfterRouteChange: true

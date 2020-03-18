@@ -9,29 +9,36 @@ export class GlobalErrorHandler implements ErrorHandler {
   constructor(private injector: Injector, private alertService: AlertService) {}
 
   handleError(err: any) {
-    const router = this.injector.get(Router);
-
-    this.alertService.error(`Request URL: ${router.url}`, {
-      autoClose: true,
-      keepAfterRouteChange: true
-    });
-
-    console.log(`Request URL: ${router.url}`);
-
-    if (err instanceof HttpErrorResponse) {
-      this.alertService.error(`${err.status}: ${err.message}`, {
-        autoClose: true,
-        keepAfterRouteChange: true
-      });
-
-      console.error(`${err.status}: ${err.message}`);
+    //DISREGARD STARREDS UNDEFINED
+    if (err.message === `this.starreds is undefined`) {
+      return;
     } else {
-      this.alertService.error(`An error occurred: ${err.message}`, {
+      //SHOW ROUTE BEING ACCESSED
+      const router = this.injector.get(Router);
+
+      this.alertService.error(`Request URL: ${router.url}`, {
         autoClose: true,
         keepAfterRouteChange: true
       });
 
-      console.error(`An error occurred: ${err.message}`);
+      console.log(`Request URL: ${router.url}`);
+
+      //HANDLE ALL HTTP ERRORS
+      if (err instanceof HttpErrorResponse) {
+        this.alertService.error(`${err.status}: ${err.message}`, {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
+
+        console.error(`${err.status}: ${err.message}`);
+      } else {
+        this.alertService.error(`An error occurred: ${err.message}`, {
+          autoClose: true,
+          keepAfterRouteChange: true
+        });
+
+        console.error(`An error occurred: ${err.message}`);
+      }
     }
   }
 }
