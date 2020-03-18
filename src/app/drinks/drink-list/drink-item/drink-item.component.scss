@@ -57,7 +57,7 @@
       }
 
       &:hover {
-        text-shadow: 0 0 0.5rem currentColor, 0 0 1rem var(--color-blonde),
+        text-shadow: 0 0 0.5rem var(--color-espresso), 0 0 1rem currentColor,
           0 0 2rem var(--color-white);
       }
     }
