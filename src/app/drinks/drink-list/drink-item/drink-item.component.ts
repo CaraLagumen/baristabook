@@ -1,4 +1,9 @@
-import { Component, Input, OnInit } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnInit,
+  ChangeDetectionStrategy
+} from "@angular/core";
 
 import { Drink } from "../../../shared/drink.model";
 import { UserService } from "src/app/user/user.service";
@@ -8,6 +13,7 @@ import { fadeTrigger } from "src/app/shared/route-animations";
   selector: "app-drink-item",
   templateUrl: "./drink-item.component.html",
   styleUrls: ["./drink-item.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [fadeTrigger]
 })
 export class DrinkItemComponent implements OnInit {

@@ -9,6 +9,10 @@
 
   display: flex;
 
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+
   @media only screen and (max-width: 26em) {
     //414
     align-items: center;
@@ -18,9 +22,5 @@
 
     height: 100%;
     width: 100%;
-
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
   }
 }

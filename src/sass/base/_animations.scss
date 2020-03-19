@@ -15,6 +15,9 @@
     width: 2.5rem;
     height: 2.5rem;
 
+    border-radius: 50%;
+    opacity: 0.2;
+
     animation-fill-mode: both;
     animation: load 1.8s infinite ease-in-out;
   }

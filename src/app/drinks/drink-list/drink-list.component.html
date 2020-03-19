@@ -63,10 +63,15 @@
 
   </div>
 
+  <span
+    *ngIf="!(drinks$ | async)"
+    class="loading"
+  >Loading...</span>
+
   <!-- MAIN VIEW -->
   <div
     @fadeTrigger
-    *ngIf="!isLoading && !listView"
+    *ngIf="(drinks$ | async) && !listView"
     class="main"
   >
     <div class="main__cards">
@@ -84,7 +89,7 @@
   <!-- LIST VIEW -->
   <div
     @fadeTrigger
-    *ngIf="!isLoading && listView"
+    *ngIf="(drinks$ | async) && listView"
     class="list"
   >
 
@@ -120,10 +125,5 @@
     </div>
 
   </div>
-
-  <span
-    *ngIf="isLoading"
-    class="loading"
-  >Loading...</span>
 
 </div>

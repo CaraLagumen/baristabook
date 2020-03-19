@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 
 import { Drink } from "../../../shared/drink.model";
 import { UserService } from "../../user.service";
@@ -9,7 +9,8 @@ import { UserService } from "../../user.service";
   styleUrls: [
     "./starred-item.component.scss",
     "../../../shared/drink-card.scss"
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StarredItemComponent {
   @Input() starredDrink: Drink;

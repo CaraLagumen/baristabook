@@ -29,7 +29,6 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   starreds: any[];
   searching: boolean;
 
-  isLoading = false;
   searchTerm = new Subject<string>();
   searchResults: any;
   hidden = false;
@@ -76,18 +75,14 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.isLoading = true;
-
     this.userFeature();
 
     //EXPOSE DRINK FOR DISPLAY WITH MINISCULE DELAY
     //TO REGISTER STARRED DRINKS IF ANY
     this.drinks$ = this.drinksService
       .getDrinks()
-      .pipe(delay(150))
+      // .pipe(delay(150))
       .pipe(map((drinks: any) => drinks.doc));
-
-    this.isLoading = false;
   }
 
   onListView() {

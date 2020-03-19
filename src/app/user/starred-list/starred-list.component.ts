@@ -15,16 +15,12 @@ export class StarredListComponent implements OnInit {
   starredsDrinks$: Observable<Drink[]>;
   starreds: any[];
 
-  isLoading = false;
-
   constructor(
     private userService: UserService,
     private alertService: AlertService
   ) {}
 
   ngOnInit() {
-    this.isLoading = true;
-
     //EXPOSE STARRED FOR DISPLAY
     this.starredsDrinks$ = this.userService
       .getStarredDrinks()
@@ -41,8 +37,6 @@ export class StarredListComponent implements OnInit {
         });
       }
     });
-
-    this.isLoading = false;
   }
 
   onSort() {

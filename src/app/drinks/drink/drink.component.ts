@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Observable } from "rxjs";
+import {
+  Component,
+  OnInit,
+  Input,
+  ChangeDetectionStrategy
+} from "@angular/core";
 
 import { Drink } from "../../shared/drink.model";
 import { UserService } from "src/app/user/user.service";
@@ -7,7 +11,8 @@ import { UserService } from "src/app/user/user.service";
 @Component({
   selector: "app-drink",
   templateUrl: "./drink.component.html",
-  styleUrls: ["./drink.component.scss", '../../shared/drink-card.scss']
+  styleUrls: ["./drink.component.scss", "../../shared/drink-card.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DrinkComponent implements OnInit {
   @Input() drink: Drink;

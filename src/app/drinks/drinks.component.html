@@ -1,7 +1,7 @@
 <div class="drinks-container">
 
   <div
-    *ngIf="!isLoading"
+    *ngIf="(drinks$ | async)"
     class="main__cards"
   >
     <app-drink
@@ -13,7 +13,7 @@
   </div>
 
   <span
-    *ngIf="isLoading"
+    *ngIf="!(drinks$ | async)"
     class="loading"
   >Loading...</span>
 

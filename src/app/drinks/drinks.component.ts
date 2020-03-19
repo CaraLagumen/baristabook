@@ -22,8 +22,6 @@ export class DrinksComponent implements OnInit, OnDestroy {
   starreds: any[];
   slug: string;
 
-  isLoading = false;
-
   constructor(
     private drinksService: DrinksService,
     private authService: AuthService,
@@ -32,8 +30,6 @@ export class DrinksComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    this.isLoading = true;
-
     this.userFeature();
 
     //FETCH SLUG FROM ROUTE PARAM
@@ -43,8 +39,6 @@ export class DrinksComponent implements OnInit, OnDestroy {
       .getDrinkSlug(this.slug)
       .pipe(delay(150))
       .pipe(map((drinks: any) => drinks.doc));
-
-    this.isLoading = false;
   }
 
   userFeature() {
