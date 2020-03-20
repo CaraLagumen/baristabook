@@ -16,7 +16,7 @@
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "postinstall": "ng build --output-path dist",
-    "heroku-postbuild": "ng build --configuration=production --output-path dist"
+    "heroku-postbuild": "ng build --configuration=production"
   },
   "private": true,
   "dependencies": {
