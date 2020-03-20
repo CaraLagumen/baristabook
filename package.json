@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "debug": "ndb server.js",
-    "heroku-postbuild": "ng build --configuration=production"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
