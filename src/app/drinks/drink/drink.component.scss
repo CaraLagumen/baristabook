@@ -5,4 +5,9 @@
   justify-content: center;
 
   height: 100%;
+
+  @media only screen and (max-height: 34em) {
+    //550
+    transform: scale(0.7);
+  }
 }
