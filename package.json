@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "debug": "ndb server.js",
-    "postinstall": "ng build --configuration=production --output-path dist"
+    "postinstall": "ng build --prod --output-path dist"
   },
   "private": true,
   "dependencies": {
