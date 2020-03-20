@@ -1,6 +1,6 @@
 .starred-list-container {
   display: grid;
-  grid-template-rows: 8vh 60vh;
+  grid-template-rows: 8vh 70vh;
 }
 
 .sort {
@@ -54,7 +54,7 @@
       margin: 0;
       padding: 0;
 
-      height: 60vh;
+      height: 70vh;
       width: auto;
 
       overflow-x: auto;
@@ -71,6 +71,7 @@
       column-gap: 10rem;
       row-gap: 5rem;
 
+      height: 77vh;
       padding: 5rem 10rem;
 
       overflow-x: hidden;

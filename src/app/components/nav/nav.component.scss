@@ -1,7 +1,7 @@
 .brief {
   display: grid;
-  grid-template-rows: 5vh 63vh;
-  align-content: flex-start;
+  grid-template-rows: 5vh 55vh;
+  align-content: center;
   justify-content: center;
   justify-items: center;
   row-gap: 3rem;
@@ -15,7 +15,7 @@
 
   .about__text,
   .disclaimer__text {
-    height: 50vh;
+    height: 65vh;
 
     //SPACE FOR SCROLL BAR
     padding-right: 1rem;
@@ -93,15 +93,11 @@
 
 .contact-us {
   display: grid;
-  grid-template-rows: 10vh 10vh 48vh;
+  grid-template-rows: 10vh 10vh 40vh;
   justify-content: center;
   justify-items: center;
 
   padding: 6rem 2rem;
-
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-width: thin;
 
   @media only screen and (max-width: 22em) {
     //320
@@ -136,7 +132,7 @@
       grid-column: 1 / -1;
       grid-row: 1 / 2;
 
-      height: 20rem;
+      height: 15rem;
       width: 28rem;
       resize: none;
 

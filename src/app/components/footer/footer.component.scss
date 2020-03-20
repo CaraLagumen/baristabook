@@ -3,7 +3,7 @@
   grid-template-columns:
     [cara-start] 30vw
     [cara-end] 1fr
-    [nav-start] 30vw
+    [nav-start] 18rem
     [nav-end];
 
   color: var(--color-white);
@@ -34,7 +34,7 @@
 
       @media only screen and (max-height: 26em) {
         //414 LANDSCAPE
-        height: 8vh;
+        height: 6vh;
       }
     }
 
@@ -46,9 +46,8 @@
   &__nav {
     grid-column: nav-start / nav-end;
 
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
     z-index: 300;
 
     padding-bottom: 2.5rem;
@@ -59,6 +58,8 @@
     @media only screen and (max-height: 28em) {
       //446 LANDSCAPE
       display: inline;
+      
+      padding-bottom: 2rem;
       padding-right: 0;
     }
 
@@ -121,7 +122,7 @@
     height: 15vh;
     width: 100vw;
     background-color: var(--color-earth);
-    clip-path: polygon(0% 70%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(100% 30%, 0 100%, 100% 100%);
 
     z-index: 200;
   }
@@ -134,7 +135,7 @@
     height: 15vh;
     width: 100vw;
     background-color: var(--color-mocha);
-    clip-path: polygon(0% 30%, 100% 70%, 100% 100%, 0 100%);
+    clip-path: polygon(0 60%, 0 100%, 100% 100%);
 
     z-index: 100;
   }

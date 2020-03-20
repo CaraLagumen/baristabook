@@ -2,14 +2,14 @@
   display: grid;
   grid-template-rows:
     [search-start] 8vh
-    [search-end main-start] 60vh
+    [search-end main-start] 70vh
     [main-end];
 
   @media only screen and (max-height: 28em) {
     //446 LANDSCAPE
     grid-template-rows:
       [search-start] 12vh
-      [search-end main-start] 56vh
+      [search-end main-start] 66vh
       [main-end];
   }
 }
@@ -353,8 +353,8 @@
     margin-right: auto;
     margin-left: auto;
 
-    height: 52vh;
-    width: 95.2vw; //ADD 0.2vw FOR SCROLL BAR
+    height: 60vh;
+    width: 95.4vw; //ADD 0.2vw FOR SCROLL BAR
 
     overflow-x: hidden;
     overflow-y: auto;

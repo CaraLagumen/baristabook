@@ -1,9 +1,9 @@
 .app-container {
   display: grid;
   grid-template-rows:
-    [header-start] 17vh
+    [header-start] 12vh
     [header-end main-start] 1fr
-    [main-end footer-start] 15vh
+    [main-end footer-start] 10vh
     [footer-end];
   height: 100vh;
 }

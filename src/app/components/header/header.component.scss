@@ -18,19 +18,19 @@
   &__logo {
     grid-column: logo-start / logo-end;
 
-    padding-bottom: 2vh;
+    padding-bottom: 0.5vh;
     padding-left: 4.5vw;
 
     transition: all 0.3s cubic-bezier(0.71, 0.01, 0.09, 1.51);
 
     img {
-      height: 10vh;
+      height: 9vh;
 
       @media only screen and (max-height: 26em) {
         //414 LANDSCAPE
         transform: translateY(1rem);
 
-        height: 14vh;
+        height: 12vh;
       }
     }
 
@@ -52,8 +52,14 @@
       height: 100%;
       width: 100%;
 
-      padding-bottom: 4vh;
+      padding-bottom: 2.5vh;
       padding-right: 4.5vw;
+
+      img,
+      .starred-icon {
+        //ONLY SHOW ON MOBILE
+        display: none;
+      }
 
       @media only screen and (max-height: 26em) {
         //414 LANDSCAPE
@@ -62,19 +68,13 @@
         padding-right: 2vw;
       }
 
-      img,
-      .starred-icon {
-        //ONLY SHOW ON MOBILE
-        display: none;
-      }
-
       @media only screen and (max-width: 44em) {
         //700
         grid-template-columns: repeat(3, 4.5rem);
         justify-content: flex-end;
         justify-items: flex-end;
 
-        padding-bottom: 3vh;
+        padding-bottom: 2vh;
         padding-right: 2rem;
 
         span {
@@ -103,7 +103,7 @@
     height: 10vh;
     width: 100vw;
     background-color: var(--color-mocha);
-    clip-path: polygon(100% 20%, 100% 0, 0 0, 0 100%);
+    clip-path: polygon(100% 0, 0 0, 0 70%);
 
     z-index: -1;
   }
@@ -116,7 +116,7 @@
     height: 10vh;
     width: 100vw;
     background-color: var(--color-earth);
-    clip-path: polygon(100% 80%, 100% 0, 0 0, 0 25%);
+    clip-path: polygon(100% 0, 0 0, 100% 50%);
 
     z-index: -2;
   }

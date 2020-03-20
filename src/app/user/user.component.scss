@@ -1,16 +1,16 @@
 .user-container {
   display: grid;
-  grid-template-rows: 10vh 58vh;
+  grid-template-rows: 10vh 65vh;
   justify-content: center;
   justify-items: center;
 }
 
 .title {
-  align-self: flex-start;
+  align-self: flex-end;
 }
 
 .user {
-  align-self: flex-start;
+  align-self: center;
 
   padding: 1.5rem;
 
