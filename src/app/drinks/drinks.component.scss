@@ -1,12 +1,11 @@
 .drinks-container {
   display: grid;
-  grid-template-rows: 68vh;
+  grid-template-rows: 78vh;
   align-content: center;
   justify-content: center;
 }
 
 .main__cards {
-
   display: flex;
 
   overflow-x: auto;
