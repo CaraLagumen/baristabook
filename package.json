@@ -13,9 +13,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
-    "postinstall": "ng build --output-path dist",
     "heroku-postbuild": "ng build --configuration=production"
   },
   "private": true,
