@@ -2,7 +2,8 @@ import {
   Component,
   Input,
   OnInit,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
 } from "@angular/core";
 
 import { Drink } from "../../../shared/drink.model";
@@ -27,7 +28,10 @@ export class DrinkItemComponent implements OnInit {
   drinkIsStarred = false;
   star = "★";
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     if (this.userIsAuth) {
@@ -74,6 +78,8 @@ export class DrinkItemComponent implements OnInit {
   updateStarred() {
     this.userService.getStarred().subscribe((starred: any) => {
       this.starreds = starred.doc;
+
+      this.cd.markForCheck();
     });
   }
 

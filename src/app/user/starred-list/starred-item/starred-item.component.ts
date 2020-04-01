@@ -1,4 +1,9 @@
-import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
+import {
+  Component,
+  Input,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef
+} from "@angular/core";
 
 import { Drink } from "../../../shared/drink.model";
 import { UserService } from "../../user.service";
@@ -21,7 +26,10 @@ export class StarredItemComponent {
   star = "☆";
   isDisabled = false;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   //TOGGLE STARRED PREVIEW
   onViewStarred() {
@@ -35,6 +43,8 @@ export class StarredItemComponent {
       .subscribe(() => {
         this.star = "★";
         this.isDisabled = true;
+
+        this.cd.markForCheck();
       });
   }
 }
