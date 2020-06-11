@@ -10,7 +10,10 @@
     <div class="starred-card__star">
       <button
         (click)="onDeleteStarred()"
+        (mouseenter)="hoverHandler('action')"
+        (mouseleave)="hoverHandler('reset')"
         [disabled]="isDisabled"
+        [ngClass]="{ 'disabled': isDisabled }"
         class="starred-card__star--btn emboss"
       >{{ star }}</button>
     </div>

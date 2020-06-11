@@ -17,8 +17,9 @@
       <form>
         <label>
           <input
-            type="text"
             (keyup)="searchTerm.next($event)"
+            (keydown.enter)="$event.preventDefault()"
+            type="text"
             placeholder="Search"
             class="search__bar--input"
           >

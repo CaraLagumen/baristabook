@@ -178,7 +178,7 @@
     z-index: 5000;
 
     max-height: 70%;
-    width: 30rem;
+    max-width: 40rem;
     padding: 0rem 3rem;
     padding-top: 2rem; //TO BE USED WITH ul:last-child
     border-radius: 0.8rem;
@@ -213,6 +213,9 @@
 
     &--item {
       transition: all 0.2s cubic-bezier(0.71, 0.01, 0.09, 1.51);
+
+      overflow-x: auto;
+      white-space: nowrap;
 
       &:hover {
         color: var(--color-white);

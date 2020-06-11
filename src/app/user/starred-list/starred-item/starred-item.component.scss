@@ -9,3 +9,23 @@
     padding: 0 2rem;
   }
 }
+
+.starred-card__star--btn {
+  color: var(--color-star);
+  text-shadow: 0 0 0.5rem var(--color-espresso), 0 0 1rem currentColor,
+    0 0 2rem var(--color-white);
+}
+
+.disabled {
+  color: var(--color-blonde);
+  text-shadow: -0.1rem -0.1rem 0.1rem rgba(0, 0, 0, 0.7),
+    0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7);
+
+  cursor: not-allowed;
+
+  &:hover {
+    color: var(--color-blonde) !important;
+    text-shadow: -0.1rem -0.1rem 0.1rem rgba(0, 0, 0, 0.7),
+      0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.7) !important;
+  }
+}

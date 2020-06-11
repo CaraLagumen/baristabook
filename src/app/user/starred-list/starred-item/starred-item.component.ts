@@ -23,7 +23,7 @@ export class StarredItemComponent {
   @Input() index: number;
 
   viewStarred = false;
-  star = "☆";
+  star = "★";
   isDisabled = false;
 
   constructor(
@@ -41,10 +41,13 @@ export class StarredItemComponent {
     this.userService
       .deleteStarred(this.starreds, this.starredDrink.id)
       .subscribe(() => {
-        this.star = "★";
         this.isDisabled = true;
 
         this.cd.markForCheck();
       });
+  }
+
+  hoverHandler(type: `action` | `reset`) {
+    type === `action` && !this.isDisabled ? (this.star = "☆") : (this.star = "★");
   }
 }
