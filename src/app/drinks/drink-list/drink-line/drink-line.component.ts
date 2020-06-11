@@ -39,7 +39,6 @@ export class DrinkLineComponent implements OnInit {
       this.starreds.forEach(el => {
         if (el.drink.id === this.drink.id) {
           this.drinkIsStarred = true;
-          this.star = "☆";
         }
       });
     }
@@ -55,7 +54,6 @@ export class DrinkLineComponent implements OnInit {
     this.userService.saveStarred(this.drink.id, this.userId).subscribe(() => {
       //UPDATE VALUES & starreds ARR
       this.drinkIsStarred = true;
-      this.star = "☆";
 
       this.updateStarred();
     });
@@ -68,7 +66,6 @@ export class DrinkLineComponent implements OnInit {
       .subscribe(() => {
         //UPDATE VALUES & STARRED ARR
         this.drinkIsStarred = false;
-        this.star = "★";
 
         this.updateStarred();
       });
@@ -85,10 +82,12 @@ export class DrinkLineComponent implements OnInit {
 
   //ENABLES TOGGLE BUTTON
   clickHandler() {
-    if (this.drinkIsStarred) {
-      this.onDeleteStarred();
-    } else if (!this.drinkIsStarred) {
-      this.onSaveStarred();
-    }
+    this.drinkIsStarred ? this.onDeleteStarred() : this.onSaveStarred();
+  }
+
+  hoverHandler(type: `action` | `reset`) {
+    type === `action` && this.drinkIsStarred
+      ? (this.star = "☆")
+      : (this.star = "★");
   }
 }

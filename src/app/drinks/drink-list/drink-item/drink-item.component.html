@@ -10,9 +10,12 @@
   <div class="drink-item-card__star">
     <button
       *ngIf="userIsAuth"
-      (click)="clickHandler($event)"
+      (click)="clickHandler()"
+      (mouseenter)="hoverHandler('action')"
+      (mouseleave)="hoverHandler('reset')"
+      [ngClass]="{ 'starred': drinkIsStarred }"
       class="drink-item-card__star--btn emboss"
-    >{{ star }}
+    ><span>{{ star }}</span>
     </button>
 
     <button

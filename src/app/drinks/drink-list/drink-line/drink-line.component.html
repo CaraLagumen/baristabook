@@ -12,7 +12,10 @@
         {{ drink?.code }}
         <button
           *ngIf="userIsAuth"
-          (click)="clickHandler($event)"
+          (click)="clickHandler()"
+          (mouseenter)="hoverHandler('action')"
+          (mouseleave)="hoverHandler('reset')"
+          [ngClass]="{ 'starred': drinkIsStarred }"
         >{{ star }}
         </button>
 

@@ -5,16 +5,15 @@
   "main": "app.js",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
-    "dev": "ng serve",
-    "devserver": "nodemon server.js",
-    "start:dev": "npm-run-all --parallel dev devserver",
     "build": "ng build",
+    "start": "node server.js",
+    "postinstall": "ng build --output-path dist",
+    "dev": "ng serve --configuration=development",
+    "dev:server": "nodemon server.js",
+    "start:dev": "npm-run-all --parallel dev dev:server",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "debug": "ndb server.js",
-    "postinstall": "ng build --output-path dist"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {

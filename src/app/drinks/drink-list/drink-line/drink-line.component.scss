@@ -69,10 +69,15 @@
         justify-items: flex-end;
 
         height: 100%;
-      }
 
-      button {
-        font-size: 2rem;
+        button {
+          font-size: 2rem;
+
+          &:hover {
+            text-shadow: 0 0 0.5rem var(--color-espresso), 0 0 1rem currentColor,
+              0 0 2rem var(--color-white);
+          }
+        }
       }
     }
   }
@@ -83,4 +88,9 @@
     //1200 CONTROL WITH drink-list
     display: none;
   }
+}
+
+.starred {
+  text-shadow: 0 0 0.5rem var(--color-espresso), 0 0 1rem currentColor,
+    0 0 2rem var(--color-white);
 }

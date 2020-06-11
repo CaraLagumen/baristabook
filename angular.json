@@ -30,9 +30,23 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "fileReplacements": [
+              {
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }
+            ]
           },
           "configurations": {
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.prod.ts",
+                  "with": "src/environments/environment.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [{
                 "replace": "src/environments/environment.ts",
@@ -67,6 +81,9 @@
             "browserTarget": "baristabook:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "baristabook:build:development"
+            },
             "production": {
               "browserTarget": "baristabook:build:production"
             }
