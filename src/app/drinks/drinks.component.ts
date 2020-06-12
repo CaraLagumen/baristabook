@@ -3,10 +3,11 @@ import { Subscription, Observable } from "rxjs";
 import { map, delay } from "rxjs/operators";
 import { ActivatedRoute } from "@angular/router";
 
-import { Drink } from "../shared/drink.model";
 import { DrinksService } from "./drinks.service";
 import { AuthService } from "../auth/auth.service";
 import { UserService } from "../user/user.service";
+import { Drink } from "../shared/drink.model";
+import { Starred } from "../shared/starred.model";
 
 @Component({
   selector: "app-drinks",
@@ -19,7 +20,7 @@ export class DrinksComponent implements OnInit, OnDestroy {
   drinks$: Observable<Drink[]>;
   userIsAuth: boolean;
   userId: string;
-  starreds: any[];
+  starreds: Starred[];
   slug: string;
 
   constructor(

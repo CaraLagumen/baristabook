@@ -5,8 +5,9 @@ import {
   ChangeDetectorRef
 } from "@angular/core";
 
-import { Drink } from "../../../shared/drink.model";
 import { UserService } from "../../user.service";
+import { Drink } from "../../../shared/drink.model";
+import { Starred } from "../../../shared/starred.model";
 
 @Component({
   selector: "app-starred-item",
@@ -19,7 +20,7 @@ import { UserService } from "../../user.service";
 })
 export class StarredItemComponent {
   @Input() starredDrink: Drink;
-  @Input() starreds: any[];
+  @Input() starreds: Starred[];
   @Input() index: number;
 
   viewStarred = false;
@@ -48,6 +49,8 @@ export class StarredItemComponent {
   }
 
   hoverHandler(type: `action` | `reset`) {
-    type === `action` && !this.isDisabled ? (this.star = "☆") : (this.star = "★");
+    type === `action` && !this.isDisabled
+      ? (this.star = "☆")
+      : (this.star = "★");
   }
 }

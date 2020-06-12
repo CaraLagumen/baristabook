@@ -7,7 +7,8 @@ import {
 } from "@angular/core";
 
 import { Drink } from "../../shared/drink.model";
-import { UserService } from "src/app/user/user.service";
+import { Starred } from "../../shared/starred.model";
+import { UserService } from "../../user/user.service";
 
 @Component({
   selector: "app-drink",
@@ -18,8 +19,8 @@ import { UserService } from "src/app/user/user.service";
 export class DrinkComponent implements OnInit {
   @Input() drink: Drink;
   @Input() userIsAuth: boolean;
-  @Input() userId: any;
-  @Input() starreds: any[];
+  @Input() userId: string;
+  @Input() starreds: Starred[];
 
   //STARRED FEATURE
   drinkIsStarred = false;
@@ -34,7 +35,7 @@ export class DrinkComponent implements OnInit {
     if (this.userIsAuth) {
       //FIND IF DRINK IS STARRED, TOGGLE drinkIsStarred BUTTON
       this.starreds.forEach(el => {
-        if (el.drink.id === this.drink.id) {
+        if ((el.drink as Drink).id === this.drink.id) {
           this.drinkIsStarred = true;
         }
       });
@@ -71,7 +72,7 @@ export class DrinkComponent implements OnInit {
       this.cd.markForCheck();
     });
   }
-  
+
   clickHandler() {
     this.drinkIsStarred ? this.onDeleteStarred() : this.onSaveStarred();
   }

@@ -3,8 +3,9 @@ import { Observable } from "rxjs";
 import { delay, map } from "rxjs/operators";
 
 import { UserService } from "../user.service";
-import { Drink } from "src/app/shared/drink.model";
 import { AlertService } from "src/app/components/alert/alert.service";
+import { Drink } from "src/app/shared/drink.model";
+import { Starred } from 'src/app/shared/starred.model';
 
 @Component({
   selector: "app-starred",
@@ -13,7 +14,7 @@ import { AlertService } from "src/app/components/alert/alert.service";
 })
 export class StarredListComponent implements OnInit {
   starredsDrinks$: Observable<Drink[]>;
-  starreds: any[];
+  starreds: Starred[];
 
   constructor(
     private userService: UserService,

@@ -6,9 +6,10 @@ import {
   ChangeDetectorRef
 } from "@angular/core";
 
+import { UserService } from "../../../user/user.service";
 import { Drink } from "../../../shared/drink.model";
-import { UserService } from "src/app/user/user.service";
-import { fadeTrigger } from "src/app/shared/route-animations";
+import { Starred } from "../../../shared/starred.model";
+import { fadeTrigger } from "../../../shared/route-animations";
 
 @Component({
   selector: "app-drink-item",
@@ -20,8 +21,8 @@ import { fadeTrigger } from "src/app/shared/route-animations";
 export class DrinkItemComponent implements OnInit {
   @Input() drink: Drink;
   @Input() userIsAuth: boolean;
-  @Input() userId: any;
-  @Input() starreds: any[];
+  @Input() userId: string;
+  @Input() starreds: Starred[];
 
   previewDrink = false;
   //STARRED FEATURE
@@ -37,7 +38,7 @@ export class DrinkItemComponent implements OnInit {
     if (this.userIsAuth) {
       //FIND IF DRINK IS STARRED, TOGGLE drinkIsStarred BUTTON
       this.starreds.forEach(el => {
-        if (el.drink.id === this.drink.id) {
+        if ((el.drink as Drink).id === this.drink.id) {
           this.drinkIsStarred = true;
         }
       });

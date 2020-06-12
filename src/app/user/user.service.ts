@@ -5,8 +5,10 @@ import { map } from "rxjs/operators";
 import { Router } from "@angular/router";
 
 import { environment } from "src/environments/environment";
-import { UserData } from "./user-data.model";
 import { AlertService } from "../components/alert/alert.service";
+import { UserData } from "./user-data.model";
+import { Drink } from '../shared/drink.model';
+import { Starred } from '../shared/starred.model';
 
 const ROOT_URL = `${environment.apiUrl}`;
 
@@ -65,12 +67,12 @@ export class UserService {
     return this.http.post<any>(`${ROOT_URL}/drinks/${drinkId}`, starredData);
   }
 
-  deleteStarred(starreds: any[], drinkId: string): Observable<any> {
+  deleteStarred(starreds: Starred[], drinkId: string): Observable<any> {
     let starredId;
 
     //MATCH DRINK ID WITH STARRED'S DRINK ID TO FIND STARRED UNIQUE ID
     starreds.forEach(el => {
-      if (el.drink.id === drinkId) {
+      if ((el.drink as Drink).id === drinkId) {
         starredId = el.id;
       }
     });

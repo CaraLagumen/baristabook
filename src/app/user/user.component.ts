@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 
 import { UserService } from './user.service';
 import { AuthService } from '../auth/auth.service';
+import { User } from '../shared/user.model';
 
 @Component({
    selector: 'app-user',
@@ -11,7 +12,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class UserComponent implements OnInit {
    updateUserForm: FormGroup;
-   user: any;
+   user: User;
 
    isLoading = false;
 

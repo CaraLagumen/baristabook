@@ -9,10 +9,11 @@ import {
 } from "rxjs/operators";
 
 import { DrinksService } from "../drinks.service";
+import { AuthService } from "../../auth/auth.service";
+import { UserService } from "../../user/user.service";
 import { Drink } from "../../shared/drink.model";
-import { AuthService } from "src/app/auth/auth.service";
-import { UserService } from "src/app/user/user.service";
-import { fadeTrigger } from "src/app/shared/route-animations";
+import { Starred } from "../../shared/starred.model";
+import { fadeTrigger } from "../../shared/route-animations";
 
 @Component({
   selector: "app-drink-list",
@@ -26,11 +27,11 @@ export class DrinkListComponent implements OnInit, OnDestroy {
   drinks$: Observable<Drink[]>;
   userIsAuth: boolean;
   userId: string;
-  starreds: any[];
+  starreds: Starred[];
   searching: boolean;
 
   searchTerm = new Subject<string>();
-  searchResults: any;
+  searchResults: Drink[];
   hidden = false;
   listView = false;
   view = "List view";

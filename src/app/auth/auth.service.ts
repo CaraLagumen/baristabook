@@ -17,7 +17,7 @@ export class AuthService {
   private token: string;
   private authStatusListener = new Subject<boolean>();
   private isAuth = false;
-  private tokenTimer: any;
+  private tokenTimer: ReturnType<typeof setTimeout>;
 
   constructor(
     private http: HttpClient,
